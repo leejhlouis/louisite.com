@@ -16,6 +16,7 @@ export default function AboutPage(): JSX.Element {
           name="description"
           content="Explore Louis Gustavo's software projects featuring Spring Boot, Vue.js, Next.js, React, Laravel, and more!"
         />
+        <link rel="canonical" href="https://louisite.com/projects" />
       </Helmet>
       <Suspense fallback={<Preloader />}>
         <PageWrapper>
