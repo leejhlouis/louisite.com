@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "https://louisite.netlify.app"
-  to = "https://louisite.com"
+  from = "/*"
+  to = "https://louisite.com/:splat"
   status = 301
   force = true
 
