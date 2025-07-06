@@ -10,11 +10,16 @@ Previously, I assumed the role of **Manager of Web Development Division** of [HI
 
 Here are some technologies that I am familiar with:
 
-### Web development
+### Software engineering
 
+- Java
+- Spring Boot
 - HTML5
 - CSS3
 - JavaScript (ES6+)
+- Node.js
+- Express
+- Next.js
 - TypeScript
 - Vue.js
 - React
@@ -25,21 +30,24 @@ Here are some technologies that I am familiar with:
 - Bootstrap
 - SCSS (BEM)
 - Laravel
+- PostgreSQL
 - MySQL
+- MongoDB
 - Prettier
 
 ### Other languages
 
 - C
 - C++
-- Java
 - SQL
 - Python
-- Node.js
 - PHP
 
 ### Development tools
 
+- Amazon Web Services (AWS)
+- Terraform
+- Google Cloud Platform (GCP)
 - Netlify
 - Firebase
 - Git

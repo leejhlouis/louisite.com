@@ -35,8 +35,7 @@ export default function Hero(): JSX.Element {
             'break-words font-extrabold tracking-tight'
           )}
         >
-          I specialize in both building <HighlightText>web interfaces</HighlightText> and{' '}
-          <HighlightText>backend systems</HighlightText>.
+          3+ years building <HighlightText>web interfaces</HighlightText> and <HighlightText>backend systems</HighlightText>.
         </h1>
         <p
           className={clsx(
@@ -46,7 +45,7 @@ export default function Hero(): JSX.Element {
             'pb-0'
           )}
         >
-          Software Engineer at <InlineLink href='https://traveloka.com'>Traveloka</InlineLink>
+          Software Engineer <InlineLink href='https://traveloka.com'>@Traveloka</InlineLink>
         </p>
         <SocialMediaLinks className={clsx('animate-fade-in !delay-500', 'mt-6')} />
       </div>

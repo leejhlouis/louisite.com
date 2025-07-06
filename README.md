@@ -1,8 +1,8 @@
-# LOUISITE
+# [louisite.com](https://louisite.com/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b5ed574c-98f0-4d7e-bec5-ebcf23f65039/deploy-status)](https://app.netlify.com/sites/louisite/deploys)
 
-**LOUISITE** (stylized as LOUI**SITE**, a portmanteau of _Louis_ and _site_) is my personal website—this is the second iteration—showcasing my accomplishments. This website was built with [Tailwind CSS](https://tailwindcss.com/), [React](https://reactjs.org/), and [TypeScript](https://www.typescriptlang.org/).
+**louisite.com** (stylized as LOUI**SITE**, a portmanteau of _Louis_ and _site_) is my personal website—this is the second iteration—showcasing my accomplishments. This website was built with [Tailwind CSS](https://tailwindcss.com/), [React](https://reactjs.org/), and [TypeScript](https://www.typescriptlang.org/).
 
 [Visit the website here](https://louisite.com/)
 
@@ -30,20 +30,20 @@ On top of that, I implemented glassmorphism—a frosted glass effect popularized
 
 The website was initially bootstrapped with [Create React App](https://create-react-app.dev/) (CRA) and built with Tailwind CSS, React, and TypeScript. Tailwind CSS was used as the CSS framework for its practical utility classes to build the interface. Meanwhile, React was chosen due to its beautifully curated JavaScript library for UI components and TypeScript was chosen due to its type-checking feature. Furthermore, I use `.markdown` for managing the content of the [about me](https://louisite.com/about) page.
 
-In 2023, I [migrated](https://github.com/leejhlouis/louisite/pull/9) CRA to [Vite](https://vitejs.dev/), a simpler and faster build tool alternative to CRA.
+In 2023, I [migrated](https://github.com/leejhlouis/louisite.com/pull/9) CRA to [Vite](https://vitejs.dev/), a simpler and faster build tool alternative to CRA.
 
 ## How to run the website locally
 
 1. Clone this repository to your local machine
 
 ```
-git clone https://github.com/leejhlouis/louisite.git
+git clone https://github.com/leejhlouis/louisite.com.git
 ```
 
-2. Change directory to `/louisite`, the project directory
+2. Change directory to `/louisite.com`, the project directory
 
 ```
-cd louisite
+cd louisite.com
 ```
 
 3. Install the dependencies locally (**make sure to have Node.js or any other package manager installed**)
@@ -58,4 +58,4 @@ npm install
 npm run dev
 ```
 
-5. Open http://localhost:3000 to view the website.
+5. Open http://localhost:5173 to view the website.

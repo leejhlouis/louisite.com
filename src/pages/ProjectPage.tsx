@@ -11,10 +11,14 @@ export default function AboutPage(): JSX.Element {
   return (
     <>
       <Helmet>
-        <title>Projects | Louis Gustavo</title>
+        <title>Projects by Louis Gustavo | Full-stack Development</title>
         <meta
-          name="description"
-          content="Explore Louis Gustavo's software projects featuring Spring Boot, Vue.js, Next.js, React, Laravel, and more!"
+          name='description'
+          content="Explore Louis Gustavo's full-stack software projects featuring Spring Boot, Vue.js, Next.js, React, Laravel, and more!"
+        />
+        <link
+          rel='canonical'
+          href='https://louisite.com/projects'
         />
       </Helmet>
       <Suspense fallback={<Preloader />}>
