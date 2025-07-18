@@ -3,7 +3,6 @@
 import { lazy } from 'react'
 
 const PrimaryButton = lazy(() => import('@/components/ui/button/PrimaryButton'))
-const ArrowUpSLineIcon = lazy(() => import('remixicon-react/ArrowUpSLineIcon'))
 
 export default function BackToTop(): JSX.Element {
   const scrollToTop = (): void => {
