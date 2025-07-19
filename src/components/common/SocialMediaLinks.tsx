@@ -7,27 +7,12 @@ export default function SocialMediaLinks({ className }: ComponentProps): JSX.Ele
   const social = socialList.map(
     (item: SocialProps, index: number): JSX.Element => (
       <li key={index}>
-        <a
-          href={item.url}
-          target='_blank'
-          rel='noreferrer'
-          aria-label={item.name}
-        >
+        <a href={item.url} target='_blank' rel='noreferrer' aria-label={item.name}>
           {item.icon}
         </a>
       </li>
     )
   )
 
-  return (
-    // prettier-ignore
-    <ul
-      className={clsx(
-        className,
-        'flex list-none items-center space-x-4'
-      )}
-    >
-      {social}
-    </ul>
-  )
+  return <ul className={clsx(className, 'flex list-none items-center space-x-4')}>{social}</ul>
 }

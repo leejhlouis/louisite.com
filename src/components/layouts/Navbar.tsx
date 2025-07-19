@@ -4,10 +4,6 @@ import ThemeToggle from '@/components/common/ThemeToggle'
 import NavDropdown from '@/components/common/NavDropdown'
 
 export default function Navbar() {
-  // const [toggle, setToggle] = useState<boolean>(false)
-
-  // const onThemeButtonClick = (): void => setToggle(!toggle)
-
   return (
     <nav className='fixed top-0 z-50 w-full backdrop-blur-xl'>
       <div className='container flex flex-wrap items-center justify-between py-4 xl:max-w-screen-xl'>

@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import ScrollToTopFAB from '@/components/common/ScrollToTopFAB'
 import '@/styles/main.css'
 import clsx from 'clsx'
-import Providers from '@/app/_lib/Providers';
+import Providers from '@/app/_lib/providers';
 
 export const metadata: Metadata = {
   title: 'Louis Gustavo | Software Engineer',

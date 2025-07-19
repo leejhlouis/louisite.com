@@ -6,7 +6,7 @@ import ArticleProps from '@/types/ArticleProps'
 
 const Heading1 = lazy(() => import('@/components/ui/heading/Heading1'))
 const InlineLink = lazy(() => import('@/components/ui/InlineLink'))
-const BlogCard = lazy(() => import('@/components/common/BlogCard'))
+const BlogCard = lazy(() => import('@/components/blog/BlogCard'))
 const Section = lazy(() => import('@/components/layouts/Section'))
 
 export default function Blog({ articles }: BlogProps): JSX.Element {

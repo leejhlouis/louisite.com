@@ -1,11 +1,9 @@
-import { lazy } from 'react'
 import clsx from 'clsx'
 import ProjectProps from '@/types/components/ProjectProps'
 import LinkProps from '@/types/LinkProps'
-
-const Badge = lazy(() => import('@/components/ui/Badge'))
-const Card = lazy(() => import('@/components/ui/Card'))
-const Heading3 = lazy(() => import('@/components/ui/heading/Heading3'))
+import Badge from '@/components/ui/Badge'
+import Card from '@/components/ui/Card'
+import Heading3 from '@/components/ui/heading/Heading3'
 
 export default function ProjectCard({
   title,

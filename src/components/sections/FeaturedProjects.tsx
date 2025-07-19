@@ -1,37 +1,21 @@
-'use client'
-import { lazy, useRef } from 'react'
 import { projects } from '@/constants/projects'
-import useIntersectionObserver from '@/hooks/useIntersectionObserver'
 import clsx from 'clsx'
 import Link from 'next/link'
-
-const ArrowRightSLineIcon = lazy(() => import('remixicon-react/ArrowRightSLineIcon'))
-const PrimaryButton = lazy(() => import('@/components/ui/button/PrimaryButton'))
-const Heading2 = lazy(() => import('@/components/ui/heading/Heading2'))
-const ProjectCard = lazy(() => import('@/components/common/ProjectCard'))
-const Section = lazy(() => import('@/components/layouts/Section'))
+import AnimatedSection from '@/components/sections/AnimatedSection'
+import ProjectCard from '@/components/common/ProjectCard'
+import Section from '@/components/layouts/Section'
+import Heading2 from '@/components/ui/heading/Heading2'
+import PrimaryButton from '@/components/ui/button/PrimaryButton'
+import ArrowRightSLineIcon from 'remixicon-react/ArrowRightSLineIcon'
 
 export default function Projects(): JSX.Element {
-  const ref = useRef<HTMLDivElement>(null)
-  useIntersectionObserver(ref, (): void => {
-    ref.current?.classList.add('animate-start')
-  })
-
   const projectsEntry: JSX.Element[] = projects
     .filter(({ featured }) => !!featured)
-    .map(project => (
-      <ProjectCard
-        key={project.slug}
-        {...project}
-      />
-    ))
+    .map(project => <ProjectCard key={project.slug} {...project} />)
 
   return (
-    <div ref={ref}>
-      <Section
-        id='projects'
-        className='scroll-mt-8'
-      >
+    <AnimatedSection>
+      <Section id='projects' className='scroll-mt-8'>
         <Heading2 className='animate-fade-in pb-6 text-center text-primary-dark !delay-200 dark:text-white'>
           Featured projects
         </Heading2>
@@ -46,16 +30,12 @@ export default function Projects(): JSX.Element {
         </div>
         <div className='animate-fade-in !delay-500'>
           <Link href='/projects'>
-            <PrimaryButton
-              className='my-8'
-              icon={<ArrowRightSLineIcon size={20} />}
-              inverted
-            >
+            <PrimaryButton className='my-8' icon={<ArrowRightSLineIcon size={20} />} inverted>
               More projects
             </PrimaryButton>
           </Link>
         </div>
       </Section>
-    </div>
+    </AnimatedSection>
   )
 }

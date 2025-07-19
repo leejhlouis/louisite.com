@@ -6,7 +6,7 @@ import clsx from 'clsx'
 import { navItems } from '@/constants'
 import NavItemsProps from '@/types/NavItemsProps'
 
-export default function Dropdown(): JSX.Element {
+export default function NavDropdownContent(): JSX.Element {
   const pathname = usePathname()
 
   const links = navItems.map((item: NavItemsProps, index: number): JSX.Element => {
