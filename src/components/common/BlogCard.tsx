@@ -2,8 +2,8 @@ import { lazy } from 'react'
 import clsx from 'clsx'
 import ArticleProps from '@/types/ArticleProps'
 
-const Heading3 = lazy(() => import('@/components/common/reusable/heading/Heading3'))
-const Card = lazy(() => import('@/components/common/reusable/Card'))
+const Heading3 = lazy(() => import('@/components/ui/heading/Heading3'))
+const Card = lazy(() => import('@/components/ui/Card'))
 
 export default function BlogCard({
   link,

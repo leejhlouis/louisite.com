@@ -3,11 +3,11 @@ import clsx from 'clsx'
 import useFadeInMounted from '@/hooks/useFadeInMounted'
 import ComponentProps from '@/types/components/ComponentProps'
 
-const Heading1 = lazy(() => import('@/components/common/reusable/heading/Heading1'))
-const Heading2 = lazy(() => import('@/components/common/reusable/heading/Heading2'))
-const Heading3 = lazy(() => import('@/components/common/reusable/heading/Heading3'))
-const Badge = lazy(() => import('@/components/common/reusable/Badge'))
-const InlineLink = lazy(() => import('@/components/common/reusable/InlineLink'))
+const Heading1 = lazy(() => import('@/components/ui/heading/Heading1'))
+const Heading2 = lazy(() => import('@/components/ui/heading/Heading2'))
+const Heading3 = lazy(() => import('@/components/ui/heading/Heading3'))
+const Badge = lazy(() => import('@/components/ui/Badge'))
+const InlineLink = lazy(() => import('@/components/ui/InlineLink'))
 const Section = lazy(() => import('@/components/layouts/Section'))
 const ReactMarkdown = lazy(() => import('react-markdown'))
 

@@ -1,7 +1,7 @@
 'use client'
 import { lazy } from 'react'
 
-const PrimaryButton = lazy(() => import('@/components/common/reusable/button/PrimaryButton'))
+const PrimaryButton = lazy(() => import('@/components/ui/button/PrimaryButton'))
 const NavLinks = lazy(() => import('@/components/common/NavLinks'))
 const SocialMediaLinks = lazy(() => import('@/components/common/SocialMediaLinks'))
 const Title = lazy(() => import('@/components/common/Title'))

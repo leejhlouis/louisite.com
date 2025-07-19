@@ -5,9 +5,9 @@ import { filters, projects } from '@/constants/projects'
 import useFadeInMounted from '@/hooks/useFadeInMounted'
 import ProjectProps from '@/types/components/ProjectProps'
 
-const Badge = lazy(() => import('@/components/common/reusable/Badge'))
-const Heading1 = lazy(() => import('@/components/common/reusable/heading/Heading1'))
-const InlineLink = lazy(() => import('@/components/common/reusable/InlineLink'))
+const Badge = lazy(() => import('@/components/ui/Badge'))
+const Heading1 = lazy(() => import('@/components/ui/heading/Heading1'))
+const InlineLink = lazy(() => import('@/components/ui/InlineLink'))
 const ProjectCard = lazy(() => import('@/components/common/ProjectCard'))
 const Section = lazy(() => import('@/components/layouts/Section'))
 

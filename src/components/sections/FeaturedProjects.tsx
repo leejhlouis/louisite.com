@@ -6,8 +6,8 @@ import clsx from 'clsx'
 import Link from 'next/link'
 
 const ArrowRightSLineIcon = lazy(() => import('remixicon-react/ArrowRightSLineIcon'))
-const PrimaryButton = lazy(() => import('@/components/common/reusable/button/PrimaryButton'))
-const Heading2 = lazy(() => import('@/components/common/reusable/heading/Heading2'))
+const PrimaryButton = lazy(() => import('@/components/ui/button/PrimaryButton'))
+const Heading2 = lazy(() => import('@/components/ui/heading/Heading2'))
 const ProjectCard = lazy(() => import('@/components/common/ProjectCard'))
 const Section = lazy(() => import('@/components/layouts/Section'))
 

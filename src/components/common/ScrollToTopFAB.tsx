@@ -1,9 +1,10 @@
 'use client'
+
 import { lazy, useState } from 'react'
 import clsx from 'clsx'
 import useEventListener from '@/hooks/useEventListener'
 
-const IconButton = lazy(() => import('@/components/common/reusable/button/IconButton'))
+const IconButton = lazy(() => import('@/components/ui/button/IconButton'))
 const ArrowUpFillIcon = lazy(() => import('remixicon-react/ArrowUpFillIcon'))
 
 const SCROLL_OFFSET = 120

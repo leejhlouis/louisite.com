@@ -2,7 +2,7 @@ import { lazy } from 'react'
 import clsx from 'clsx'
 import PrimaryButtonProps from '@/types/components/buttons/PrimaryButtonProps'
 
-const SlidingInUnderline = lazy(() => import('@/components/common/reusable/SlidingInUnderline'))
+const SlidingInUnderline = lazy(() => import('@/components/ui/SlidingInUnderline'))
 
 export default function PrimaryButton({
   className,

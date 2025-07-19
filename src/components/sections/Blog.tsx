@@ -4,8 +4,8 @@ import useFadeInMounted from '@/hooks/useFadeInMounted'
 import BlogProps from '@/types/components/BlogProps'
 import ArticleProps from '@/types/ArticleProps'
 
-const Heading1 = lazy(() => import('@/components/common/reusable/heading/Heading1'))
-const InlineLink = lazy(() => import('@/components/common/reusable/InlineLink'))
+const Heading1 = lazy(() => import('@/components/ui/heading/Heading1'))
+const InlineLink = lazy(() => import('@/components/ui/InlineLink'))
 const BlogCard = lazy(() => import('@/components/common/BlogCard'))
 const Section = lazy(() => import('@/components/layouts/Section'))
 

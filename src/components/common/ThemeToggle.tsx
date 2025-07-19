@@ -1,12 +1,12 @@
 'use client'
+
 import { lazy, useEffect, useState } from 'react'
-import checkDarkTheme from '@/utils/checkDarkTheme'
 import SunLineIcon from 'remixicon-react/SunLineIcon'
 import MoonLineIcon from 'remixicon-react/MoonLineIcon'
 
-const IconButton = lazy(() => import('@/components/common/reusable/button/IconButton'))
+const IconButton = lazy(() => import('@/components/ui/button/IconButton'))
 
-export default function ThemeSwitcher(): JSX.Element {
+export default function ThemeToggle() {
   const [isDark, setDark] = useState<boolean>(false)
 
   const toggleDarkTheme = (): void => {
@@ -14,10 +14,6 @@ export default function ThemeSwitcher(): JSX.Element {
     localStorage.theme = isDark ? 'light' : 'dark'
     setDark(!isDark)
   }
-
-  useEffect(() => {
-    setDark(checkDarkTheme())
-  }, [])
 
   return (
     <IconButton

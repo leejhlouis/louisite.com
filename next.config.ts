@@ -3,7 +3,6 @@ import path from 'path'
 import withMDX from '@next/mdx'
 
 const nextConfig: NextConfig = {
-  output: 'export',
   distDir: './dist',
   webpack: config => {
     if (!config.resolve) config.resolve = { alias: {} }

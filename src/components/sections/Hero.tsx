@@ -4,10 +4,10 @@ import clsx from 'clsx'
 import useFadeInMounted from '@/hooks/useFadeInMounted'
 
 const ArrowDownSLineIcon = lazy(() => import('remixicon-react/ArrowDownSLineIcon'))
-const PrimaryButton = lazy(() => import('@/components/common/reusable/button/PrimaryButton'))
-const SlidingInUnderline = lazy(() => import('@/components/common/reusable/SlidingInUnderline'))
-const HighlightText = lazy(() => import('@/components/common/reusable/HighlightText'))
-const InlineLink = lazy(() => import('@/components/common/reusable/InlineLink'))
+const PrimaryButton = lazy(() => import('@/components/ui/button/PrimaryButton'))
+const SlidingInUnderline = lazy(() => import('@/components/ui/SlidingInUnderline'))
+const HighlightText = lazy(() => import('@/components/ui/HighlightText'))
+const InlineLink = lazy(() => import('@/components/ui/InlineLink'))
 const SocialMediaLinks = lazy(() => import('@/components/common/SocialMediaLinks'))
 const Section = lazy(() => import('@/components/layouts/Section'))
 

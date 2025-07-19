@@ -5,8 +5,8 @@ import useEventListener from '@/hooks/useEventListener'
 import useMounted from '@/hooks/useMounted'
 import Link from 'next/link'
 
-const PrimaryButton = lazy(() => import('@/components/common/reusable/button/PrimaryButton'))
-const Heading1 = lazy(() => import('@/components/common/reusable/heading/Heading1'))
+const PrimaryButton = lazy(() => import('@/components/ui/button/PrimaryButton'))
+const Heading1 = lazy(() => import('@/components/ui/heading/Heading1'))
 const Section = lazy(() => import('@/components/layouts/Section'))
 const ArrowLeftSLineIcon = lazy(() => import('remixicon-react/ArrowLeftSLineIcon'))
 

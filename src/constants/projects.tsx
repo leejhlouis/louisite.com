@@ -1,6 +1,6 @@
 import GithubFillIcon from 'remixicon-react/GithubFillIcon'
 import ExternalLinkFillIcon from 'remixicon-react/ExternalLinkFillIcon'
-import InlineLink from '@/components/common/reusable/InlineLink'
+import InlineLink from '@/components/ui/InlineLink'
 import ProjectProps from '@/types/components/ProjectProps'
 import LinkProps from '@/types/LinkProps'
 import getGitHubUrl from '@/utils/getGitHubUrl'

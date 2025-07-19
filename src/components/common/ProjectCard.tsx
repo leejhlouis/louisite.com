@@ -3,9 +3,9 @@ import clsx from 'clsx'
 import ProjectProps from '@/types/components/ProjectProps'
 import LinkProps from '@/types/LinkProps'
 
-const Badge = lazy(() => import('@/components/common/reusable/Badge'))
-const Card = lazy(() => import('@/components/common/reusable/Card'))
-const Heading3 = lazy(() => import('@/components/common/reusable/heading/Heading3'))
+const Badge = lazy(() => import('@/components/ui/Badge'))
+const Card = lazy(() => import('@/components/ui/Card'))
+const Heading3 = lazy(() => import('@/components/ui/heading/Heading3'))
 
 export default function ProjectCard({
   title,
