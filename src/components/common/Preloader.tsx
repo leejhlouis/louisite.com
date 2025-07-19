@@ -1,4 +1,5 @@
 'use client'
+
 import { BallTriangle } from 'react-loader-spinner'
 
 export default function Preloader() {
