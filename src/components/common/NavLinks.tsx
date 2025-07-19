@@ -1,26 +1,33 @@
-import { lazy } from 'react'
-import { NavLink } from 'react-router-dom'
-import navItems from '@/_data/navItems.ts'
-import NavItemsProps from '@/types/NavItemsProps'
+'use client'
 
-const PrimaryButton = lazy(() => import('@/components/common/reusable/button/PrimaryButton'))
+import dynamic from 'next/dynamic'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import NavItemsProps from '@/types/NavItemsProps'
+import { navItems } from '@/constants'
+
+// lazy load PrimaryButton, Next-style (only on client)
+const PrimaryButton = dynamic(() => import('@/components/common/reusable/button/PrimaryButton'), {
+  ssr: false
+})
 
 export default function NavLinks(): JSX.Element {
-  const links = navItems.map(
-    (item: NavItemsProps, index: number): JSX.Element => (
+  const pathname = usePathname()
+
+  const links = navItems.map((item: NavItemsProps, index: number): JSX.Element => {
+    const isActive = pathname === item.href
+
+    return (
       <li
         className='flex'
         key={index}
       >
-        <NavLink
-          key={index}
-          to={item.href}
-        >
-          {({ isActive }) => <PrimaryButton active={isActive}>{item.name}</PrimaryButton>}
-        </NavLink>
+        <Link href={item.href}>
+          <PrimaryButton active={isActive}>{item.name}</PrimaryButton>
+        </Link>
       </li>
     )
-  )
+  })
 
   return <ul className='flex flex-row items-center space-x-4'>{links}</ul>
 }

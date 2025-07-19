@@ -1,19 +1,16 @@
-import { lazy, Suspense } from 'react'
-import { Helmet } from 'react-helmet'
+import { Suspense } from 'react'
 import Preloader from '@/components/common/Preloader'
+import NotFound from '@/components/sections/NotFound'
+import { Metadata } from 'next'
 
-const NotFound = lazy(() => import('@/components/sections/NotFound'))
+export const metadata: Metadata = {
+  title: 'Page Not Found | Louis Gustavo',
+  robots: 'noindex, nofollow'
+}
 
-export default function NotFoundPage(): JSX.Element {
+export default function NotFoundPage() {
   return (
     <>
-      <Helmet>
-        <title>Page Not Found | Louis Gustavo</title>
-        <meta
-          name='robots'
-          content='noindex, nofollow'
-        />
-      </Helmet>
       <Suspense fallback={<Preloader />}>
         <NotFound />
       </Suspense>

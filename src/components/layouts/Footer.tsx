@@ -1,3 +1,4 @@
+'use client'
 import { lazy } from 'react'
 
 const PrimaryButton = lazy(() => import('@/components/common/reusable/button/PrimaryButton'))

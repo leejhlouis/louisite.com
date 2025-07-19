@@ -1,5 +1,5 @@
+'use client'
 import { lazy, Suspense, useEffect, useState } from 'react'
-import { Helmet } from 'react-helmet'
 import Preloader from '@/components/common/Preloader'
 import ArticleProps from '@/types/ArticleProps'
 import calculateMinRead from '@/utils/calculateMinRead'
@@ -10,7 +10,7 @@ const Navbar = lazy(() => import('@/components/layouts/Navbar'))
 const Blog = lazy(() => import('@/components/sections/Blog'))
 const Footer = lazy(() => import('@/components/layouts/Footer'))
 
-export default function BlogPage(): JSX.Element {
+export default function BlogPage() {
   const [articles, setArticles] = useState<ArticleProps[]>([])
 
   const getProperty = (item: Element, query: string): string =>
@@ -58,25 +58,12 @@ export default function BlogPage(): JSX.Element {
   }, [])
 
   return (
-    <>
-      <Helmet>
-        <title>Blog | Software Engineering Insights by Louis Gustavo</title>
-        <meta
-          name='description'
-          content="Read Louis Gustavo's blog for software engineering insights. Learn how I built my portfolio with React, TypeScript, and Tailwind CSS."
-        />
-        <link
-          rel='canonical'
-          href='https://louisite.com/blog'
-        />
-      </Helmet>
-      <Suspense fallback={<Preloader />}>
-        <PageWrapper>
-          <Navbar />
-          <Blog articles={articles} />
-          <Footer />
-        </PageWrapper>
-      </Suspense>
-    </>
+    <Suspense fallback={<Preloader />}>
+      <PageWrapper>
+        <Navbar />
+        <Blog articles={articles} />
+        <Footer />
+      </PageWrapper>
+    </Suspense>
   )
 }

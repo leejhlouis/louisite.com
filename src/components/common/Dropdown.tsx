@@ -1,31 +1,38 @@
-import { NavLink } from 'react-router-dom'
+'use client'
+
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
-import navItems from '@/_data/navItems.ts'
+import { navItems } from '@/constants'
 import NavItemsProps from '@/types/NavItemsProps'
 
 export default function Dropdown(): JSX.Element {
-  const links = navItems.map((item: NavItemsProps, index: number): JSX.Element => (
-    <NavLink
-      key={index}
-      className={({ isActive }) =>
-        clsx('w-full', 'hover:color-[inherit] hover:no-underline', {
+  const pathname = usePathname()
+
+  const links = navItems.map((item: NavItemsProps, index: number): JSX.Element => {
+    const isActive = pathname === item.href
+
+    return (
+      <Link
+        key={index}
+        href={item.href}
+        className={clsx('w-full', 'hover:color-[inherit] hover:no-underline', {
           'font-bold': isActive,
-          'font-nomal': !isActive
-        })
-      }
-      to={item.href}
-    >
-      <li
-        className={clsx(
-          'cursor-pointer',
-          'flex w-full px-2 py-1',
-          'hover:bg-slate-300/50 hover:dark:bg-slate-950/50'
-        )}
+          'font-normal': !isActive
+        })}
       >
-        <span>{item.name}</span>
-      </li>
-    </NavLink>
-  ))
+        <li
+          className={clsx(
+            'cursor-pointer',
+            'flex w-full px-2 py-1',
+            'hover:bg-slate-300/50 hover:dark:bg-slate-950/50'
+          )}
+        >
+          <span>{item.name}</span>
+        </li>
+      </Link>
+    )
+  })
 
   return (
     <ul

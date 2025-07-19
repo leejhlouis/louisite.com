@@ -32,7 +32,7 @@ export default function Blog({ articles }: BlogProps): JSX.Element {
         Collection of my writings and thoughts. Subscribe to{' '}
         <InlineLink href='/blog/rss'>RSS feed</InlineLink>.
       </p>
-      {articles?.length && (
+      {!!articles?.length && (
         <div
           className={clsx(
             'animate-fade-in !delay-300',

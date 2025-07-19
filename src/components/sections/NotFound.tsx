@@ -1,8 +1,9 @@
+'use client'
 import { lazy, useRef } from 'react'
-import { NavLink } from 'react-router-dom'
 import clsx from 'clsx'
 import useEventListener from '@/hooks/useEventListener'
 import useMounted from '@/hooks/useMounted'
+import Link from 'next/link'
 
 const PrimaryButton = lazy(() => import('@/components/common/reusable/button/PrimaryButton'))
 const Heading1 = lazy(() => import('@/components/common/reusable/heading/Heading1'))
@@ -55,7 +56,7 @@ export default function HomePage(): JSX.Element {
             Oh, snap! You're in the middle of nowhere, but don't worry, returning home is just one
             click away.
           </p>
-          <NavLink to='/'>
+          <Link href='/'>
             <PrimaryButton
               icon={<ArrowLeftSLineIcon />}
               className='animate-bounce pl-1 md:mx-auto'
@@ -63,7 +64,7 @@ export default function HomePage(): JSX.Element {
             >
               Go home
             </PrimaryButton>
-          </NavLink>
+          </Link>
         </Section>
       </div>
     </div>

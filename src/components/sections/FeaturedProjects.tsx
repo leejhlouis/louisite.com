@@ -1,8 +1,9 @@
+'use client'
 import { lazy, useRef } from 'react'
-import { NavLink } from 'react-router-dom'
-import { projects } from '@/_data/projects'
+import { projects } from '@/constants/projects'
 import useIntersectionObserver from '@/hooks/useIntersectionObserver'
 import clsx from 'clsx'
+import Link from 'next/link'
 
 const ArrowRightSLineIcon = lazy(() => import('remixicon-react/ArrowRightSLineIcon'))
 const PrimaryButton = lazy(() => import('@/components/common/reusable/button/PrimaryButton'))
@@ -20,8 +21,8 @@ export default function Projects(): JSX.Element {
     .filter(({ featured }) => !!featured)
     .map(project => (
       <ProjectCard
+        key={project.slug}
         {...project}
-        key={project.id}
       />
     ))
 
@@ -44,7 +45,7 @@ export default function Projects(): JSX.Element {
           {projectsEntry}
         </div>
         <div className='animate-fade-in !delay-500'>
-          <NavLink to='/projects'>
+          <Link href='/projects'>
             <PrimaryButton
               className='my-8'
               icon={<ArrowRightSLineIcon size={20} />}
@@ -52,7 +53,7 @@ export default function Projects(): JSX.Element {
             >
               More projects
             </PrimaryButton>
-          </NavLink>
+          </Link>
         </div>
       </Section>
     </div>

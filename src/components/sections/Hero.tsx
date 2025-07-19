@@ -1,3 +1,4 @@
+'use client'
 import { lazy } from 'react'
 import clsx from 'clsx'
 import useFadeInMounted from '@/hooks/useFadeInMounted'

@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import socialList from '@/_data/social.tsx'
+import socialList from '@/constants/social'
 import ComponentProps from '@/types/components/ComponentProps'
 import SocialProps from '@/types/SocialProps'
 

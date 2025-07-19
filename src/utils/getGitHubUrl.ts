@@ -1,6 +1,6 @@
-import constants from '@/constants'
+import { social } from "@/constants"
 
 export default function getGitHubUrl(repoName: string): string {
-  const githubUrl = `https://github.com/${constants.social.github}`
+  const githubUrl = `https://github.com/${social.github}`
   return `${githubUrl}/${repoName}`
 }

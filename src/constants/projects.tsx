@@ -1,10 +1,10 @@
 import GithubFillIcon from 'remixicon-react/GithubFillIcon'
 import ExternalLinkFillIcon from 'remixicon-react/ExternalLinkFillIcon'
 import InlineLink from '@/components/common/reusable/InlineLink'
-import constants from '@/constants'
 import ProjectProps from '@/types/components/ProjectProps'
 import LinkProps from '@/types/LinkProps'
 import getGitHubUrl from '@/utils/getGitHubUrl'
+import { social } from '@/constants'
 
 const github: LinkProps = {
   label: 'Source code',
@@ -176,7 +176,7 @@ const projects: ProjectProps[] = [
     techStacks: ['React', 'TypeScript', 'Tailwind CSS'],
     otherTechStacks: ['HTML/CSS', 'JavaScript'],
     category: 'Front-end development',
-    links: getLinks('got-wordle', `https://${constants.social.github}.github.io/got-wordle/`)
+    links: getLinks('got-wordle', `https://${social.github}.github.io/got-wordle/`)
   },
   {
     slug: 'unified-registration',
@@ -224,7 +224,7 @@ const projects: ProjectProps[] = [
     description: 'First iteration of my personal website.',
     category: 'Front-end development',
     techStacks: ['JavaScript', 'Tailwind CSS', 'HTML/CSS'],
-    links: getLinks('louisite-v1', `https://${constants.social.github}.github.io/louisite-v1/`)
+    links: getLinks('louisite-v1', `https://${social.github}.github.io/louisite-v1/`)
   },
   {
     slug: 'hci-danbam',
@@ -237,7 +237,7 @@ const projects: ProjectProps[] = [
     ),
     category: 'Front-end development',
     techStacks: ['HTML/CSS', 'JavaScript', 'jQuery'],
-    links: getLinks('hci-danbam', `https://${constants.social.github}.github.io/hci-danbam`)
+    links: getLinks('hci-danbam', `https://${social.github}.github.io/hci-danbam`)
   },
   {
     slug: 'fame',
@@ -246,7 +246,7 @@ const projects: ProjectProps[] = [
       'The landing page of FAME Workshop—a game development workshop held by HIMTI BINUS University’s programming class division.',
     category: 'Front-end development',
     techStacks: ['HTML/CSS', 'JavaScript'],
-    links: getLinks('fame', `https://${constants.social.github}.github.io/fame`)
+    links: getLinks('fame', `https://${social.github}.github.io/fame`)
   },
   {
     slug: 'cinema-cgp',

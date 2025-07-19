@@ -1,5 +1,5 @@
+'use client'
 import { lazy, Suspense, useEffect, useState } from 'react'
-import { Helmet } from 'react-helmet'
 import about from '@/_data/about/about.md'
 import Preloader from '@/components/common/Preloader'
 
@@ -8,7 +8,7 @@ const Navbar = lazy(() => import('@/components/layouts/Navbar'))
 const About = lazy(() => import('@/components/sections/About'))
 const Footer = lazy(() => import('@/components/layouts/Footer'))
 
-export default function AboutPage(): JSX.Element {
+export default function AboutPage() {
   const [content, setContent] = useState<string>('')
 
   useEffect((): void => {
@@ -22,25 +22,12 @@ export default function AboutPage(): JSX.Element {
   }, [content])
 
   return (
-    <>
-      <Helmet>
-        <title>About | Louis Gustavo</title>
-        <meta
-          name='description'
-          content='Learn the journey of Louis Gustavo, a Software Engineer at Traveloka with 3+ years of experience of developing web and backend systems using Spring Boot, Next.js, Vue.js, React, Laravel, and more.'
-        />
-        <link
-          rel='canonical'
-          href='https://louisite.com/about'
-        />
-      </Helmet>
-      <Suspense fallback={<Preloader />}>
-        <PageWrapper>
-          <Navbar />
-          <About children={content} />
-          <Footer />
-        </PageWrapper>
-      </Suspense>
-    </>
+    <Suspense fallback={<Preloader />}>
+      <PageWrapper>
+        <Navbar />
+        <About children={content} />
+        <Footer />
+      </PageWrapper>
+    </Suspense>
   )
 }

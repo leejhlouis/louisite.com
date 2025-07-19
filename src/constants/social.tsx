@@ -1,13 +1,13 @@
 import MailFillIcon from 'remixicon-react/MailFillIcon'
 import LinkedinFillIcon from 'remixicon-react/LinkedinFillIcon'
 import GithubFillIcon from 'remixicon-react/GithubFillIcon'
-import constants from '@/constants'
 import SocialProps from '@/types/SocialProps'
+import { social } from '@/constants'
 
-const social: SocialProps[] = [
+const thisSocial: SocialProps[] = [
   {
     name: 'Mail',
-    url: `mailto:${constants.social.mail}`,
+    url: `mailto:${social.mail}`,
     icon: (
       <MailFillIcon
         size={22}
@@ -17,7 +17,7 @@ const social: SocialProps[] = [
   },
   {
     name: 'LinkedIn',
-    url: constants.social.linkedin,
+    url: social.linkedin,
     icon: (
       <LinkedinFillIcon
         size={24}
@@ -27,7 +27,7 @@ const social: SocialProps[] = [
   },
   {
     name: 'GitHub',
-    url: `https://github.com/${constants.social.github}`,
+    url: `https://github.com/${social.github}`,
     icon: (
       <GithubFillIcon
         size={24}
@@ -37,4 +37,4 @@ const social: SocialProps[] = [
   }
 ]
 
-export default social
+export default thisSocial

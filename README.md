@@ -6,8 +6,6 @@
 
 [Visit the website here](https://louisite.com/)
 
-![Preview](src/assets/images/preview.png)
-
 ## Overview
 
 ### Background

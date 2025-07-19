@@ -1,3 +1,4 @@
+'use client'
 import { lazy, useState } from 'react'
 import clsx from 'clsx'
 import useEventListener from '@/hooks/useEventListener'

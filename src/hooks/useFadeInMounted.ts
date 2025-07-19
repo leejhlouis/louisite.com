@@ -1,3 +1,4 @@
+'use client'
 import { useState } from 'react'
 import useMounted from '@/hooks/useMounted'
 import useEventListener from '@/hooks/useEventListener'

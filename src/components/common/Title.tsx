@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 import SizeProps from '@/types/components/SizeProps'
+import Link from 'next/link'
 
 export default function Title({ size }: SizeProps): JSX.Element {
   const textSize = (): string => {
@@ -12,7 +12,7 @@ export default function Title({ size }: SizeProps): JSX.Element {
 
   return (
     <Link
-      to='/'
+      href='/'
       className='title'
     >
       <p className={clsx('pb-0 font-light uppercase', textSize())}>

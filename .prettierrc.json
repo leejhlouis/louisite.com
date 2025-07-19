@@ -7,7 +7,7 @@
   "jsxSingleQuote": true,
   "trailingComma": "none",
   "arrowParens": "avoid",
-  "singleAttributePerLine": true,
+  "singleAttributePerLine": false,
   "tailwindConfig": "./tailwind.config.ts",
   "plugins": ["prettier-plugin-tailwindcss"]
 }

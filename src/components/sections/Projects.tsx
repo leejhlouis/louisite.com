@@ -1,6 +1,7 @@
+'use client'
 import { lazy, useEffect, useState } from 'react'
 import clsx from 'clsx'
-import { filters, projects } from '@/_data/projects'
+import { filters, projects } from '@/constants/projects'
 import useFadeInMounted from '@/hooks/useFadeInMounted'
 import ProjectProps from '@/types/components/ProjectProps'
 
@@ -47,7 +48,7 @@ export default function Projects(): JSX.Element {
   const projectsEntry: JSX.Element[] = filteredProjects.map(project => (
     <ProjectCard
       {...project}
-      key={project.id}
+      key={project.slug}
     />
   ))
 
