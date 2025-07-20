@@ -1,12 +1,11 @@
 import { Metadata } from 'next'
 import { cookies } from 'next/headers'
 import ScrollToTopFAB from '@/components/common/ScrollToTopFAB'
-import clsx from 'clsx'
-import Providers from '@/app/_lib/providers'
 import '@/styles/main.css'
 import PageWrapper from '@/components/layouts/PageWrapper'
 import Navbar from '@/components/layouts/Navbar'
 import Footer from '@/components/layouts/Footer'
+import clsx from 'clsx'
 
 export const metadata: Metadata = {
   title: 'Louis Gustavo | Software Engineer',
@@ -42,13 +41,11 @@ export default async function MainLayout({ children }: { children: React.ReactNo
       <head />
       <body className='bg-[#c5d1ff] text-slate-800 dark:bg-[#110627] dark:text-white'>
         <div id='root' className='bg-light dark:bg-dark'>
-          <Providers>
-            <PageWrapper>
-              <Navbar />
-              {children}
-              <Footer />
-            </PageWrapper>
-          </Providers>
+          <PageWrapper>
+            <Navbar />
+            {children}
+            <Footer />
+          </PageWrapper>
         </div>
         <ScrollToTopFAB />
       </body>
