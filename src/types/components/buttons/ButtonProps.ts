@@ -5,4 +5,5 @@ export default interface ButtonProps extends ComponentProps {
   icon?: React.ReactNode
   screenReaderText?: string
   active?: boolean
+  href?: string
 }

@@ -1,4 +1,4 @@
-import ProjectPage from '@/pages/ProjectPage'
+import Projects from '@/components/sections/Projects'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <ProjectPage />
+  return <Projects />
 }

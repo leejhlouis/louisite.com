@@ -11,17 +11,14 @@
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
-    "@mdx-js/loader": "^3.1.0",
-    "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.4.2",
     "@types/mdx": "^2.0.13",
     "clsx": "^2.0.0",
     "next": "^15.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-loader-spinner": "^5.3.4",
-    "react-markdown": "^8.0.7",
-    "remixicon-react": "^1.0.0"
+    "remixicon-react": "^1.0.0",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "@netlify/functions": "^2.7.0",
@@ -29,6 +26,7 @@
     "@types/react-dom": "^18.2.7",
     "@types/react-helmet": "^6.1.6",
     "@types/react-router-dom": "^5.3.3",
+    "@types/xml2js": "^0.4.14",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
     "@vitejs/plugin-react": "^4.6.0",

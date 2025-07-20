@@ -1,6 +1,6 @@
 import type { NextConfig } from 'next'
 import path from 'path'
-import withMDX from '@next/mdx'
+import createMDX from '@next/mdx'
 
 const nextConfig: NextConfig = {
   distDir: './dist',
@@ -27,4 +27,8 @@ const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx']
 }
 
-export default withMDX()(nextConfig)
+const withMDX = createMDX({
+  extension: /\.mdx?$/
+})
+
+export default withMDX(nextConfig)

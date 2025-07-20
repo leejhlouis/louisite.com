@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
 import { cookies } from "next/headers";
 import ScrollToTopFAB from '@/components/common/ScrollToTopFAB'
-import '@/styles/main.css'
 import clsx from 'clsx'
 import Providers from '@/app/_lib/providers';
+import '@/styles/main.css'
 
 export const metadata: Metadata = {
   title: 'Louis Gustavo | Software Engineer',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function MainLayout({ children }: { children: React.ReactNode }) {
   const cookieStore = await cookies();
   const theme = cookieStore.get("theme")?.value || "light" as 'light' | 'dark';
 

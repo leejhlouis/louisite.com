@@ -1,6 +1,6 @@
 'use client'
 
-import { lazy, useEffect, useState } from 'react'
+import { lazy, useState } from 'react'
 import SunLineIcon from 'remixicon-react/SunLineIcon'
 import MoonLineIcon from 'remixicon-react/MoonLineIcon'
 

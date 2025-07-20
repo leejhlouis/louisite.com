@@ -1,11 +1,6 @@
 import { Metadata } from 'next'
-import { Suspense } from 'react'
-import Preloader from '@/components/common/Preloader'
-import PageWrapper from '@/components/layouts/PageWrapper'
-import Navbar from '@/components/layouts/Navbar'
 import Hero from '@/components/sections/Hero'
 import FeaturedProjects from '@/components/sections/FeaturedProjects'
-import Footer from '@/components/layouts/Footer'
 
 export const metadata: Metadata = {
   title: 'Louis Gustavo | Software Engineer',
@@ -16,13 +11,9 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <Suspense fallback={<Preloader />}>
-      <PageWrapper>
-        <Navbar />
-        <Hero />
-        <FeaturedProjects />
-        <Footer />
-      </PageWrapper>
-    </Suspense>
+    <>
+      <Hero />
+      <FeaturedProjects />
+    </>
   )
 }
