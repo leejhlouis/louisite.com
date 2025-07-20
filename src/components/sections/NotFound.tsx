@@ -31,7 +31,7 @@ export default function NotFound(): JSX.Element {
     >
       <div ref={ref} className='cursor-tracking-gradient'>
         <Section
-          className='flex h-screen flex-col justify-center md:items-center'
+          className='flex h-[90vh] flex-col justify-center md:items-center'
           maxWidthClass='md:max-w-screen-md'
         >
           {/* prettier-ignore */}
