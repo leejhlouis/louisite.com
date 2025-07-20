@@ -3,12 +3,12 @@
 import Section from '@/components/layouts/Section'
 import useIntersectionObserver from '@/hooks/useIntersectionObserver'
 import ComponentProps from '@/types/components/ComponentProps'
-import { useRef } from 'react'
+import { RefObject, useRef } from 'react'
 
 export default function AnimatedSection({ id = '', className = '', children }: ComponentProps) {
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null) as RefObject<HTMLDivElement> | null
   useIntersectionObserver(ref, (): void => {
-    ref.current?.classList.add('animate-start')
+    ref?.current?.classList.add('animate-start')
   })
 
   return (

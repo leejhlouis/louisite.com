@@ -2,7 +2,7 @@
 import { useState, useEffect, RefObject } from 'react'
 
 export default function useIntersectionObserver(
-  ref: RefObject<HTMLElement>,
+  ref: RefObject<HTMLElement> | null,
   onIntersection: () => void
 ): void {
   const [isIntersecting, setIsIntersecting] = useState<boolean>(false)
@@ -14,12 +14,12 @@ export default function useIntersectionObserver(
       },
       { rootMargin: '-100px' }
     )
-    ref.current && observer.observe(ref.current)
+    ref?.current && observer.observe(ref?.current)
     return (): void => observer.disconnect()
   }, [isIntersecting, ref])
 
   useEffect((): void => {
-    if (ref.current && isIntersecting) {
+    if (ref?.current && isIntersecting) {
       onIntersection()
     }
   }, [isIntersecting, onIntersection, ref])
