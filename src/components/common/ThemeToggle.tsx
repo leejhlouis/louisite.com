@@ -1,6 +1,5 @@
 'use client'
 
-import Cookies from 'js-cookie'
 import { lazy } from 'react'
 import { useTheme } from 'next-themes'
 import useMounted from '@/hooks/useMounted'
@@ -15,7 +14,6 @@ export default function ThemeToggle() {
   const toggleTheme = (): void => {
     const newTheme = theme === 'dark' ? 'light' : 'dark'
     setTheme(newTheme)
-    Cookies.set('theme', newTheme, { expires: 365 })
   }
 
   if (!mounted) {
