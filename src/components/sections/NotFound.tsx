@@ -4,11 +4,11 @@ import { lazy, useRef } from 'react'
 import clsx from 'clsx'
 import useEventListener from '@/hooks/useEventListener'
 import useMounted from '@/hooks/useMounted'
+import { RiArrowLeftLine } from '@remixicon/react'
 
 const PrimaryButton = lazy(() => import('@/components/ui/button/PrimaryButton'))
 const Heading1 = lazy(() => import('@/components/ui/heading/Heading1'))
 const Section = lazy(() => import('@/components/layouts/Section'))
-const ArrowLeftSLineIcon = lazy(() => import('remixicon-react/ArrowLeftSLineIcon'))
 
 export default function NotFound(): JSX.Element {
   const ref = useRef<HTMLDivElement>(null)
@@ -54,7 +54,7 @@ export default function NotFound(): JSX.Element {
             click away.
           </p>
           <PrimaryButton
-            icon={<ArrowLeftSLineIcon />}
+            icon={<RiArrowLeftLine />}
             className='animate-fade-in pl-1 md:mx-auto'
             inverted
             href='/'

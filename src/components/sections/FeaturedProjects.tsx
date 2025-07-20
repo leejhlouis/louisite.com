@@ -5,7 +5,7 @@ import AnimatedSection from '@/components/layouts/AnimatedSection'
 import ProjectCard from '@/components/projects/ProjectCard'
 import Heading2 from '@/components/ui/heading/Heading2'
 import PrimaryButton from '@/components/ui/button/PrimaryButton'
-import ArrowRightSLineIcon from 'remixicon-react/ArrowRightSLineIcon'
+import { RiArrowRightLine } from '@remixicon/react'
 
 export default function Projects(): JSX.Element {
   const projectsEntry: JSX.Element[] = projects
@@ -28,7 +28,7 @@ export default function Projects(): JSX.Element {
       </div>
       <div className='animate-fade-in !delay-500'>
         <Link href='/projects'>
-          <PrimaryButton className='my-8' icon={<ArrowRightSLineIcon size={20} />} inverted>
+          <PrimaryButton className='my-8' icon={<RiArrowRightLine size={20} />} inverted>
             More projects
           </PrimaryButton>
         </Link>

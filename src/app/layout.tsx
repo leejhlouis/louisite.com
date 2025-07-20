@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
-import { cookies } from "next/headers";
+import { cookies } from 'next/headers'
 import ScrollToTopFAB from '@/components/common/ScrollToTopFAB'
 import clsx from 'clsx'
-import Providers from '@/app/_lib/providers';
+import Providers from '@/app/_lib/providers'
 import '@/styles/main.css'
-import PageWrapper from '@/components/layouts/PageWrapper';
-import Navbar from '@/components/layouts/Navbar';
-import Footer from '@/components/layouts/Footer';
+import PageWrapper from '@/components/layouts/PageWrapper'
+import Navbar from '@/components/layouts/Navbar'
+import Footer from '@/components/layouts/Footer'
 
 export const metadata: Metadata = {
   title: 'Louis Gustavo | Software Engineer',
@@ -34,15 +34,15 @@ export const metadata: Metadata = {
 }
 
 export default async function MainLayout({ children }: { children: React.ReactNode }) {
-  const cookieStore = await cookies();
-  const theme = cookieStore.get("theme")?.value || "light" as 'light' | 'dark';
+  const cookieStore = await cookies()
+  const theme = (cookieStore.get('theme')?.value || 'light') as 'light' | 'dark'
 
   return (
-    <html lang='en' className={clsx('scroll-smooth', theme)}>
+    <html lang='en' className={clsx('scroll-smooth', theme)} style={{ colorScheme: theme }} data-theme={theme}>
       <head />
       <body className='bg-[#c5d1ff] text-slate-800 dark:bg-[#110627] dark:text-white'>
         <div id='root' className='bg-light dark:bg-dark'>
-          <Providers>
+          <Providers theme={theme}>
             <PageWrapper>
               <Navbar />
               {children}

@@ -1,26 +1,39 @@
 'use client'
 
-import { lazy, useState } from 'react'
-import SunLineIcon from 'remixicon-react/SunLineIcon'
-import MoonLineIcon from 'remixicon-react/MoonLineIcon'
+import Cookies from 'js-cookie'
+import { lazy } from 'react'
+import { useTheme } from 'next-themes'
+import useMounted from '@/hooks/useMounted'
+import { RiLoaderLine, RiMoonLine, RiSunLine } from '@remixicon/react'
 
 const IconButton = lazy(() => import('@/components/ui/button/IconButton'))
 
 export default function ThemeToggle() {
-  const [isDark, setDark] = useState<boolean>(false)
+  const mounted = useMounted()
+  const { theme, setTheme } = useTheme()
 
-  const toggleDarkTheme = (): void => {
-    document.documentElement.classList.toggle('dark')
-    localStorage.theme = isDark ? 'light' : 'dark'
-    setDark(!isDark)
+  const toggleTheme = (): void => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark'
+    setTheme(newTheme)
+    Cookies.set('theme', newTheme, { expires: 365 })
+  }
+
+  if (!mounted) {
+    return (
+      <IconButton
+        className='animate-pulse'
+        icon={<RiLoaderLine size={20} />}
+        screenReaderText='Loading theme toggle'
+      />
+    )
   }
 
   return (
     <IconButton
       className='duration-300'
-      icon={isDark ? <MoonLineIcon size={20} /> : <SunLineIcon size={20} />}
+      icon={theme === 'dark' ? <RiMoonLine size={20} /> : <RiSunLine size={20} />}
       screenReaderText='Toggle theme'
-      onClick={toggleDarkTheme}
+      onClick={toggleTheme}
     />
   )
 }

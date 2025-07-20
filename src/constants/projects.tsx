@@ -1,19 +1,18 @@
-import GithubFillIcon from 'remixicon-react/GithubFillIcon'
-import ExternalLinkFillIcon from 'remixicon-react/ExternalLinkFillIcon'
 import InlineLink from '@/components/ui/InlineLink'
 import ProjectProps from '@/types/components/ProjectProps'
 import LinkProps from '@/types/LinkProps'
 import getGitHubUrl from '@/utils/getGitHubUrl'
 import { social } from '@/constants'
+import { RiExternalLinkFill, RiGithubFill } from '@remixicon/react'
 
 const github: LinkProps = {
   label: 'Source code',
-  icon: <GithubFillIcon size={22} />
+  icon: <RiGithubFill size={22} />
 }
 
 const live: LinkProps = {
   label: 'Live',
-  icon: <ExternalLinkFillIcon size={22} />
+  icon: <RiExternalLinkFill size={22} />
 }
 
 const getLinks = (githubRepo: string, url?: string): LinkProps[] => {

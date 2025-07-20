@@ -2,8 +2,8 @@
 
 import NavDropdownContent from '@/components/common/NavDropdownContent'
 import IconButton from '@/components/ui/button/IconButton'
+import { RiMenu3Fill } from '@remixicon/react'
 import { useState } from 'react'
-import Menu3FillIcon from 'remixicon-react/Menu3FillIcon'
 
 export default function NavDropdown(): JSX.Element {
   const [toggle, setToggle] = useState<boolean>(false)
@@ -12,7 +12,7 @@ export default function NavDropdown(): JSX.Element {
   return (
     <div className='relative sm:hidden'>
       <IconButton
-        icon={<Menu3FillIcon size={20} />}
+        icon={<RiMenu3Fill size={20} />}
         screenReaderText='Toggle dropdown'
         onClick={onDropdownButtonClick}
       />

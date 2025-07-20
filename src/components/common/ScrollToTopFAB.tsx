@@ -3,9 +3,9 @@
 import { lazy, useState } from 'react'
 import clsx from 'clsx'
 import useEventListener from '@/hooks/useEventListener'
+import { RiArrowUpFill } from '@remixicon/react'
 
 const IconButton = lazy(() => import('@/components/ui/button/IconButton'))
-const ArrowUpFillIcon = lazy(() => import('remixicon-react/ArrowUpFillIcon'))
 
 const SCROLL_OFFSET = 120
 
@@ -31,7 +31,7 @@ export default function ScrollToTopFAB(): JSX.Element {
           'opacity-100': isButtonVisible,
           'opacity-0': !isButtonVisible
         })}
-        icon={<ArrowUpFillIcon size={24} />}
+        icon={<RiArrowUpFill size={24} />}
         screenReaderText='Scroll to top'
         onClick={scrollToTop}
       />
