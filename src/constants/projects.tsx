@@ -48,7 +48,7 @@ const projects: ProjectProps[] = [
   {
     slug: 'louisite',
     featured: true,
-    title: 'LOUISITE',
+    title: 'louisite',
     description:
       'My all-new personal website—this is the second and latest iteration—built with React and TypeScript.',
     techStacks: ['React', 'TypeScript', 'Tailwind CSS'],
@@ -219,7 +219,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'louisite-v1',
-    title: 'LOUISITE v1',
+    title: 'louisite v1',
     description: 'First iteration of my personal website.',
     category: 'Front-end development',
     techStacks: ['JavaScript', 'Tailwind CSS', 'HTML/CSS'],

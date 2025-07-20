@@ -1,7 +1,7 @@
 {
-  "name": "LOUSITE",
-  "short_name": "LOUISITE",
-  "description": "LoLouis Gustavo is a Software Engineer at Traveloka specializing in building web interfaces and backend systems using Spring Boot, Next.js, Vue.js, React, Laravel, and more.",
+  "name": "louisite",
+  "short_name": "louisite",
+  "description": "Louis Gustavo is a Software Engineer at Traveloka specializing in building web interfaces and backend systems using Spring Boot, Next.js, Vue.js, React, Laravel, and more.",
   "icons": [
     {
       "src": "favicon.ico",
