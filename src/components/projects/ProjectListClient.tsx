@@ -7,14 +7,14 @@ import ProjectCard from '@/components/projects/ProjectCard'
 import InlineLink from '@/components/ui/InlineLink'
 import ProjectProps from '@/types/components/ProjectProps'
 
-export default function ProjectFilterClient({
+export default function ProjectListClient({
   initialProjects
 }: {
   initialProjects: ProjectProps[]
 }) {
   const [selected, setSelected] = useState<string[]>([])
 
-  const filtered = useMemo(() => {
+  const filtered: ProjectProps[] = useMemo(() => {
     return selected.length === 0
       ? initialProjects
       : initialProjects.filter(project => {
@@ -51,9 +51,9 @@ export default function ProjectFilterClient({
         </p>
       ) : (
         <div className='animate-fade-in grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3'>
-          {filtered.map((project, index) => (
+          {filtered.map((project) => (
             <ProjectCard
-              key={index}
+              key={project.slug}
               {...project}
             />
           ))}

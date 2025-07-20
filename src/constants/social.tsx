@@ -4,7 +4,7 @@ import GithubFillIcon from 'remixicon-react/GithubFillIcon'
 import SocialProps from '@/types/SocialProps'
 import { social } from '@/constants'
 
-const thisSocial: SocialProps[] = [
+const _social: SocialProps[] = [
   {
     name: 'Mail',
     url: `mailto:${social.mail}`,
@@ -37,4 +37,4 @@ const thisSocial: SocialProps[] = [
   }
 ]
 
-export default thisSocial
+export default _social

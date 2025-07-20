@@ -8,7 +8,11 @@ export default function useEventListener(
 ): void {
   useEffect(() => {
     const el = element?.current ?? window
-    if (!el?.addEventListener) return
+    if (!el?.addEventListener) {
+      return () => {
+        // No cleanup needed
+      }
+    }
 
     el.addEventListener(eventType, listener)
     return () => {

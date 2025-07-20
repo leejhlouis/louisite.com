@@ -51,7 +51,7 @@ const formatDate = (dateString: string): string => {
   })
 }
 
-export default async function Blog() {
+export default async function BlogSection() {
   const articles = await fetchMediumArticles()
 
   return (
