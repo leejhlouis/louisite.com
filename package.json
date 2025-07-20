@@ -5,40 +5,40 @@
   "homepage": "https://louisite.com",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "prettier:write": "prettier --write \"src/*.{js,jsx,ts,tsx}\"",
+    "prettier:check": "prettier --check \"src/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
-    "clsx": "^2.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
-    "react-loader-spinner": "^5.3.4",
-    "react-markdown": "^8.0.7",
-    "react-router-dom": "^6.15.0",
-    "react-scripts": "5.0.1",
-    "remixicon-react": "^1.0.0"
+    "@next/mdx": "^15.4.2",
+    "@remixicon/react": "^4.6.0",
+    "@types/mdx": "^2.0.13",
+    "clsx": "^2.1.1",
+    "js-cookie": "^3.0.5",
+    "next": "^15.4.2",
+    "next-themes": "^0.4.6",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
-    "@netlify/functions": "^2.7.0",
-    "@types/react": "^18.2.20",
-    "@types/react-dom": "^18.2.7",
-    "@types/react-helmet": "^6.1.6",
-    "@types/react-router-dom": "^5.3.3",
+    "@types/js-cookie": "^3.0.6",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@types/xml2js": "^0.4.14",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
-    "@vitejs/plugin-react": "^4.6.0",
     "autoprefixer": "^10.4.15",
     "eslint": "^8.47.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
-    "postcss": "^8.4.37",
-    "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.4.1",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
     "tailwindcss": "^3.3.3",
-    "typescript": "^4.9.5",
-    "vite": "^7.0.2"
+    "typescript": "^5.8.3"
   }
 }

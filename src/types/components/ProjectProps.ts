@@ -5,7 +5,7 @@ export default interface ProjectProps extends ComponentProps {
   slug?: string
   title: string
   featured?: boolean | false
-  description: string | JSX.Element
+  description: string | React.ReactNode
   category: string
   techStacks: string[]
   otherTechStacks?: string[]

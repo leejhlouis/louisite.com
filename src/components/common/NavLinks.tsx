@@ -1,23 +1,19 @@
-import { lazy } from 'react'
-import { NavLink } from 'react-router-dom'
-import navItems from '@/_data/navItems.ts'
+'use client'
+import Link from 'next/link'
 import NavItemsProps from '@/types/NavItemsProps'
+import { navItems } from '@/constants'
+import PrimaryButton from '@/components/ui/button/PrimaryButton'
+import { usePathname } from 'next/navigation'
 
-const PrimaryButton = lazy(() => import('@/components/common/reusable/button/PrimaryButton'))
+export default function NavLinks() {
+  const pathname = usePathname()
 
-export default function NavLinks(): JSX.Element {
   const links = navItems.map(
-    (item: NavItemsProps, index: number): JSX.Element => (
-      <li
-        className='flex'
-        key={index}
-      >
-        <NavLink
-          key={index}
-          to={item.href}
-        >
-          {({ isActive }) => <PrimaryButton active={isActive}>{item.name}</PrimaryButton>}
-        </NavLink>
+    (item: NavItemsProps, index: number) => (
+      <li className='flex' key={index}>
+        <Link href={item.href}>
+          <PrimaryButton active={pathname === item.href}>{item.name}</PrimaryButton>
+        </Link>
       </li>
     )
   )

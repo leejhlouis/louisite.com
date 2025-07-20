@@ -1,25 +1,12 @@
-import { lazy } from 'react'
+import BackToTop from '@/components/common/BackToTop'
+import NavLinks from '@/components/common/NavLinks'
+import SocialMediaLinks from '@/components/common/SocialMediaLinks'
+import Title from '@/components/common/Title'
 
-const PrimaryButton = lazy(() => import('@/components/common/reusable/button/PrimaryButton'))
-const NavLinks = lazy(() => import('@/components/common/NavLinks'))
-const SocialMediaLinks = lazy(() => import('@/components/common/SocialMediaLinks'))
-const Title = lazy(() => import('@/components/common/Title'))
-const ArrowUpSLineIcon = lazy(() => import('remixicon-react/ArrowUpSLineIcon'))
-
-export default function Footer(): JSX.Element {
-  const scrollToTop = (): void => {
-    window.scrollTo(0, 0)
-  }
-
+export default function Footer() {
   return (
     <footer className='container py-4 sm:py-6 xl:max-w-screen-xl xl:py-8'>
-      <PrimaryButton
-        onClick={scrollToTop}
-        className='mx-auto mb-6'
-        icon={<ArrowUpSLineIcon />}
-      >
-        Back to top
-      </PrimaryButton>
+      <BackToTop />
       <div className='pb-4 pt-8'>
         <Title size='lg' />
       </div>

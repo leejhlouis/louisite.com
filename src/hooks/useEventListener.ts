@@ -1,3 +1,4 @@
+'use client'
 import { RefObject, useEffect } from 'react'
 
 export default function useEventListener(
@@ -5,11 +6,17 @@ export default function useEventListener(
   listener: (e: Event) => void,
   element?: RefObject<HTMLElement>
 ): void {
-  const el = element?.current ?? window
-  useEffect((): (() => void) => {
+  useEffect(() => {
+    const el = element?.current ?? window
+    if (!el?.addEventListener) {
+      return () => {
+        // No cleanup needed
+      }
+    }
+
     el.addEventListener(eventType, listener)
-    return (): void => {
+    return () => {
       el.removeEventListener(eventType, listener)
     }
-  }, [el, eventType, listener])
+  }, [element, eventType, listener])
 }

@@ -1,15 +1,16 @@
+'use client'
+
 import { lazy, useRef } from 'react'
-import { NavLink } from 'react-router-dom'
 import clsx from 'clsx'
 import useEventListener from '@/hooks/useEventListener'
 import useMounted from '@/hooks/useMounted'
+import { RiArrowLeftLine } from '@remixicon/react'
 
-const PrimaryButton = lazy(() => import('@/components/common/reusable/button/PrimaryButton'))
-const Heading1 = lazy(() => import('@/components/common/reusable/heading/Heading1'))
+const PrimaryButton = lazy(() => import('@/components/ui/button/PrimaryButton'))
+const Heading1 = lazy(() => import('@/components/ui/heading/Heading1'))
 const Section = lazy(() => import('@/components/layouts/Section'))
-const ArrowLeftSLineIcon = lazy(() => import('remixicon-react/ArrowLeftSLineIcon'))
 
-export default function HomePage(): JSX.Element {
+export default function NotFound() {
   const ref = useRef<HTMLDivElement>(null)
 
   useEventListener('mousemove', (e: Event): void => {
@@ -28,12 +29,9 @@ export default function HomePage(): JSX.Element {
         'animate-start': mounted
       })}
     >
-      <div
-        ref={ref}
-        className='cursor-tracking-gradient'
-      >
+      <div ref={ref} className='cursor-tracking-gradient'>
         <Section
-          className='flex h-screen flex-col justify-center md:items-center'
+          className='flex h-[90vh] flex-col justify-center md:items-center'
           maxWidthClass='md:max-w-screen-md'
         >
           {/* prettier-ignore */}
@@ -55,15 +53,14 @@ export default function HomePage(): JSX.Element {
             Oh, snap! You're in the middle of nowhere, but don't worry, returning home is just one
             click away.
           </p>
-          <NavLink to='/'>
-            <PrimaryButton
-              icon={<ArrowLeftSLineIcon />}
-              className='animate-bounce pl-1 md:mx-auto'
-              inverted
-            >
-              Go home
-            </PrimaryButton>
-          </NavLink>
+          <PrimaryButton
+            icon={<RiArrowLeftLine />}
+            className='animate-fade-in pl-1 md:mx-auto'
+            inverted
+            href='/'
+          >
+            Go home
+          </PrimaryButton>
         </Section>
       </div>
     </div>
