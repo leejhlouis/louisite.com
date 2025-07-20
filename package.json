@@ -23,15 +23,11 @@
     "xml2js": "^0.6.2"
   },
   "devDependencies": {
-    "@netlify/functions": "^2.7.0",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
-    "@types/react-helmet": "^6.1.6",
-    "@types/react-router-dom": "^5.3.3",
     "@types/xml2js": "^0.4.14",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
-    "@vitejs/plugin-react": "^4.6.0",
     "autoprefixer": "^10.4.15",
     "eslint": "^8.47.0",
     "eslint-plugin-react-hooks": "^4.6.0",
