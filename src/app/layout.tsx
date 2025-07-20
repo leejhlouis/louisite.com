@@ -42,7 +42,7 @@ export default async function MainLayout({ children }: { children: React.ReactNo
       <head />
       <body className='bg-[#c5d1ff] text-slate-800 dark:bg-[#110627] dark:text-white'>
         <div id='root' className='bg-light dark:bg-dark'>
-          <Providers theme={theme}>
+          <Providers>
             <PageWrapper>
               <Navbar />
               {children}
