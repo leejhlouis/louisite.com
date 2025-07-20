@@ -8,7 +8,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "prettier:write": "prettier --write \"src/*.{js,jsx,ts,tsx}\"",
+    "prettier:check": "prettier --check \"src/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
     "@next/mdx": "^15.4.2",

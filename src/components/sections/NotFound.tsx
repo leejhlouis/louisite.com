@@ -4,7 +4,6 @@ import { lazy, useRef } from 'react'
 import clsx from 'clsx'
 import useEventListener from '@/hooks/useEventListener'
 import useMounted from '@/hooks/useMounted'
-import Link from 'next/link'
 
 const PrimaryButton = lazy(() => import('@/components/ui/button/PrimaryButton'))
 const Heading1 = lazy(() => import('@/components/ui/heading/Heading1'))
