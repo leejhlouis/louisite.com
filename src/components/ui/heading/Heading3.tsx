@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import ComponentProps from '@/types/components/ComponentProps'
 
-export default function Heading3({ id, className, children }: ComponentProps): JSX.Element {
+export default function Heading3({ id, className, children }: ComponentProps) {
   return (
     // prettier-ignore
     <h3

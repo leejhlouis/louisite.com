@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import BadgeProps from '@/types/components/BadgeProps'
 
-export default function Badge({ className, children, active, onClick }: BadgeProps): JSX.Element {
+export default function Badge({ className, children, active, onClick }: BadgeProps) {
   // prettier-ignore
   return (
     <div

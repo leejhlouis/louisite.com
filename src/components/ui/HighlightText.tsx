@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import clsx from 'clsx'
 import ComponentProps from '@/types/components/ComponentProps'
 
-export default function HighlightText({ children }: ComponentProps): JSX.Element {
+export default function HighlightText({ children }: ComponentProps) {
   const ref = useRef<HTMLLinkElement>(null)
   const [degree, setDegree] = useState<number>(0)
 

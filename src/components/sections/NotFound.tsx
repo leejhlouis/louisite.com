@@ -10,7 +10,7 @@ const PrimaryButton = lazy(() => import('@/components/ui/button/PrimaryButton'))
 const Heading1 = lazy(() => import('@/components/ui/heading/Heading1'))
 const Section = lazy(() => import('@/components/layouts/Section'))
 
-export default function NotFound(): JSX.Element {
+export default function NotFound() {
   const ref = useRef<HTMLDivElement>(null)
 
   useEventListener('mousemove', (e: Event): void => {

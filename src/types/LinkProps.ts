@@ -1,5 +1,5 @@
 export default interface LinkProps {
   label: string
-  icon: JSX.Element
+  icon: React.ReactNode
   url?: string
 }

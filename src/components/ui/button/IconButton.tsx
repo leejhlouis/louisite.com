@@ -6,7 +6,7 @@ export default function IconButton({
   className,
   screenReaderText,
   icon
-}: ButtonProps): JSX.Element {
+}: ButtonProps) {
   return (
     <button
       onClick={onClick}

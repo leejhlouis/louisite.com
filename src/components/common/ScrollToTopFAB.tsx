@@ -9,7 +9,7 @@ const IconButton = lazy(() => import('@/components/ui/button/IconButton'))
 
 const SCROLL_OFFSET = 120
 
-export default function ScrollToTopFAB(): JSX.Element {
+export default function ScrollToTopFAB() {
   const [isButtonVisible, setButtonVisible] = useState<boolean>(false)
 
   const scrollToTop = (): void => {

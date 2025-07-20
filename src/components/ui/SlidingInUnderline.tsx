@@ -5,7 +5,7 @@ export default function SlidingInUnderline({
   children,
   type,
   height
-}: UnderlineProps): JSX.Element {
+}: UnderlineProps) {
   const isPrimary = (type: string | undefined): boolean => {
     if (!type) {
       return true

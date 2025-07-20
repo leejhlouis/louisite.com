@@ -13,7 +13,7 @@ export default function PrimaryButton({
   inverted,
   active,
   href
-}: PrimaryButtonProps): JSX.Element {
+}: PrimaryButtonProps) {
   const baseClasses = clsx(
     className,
     'group/underline flex w-fit items-center transition duration-300 ease-in-out',

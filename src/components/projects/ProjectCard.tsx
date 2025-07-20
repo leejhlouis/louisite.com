@@ -10,9 +10,9 @@ export default function ProjectCard({
   description,
   techStacks,
   links
-}: ProjectProps): JSX.Element {
+}: ProjectProps) {
   const techStacksEntry = techStacks.map(
-    (techStack: string, index: number): JSX.Element => (
+    (techStack: string, index: number) => (
       <Badge
         key={index}
         className={clsx(
@@ -26,7 +26,7 @@ export default function ProjectCard({
   )
 
   const linksEntry = links.map(
-    (link: LinkProps, index: number): JSX.Element => (
+    (link: LinkProps, index: number) => (
       <li
         key={index}
         className='z-10'

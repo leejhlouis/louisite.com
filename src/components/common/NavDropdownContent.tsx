@@ -6,10 +6,10 @@ import clsx from 'clsx'
 import { navItems } from '@/constants'
 import NavItemsProps from '@/types/NavItemsProps'
 
-export default function NavDropdownContent(): JSX.Element {
+export default function NavDropdownContent() {
   const pathname = usePathname()
 
-  const links = navItems.map((item: NavItemsProps, index: number): JSX.Element => {
+  const links = navItems.map((item: NavItemsProps, index: number) => {
     const isActive = pathname === item.href
 
     return (

@@ -7,8 +7,8 @@ import Heading2 from '@/components/ui/heading/Heading2'
 import PrimaryButton from '@/components/ui/button/PrimaryButton'
 import { RiArrowRightLine } from '@remixicon/react'
 
-export default function Projects(): JSX.Element {
-  const projectsEntry: JSX.Element[] = projects
+export default function Projects() {
+  const projectsEntry: React.ReactNode[] = projects
     .filter(({ featured }) => !!featured)
     .map(project => <ProjectCard key={project.slug} {...project} />)
 

@@ -7,7 +7,7 @@ import SocialMediaLinks from '@/components/common/SocialMediaLinks'
 import PrimaryButton from '@/components/ui/button/PrimaryButton'
 import { RiArrowDownLine } from '@remixicon/react'
 
-export default function Hero(): JSX.Element {
+export default function Hero() {
   return (
     <FadeInSection className='flex h-[88vh] min-h-[480px] flex-col justify-between'>
       <div className='flex h-3/4 flex-col justify-center space-y-4 sm:space-y-6'>

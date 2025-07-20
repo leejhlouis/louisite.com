@@ -11,7 +11,7 @@ export default function BlogCard({
   datePublished,
   minRead,
   preview
-}: ArticleProps): JSX.Element {
+}: ArticleProps) {
   return (
     <a
       href={link}

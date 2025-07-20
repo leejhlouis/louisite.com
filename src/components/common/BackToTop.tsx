@@ -5,7 +5,7 @@ import { lazy } from 'react'
 
 const PrimaryButton = lazy(() => import('@/components/ui/button/PrimaryButton'))
 
-export default function BackToTop(): JSX.Element {
+export default function BackToTop() {
   const scrollToTop = (): void => {
     window.scrollTo(0, 0)
   }

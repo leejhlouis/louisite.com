@@ -6,7 +6,7 @@ export default function Section({
   className,
   maxWidthClass,
   children
-}: SectionProps): JSX.Element {
+}: SectionProps) {
   return (
     <section
       id={id || ''}

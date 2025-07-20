@@ -5,7 +5,7 @@ import IconButton from '@/components/ui/button/IconButton'
 import { RiMenu3Fill } from '@remixicon/react'
 import { useState } from 'react'
 
-export default function NavDropdown(): JSX.Element {
+export default function NavDropdown() {
   const [toggle, setToggle] = useState<boolean>(false)
   const onDropdownButtonClick = (): void => setToggle(!toggle)
 

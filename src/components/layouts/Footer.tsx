@@ -3,7 +3,7 @@ import NavLinks from '@/components/common/NavLinks'
 import SocialMediaLinks from '@/components/common/SocialMediaLinks'
 import Title from '@/components/common/Title'
 
-export default function Footer(): JSX.Element {
+export default function Footer() {
   return (
     <footer className='container py-4 sm:py-6 xl:max-w-screen-xl xl:py-8'>
       <BackToTop />

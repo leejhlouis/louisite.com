@@ -4,7 +4,7 @@ import Heading1 from '@/components/ui/heading/Heading1'
 import ProjectListClient from '@/components/projects/ProjectListClient'
 import { projects } from '@/constants/projects'
 
-export default function Projects(): JSX.Element {
+export default function Projects() {
   return (
     <FadeInSection className='min-h-[calc(100vh-320px)]'>
       <Heading1

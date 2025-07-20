@@ -3,9 +3,9 @@ import socialList from '@/constants/social'
 import ComponentProps from '@/types/components/ComponentProps'
 import SocialProps from '@/types/SocialProps'
 
-export default function SocialMediaLinks({ className }: ComponentProps): JSX.Element {
+export default function SocialMediaLinks({ className }: ComponentProps) {
   const social = socialList.map(
-    (item: SocialProps, index: number): JSX.Element => (
+    (item: SocialProps, index: number) => (
       <li key={index}>
         <a href={item.url} target='_blank' rel='noreferrer' aria-label={item.name}>
           {item.icon}

@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import ComponentProps from '@/types/components/ComponentProps'
 
-export default function Card({ className, children }: ComponentProps): JSX.Element {
+export default function Card({ className, children }: ComponentProps) {
   return (
     <div
       className={clsx(

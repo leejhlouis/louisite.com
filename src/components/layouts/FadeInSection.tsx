@@ -11,7 +11,7 @@ export default function FadeInSection({
   maxWidthClass
 }: ComponentProps & {
   maxWidthClass?: string
-}): JSX.Element {
+}) {
   const { animationClass } = useFadeInMounted()
 
   return (
