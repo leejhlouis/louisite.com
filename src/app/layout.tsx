@@ -1,11 +1,9 @@
 import { Metadata } from 'next'
-import { cookies } from 'next/headers'
 import ScrollToTopFAB from '@/components/common/ScrollToTopFAB'
 import '@/styles/main.css'
 import PageWrapper from '@/components/layouts/PageWrapper'
 import Navbar from '@/components/layouts/Navbar'
 import Footer from '@/components/layouts/Footer'
-import clsx from 'clsx'
 
 export const metadata: Metadata = {
   title: 'Louis Gustavo | Software Engineer',
@@ -32,13 +30,9 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function MainLayout({ children }: { children: React.ReactNode }) {
-  const cookieStore = await cookies()
-  const theme = (cookieStore.get('theme')?.value || 'light') as 'light' | 'dark'
-
+export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en' className={clsx('scroll-smooth', theme)} style={{ colorScheme: theme }} data-theme={theme}>
-      <head />
+    <html lang='en' className='dark'>
       <body className='bg-[#c5d1ff] text-slate-800 dark:bg-[#110627] dark:text-white'>
         <div id='root' className='bg-light dark:bg-dark'>
           <PageWrapper>
