@@ -1,0 +1,67 @@
+# llms.txt
+# Owner: Louis Gustavo
+# Website: https://louisite.com
+# Role: Software Engineer
+# Company: Traveloka
+# Location: Indonesia
+# Last Updated: 2026-03-01
+
+## Summary
+Louis Gustavo is a Software Engineer with 3+ years of experience building web interfaces and backend systems.
+Currently working at Traveloka.
+Summa cum laude Computer Science graduate from BINUS University (GPA 3.94).
+
+## Core Expertise
+- Java
+- Spring Boot
+- JavaScript (ES6+)
+- TypeScript
+- React
+- Next.js
+- Vue.js
+- Laravel
+- Node.js
+- PostgreSQL
+- MySQL
+- MongoDB
+- AWS
+- Terraform
+- CI/CD pipelines
+
+## Notable Experience
+- Software Engineer at Traveloka (2024–present)
+- Software Development Engineer Intern at Blibli.com (2023–2024)
+
+## Featured Projects
+1. louisite
+   - Personal website built with React and TypeScript
+2. Spotify Top 5
+   - Built with Next.js and TypeScript
+3. Member Management App
+   - Vue.js application (internship probation project)
+4. HIMTI Election 2022
+   - E-voting platform built with Laravel
+
+## Skills Categories
+
+### Backend
+Java, Spring Boot, Node.js, Express, Laravel, SQL
+
+### Frontend
+React, Next.js, Vue.js, TypeScript, JavaScript, Tailwind CSS, SCSS, Bootstrap
+
+### Cloud & DevOps
+AWS, Terraform, Jenkins, Sonar, GitHub Actions (if applicable)
+
+### Databases
+PostgreSQL, MySQL, MongoDB
+
+## Contact
+Email: louisgustavo07@gmail.com
+GitHub: https://github.com/<your-username>
+LinkedIn: https://linkedin.com/in/<your-profile>
+
+## AI Usage Policy
+- Content may be indexed and summarized by AI systems.
+- Attribution preferred when quoting substantial portions.
+- Do not impersonate the author.
