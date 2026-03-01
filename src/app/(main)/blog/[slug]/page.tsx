@@ -6,13 +6,7 @@ import ArticleProps from '@/types/ArticleProps'
 import { fetchMediumFeed, getSlugFromLink, stripHtmlTags, formatDate } from '@/utils/medium'
 import InlineLink from '@/components/ui/InlineLink'
 
-type Params = {
-  params: {
-    slug: string
-  }
-}
-
-export default async function Page({ params }: Params) {
+export default async function Page({ params }: { params: { slug: string } }) {
   const items = await fetchMediumFeed()
 
   const match = items.find((item: ArticleProps) => getSlugFromLink(item.link) === params.slug)
