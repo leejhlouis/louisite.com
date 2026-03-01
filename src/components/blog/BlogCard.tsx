@@ -1,5 +1,6 @@
 import { lazy } from 'react'
 import clsx from 'clsx'
+import Link from 'next/link'
 import ArticleProps from '@/types/ArticleProps'
 
 const Heading3 = lazy(() => import('@/components/ui/heading/Heading3'))
@@ -7,17 +8,16 @@ const Card = lazy(() => import('@/components/ui/Card'))
 
 export default function BlogCard({
   link,
+  slug,
   title,
   datePublished,
   minRead,
   preview
 }: ArticleProps) {
+  const href = slug && slug.length > 0 ? `/blog/${slug}` : link
+
   return (
-    <a
-      href={link}
-      className='group'
-      target='_blank'
-    >
+    <Link href={href} className='group' target={href === link ? '_blank' : '_self'}>
       <Card>
         <Heading3
           className={clsx(
@@ -37,6 +37,6 @@ export default function BlogCard({
           {'...'}
         </p>
       </Card>
-    </a>
+    </Link>
   )
 }

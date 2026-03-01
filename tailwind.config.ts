@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
 import colors from 'tailwindcss/colors'
 import defaultTheme from 'tailwindcss/defaultTheme'
+import typography from '@tailwindcss/typography'
 
 export default {
   content: ['index.html', './src/**/*.{js,jsx,ts,tsx,mdx}'],
@@ -36,5 +37,5 @@ export default {
       xs: '480px'
     }
   },
-  plugins: []
+  plugins: [typography]
 } satisfies Config
