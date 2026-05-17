@@ -1,5 +1,4 @@
 import clsx from 'clsx'
-import { parseStringPromise } from 'xml2js'
 import ArticleProps from '@/types/ArticleProps'
 import FadeInSection from '@/components/layouts/FadeInSection'
 import Heading1 from '@/components/ui/heading/Heading1'
@@ -7,18 +6,10 @@ import InlineLink from '@/components/ui/InlineLink'
 import BlogCard from '@/components/blog/BlogCard'
 import calculateMinRead from '@/utils/calculateMinRead'
 import truncateText from '@/utils/truncateText'
+import { fetchMediumFeed, getSlugFromLink, stripHtmlTags, formatDate } from '@/utils/medium'
 
 const fetchMediumArticles = async (): Promise<ArticleProps[]> => {
-  const response = await fetch('https://medium.com/@leejhlouis/feed')
-  const rssText = await response.text()
-  const rssData = await parseStringPromise(rssText, {
-    explicitArray: false,
-    mergeAttrs: true
-  })
-
-  const items = Array.isArray(rssData.rss.channel.item)
-    ? rssData.rss.channel.item
-    : [rssData.rss.channel.item]
+  const items = await fetchMediumFeed()
 
   return items.map(
     (item: {
@@ -28,30 +19,21 @@ const fetchMediumArticles = async (): Promise<ArticleProps[]> => {
       'content:encoded'?: string
     }): ArticleProps => {
       const encodedContent = item['content:encoded'] ?? ''
+      const slug = getSlugFromLink(item.link)
 
       return {
         title: item.title,
         link: item.link,
+        slug,
         datePublished: formatDate(item.pubDate),
         minRead: calculateMinRead(stripHtmlTags(encodedContent)),
-        preview: truncateText(stripHtmlTags(encodedContent), 240)
+        preview: truncateText(stripHtmlTags(encodedContent), 125)
       }
     }
   )
 }
 
-const stripHtmlTags = (html: string): string => {
-  return html.replace(/<\/?[^>]+(>|$)/g, '')
-}
-
-const formatDate = (dateString: string): string => {
-  const pubDate = new Date(dateString)
-  return pubDate.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
-}
+// util functions moved to src/utils/medium.ts
 
 export default async function BlogSection() {
   const articles = await fetchMediumArticles()

@@ -5,7 +5,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'https://louisite.com/',
     'https://louisite.com/blog',
     'https://louisite.com/projects',
-    'https://louisite.com/about'
+    'https://louisite.com/about',
+    'https://louisite.com/blog/how-i-build-my-portfolio-site-with-react-typescript-and-tailwind-css-479778cf2960'
   ]
 
   return baseUrls.map(url => ({
