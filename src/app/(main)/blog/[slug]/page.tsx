@@ -29,9 +29,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       </span>
       <article
         className={clsx(
-          'prose dark:prose-invert mt-6',
+          'prose dark:prose-invert mt-6 max-w-full',
           'prose-p:pb-0',
-          'prose-a:text-primary-dark dark:prose-a:text-primary-light hover:prose-a:text-primary-lighter-dark hover:dark:prose-a:text-primary-lighter'
+          'text-default-dark dark:text-default-light',
+          'prose-a:text-primary-dark prose-a:no-underline hover:prose-a:underline dark:prose-a:text-primary-light hover:prose-a:text-primary-lighter-dark hover:dark:prose-a:text-primary-lighter'
         )}
         dangerouslySetInnerHTML={{ __html: content }}
       />

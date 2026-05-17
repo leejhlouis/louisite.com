@@ -5,7 +5,7 @@ import Title from '@/components/common/Title'
 
 export default function Footer() {
   return (
-    <footer className='container py-4 sm:py-6 xl:py-8'>
+    <footer className='container max-w-screen-lg py-4 sm:py-6 xl:py-8'>
       <div className='mb-6 flex justify-center'>
         <BackToTop />
       </div>

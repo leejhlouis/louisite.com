@@ -7,10 +7,11 @@
 @layer base {
   html {
     font-family: 'Nunito Sans', system-ui, sans-serif;
+    font-size: 14px;
   }
 
   p {
-    padding-bottom: theme(spacing.6);
+    padding-bottom: theme('spacing.6');
   }
 
   span,
@@ -20,28 +21,32 @@
   }
 
   a:hover svg {
-    transition-duration: theme(transitionDuration.300);
-    fill: theme(colors.primary.dark);
+    transition-duration: theme('transitionDuration.300');
+    fill: theme('colors.primary.dark');
   }
 
   html.dark a:hover svg {
-    fill: theme(colors.primary.light);
+    fill: theme('colors.primary.light');
   }
 
   .preloader > svg {
-    stroke: theme(colors.fuchsia.700);
+    stroke: theme('colors.fuchsia.700');
   }
 
   .dark .preloader > svg {
-    stroke: theme(colors.fuchsia.400);
+    stroke: theme('colors.fuchsia.400');
   }
 
-  @media (min-width: theme(screens.sm)) {
+  @media (min-width: theme('screens.sm')) {
+    html {
+      font-size: 16px;
+    }
+
     li,
     i,
     p,
     button {
-      line-height: theme(lineHeight.7);
+      line-height: theme('lineHeight.7');
     }
   }
 }

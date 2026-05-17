@@ -27,7 +27,7 @@ const fetchMediumArticles = async (): Promise<ArticleProps[]> => {
         slug,
         datePublished: formatDate(item.pubDate),
         minRead: calculateMinRead(stripHtmlTags(encodedContent)),
-        preview: truncateText(stripHtmlTags(encodedContent), 125)
+        preview: truncateText(stripHtmlTags(encodedContent), 225)
       }
     }
   )

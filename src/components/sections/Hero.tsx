@@ -9,8 +9,8 @@ import { RiArrowDownLine } from '@remixicon/react'
 
 export default function Hero() {
   return (
-    <FadeInSection className='flex h-[88vh] min-h-[480px] flex-col justify-between'>
-      <div className='-mt-8 flex h-full flex-col justify-center space-y-4 sm:space-y-6'>
+    <FadeInSection className='flex h-[90vh] min-h-[480px] flex-col justify-between'>
+      <div className='-mt-8 flex h-full flex-col justify-center space-y-6'>
         <h2 className={clsx('animate-fade-in', 'text-md sm:text-lg lg:text-xl')}>
           Hey👋, I'm{' '}
           <SlidingInUnderline type='secondary' height='lg'>
@@ -20,7 +20,7 @@ export default function Hero() {
         <h1
           className={clsx(
             'animate-fade-in !delay-200',
-            'text-3xl text-slate-900 dark:text-white sm:text-5xl lg:text-6xl',
+            'text-5xl text-slate-900 dark:text-white lg:text-6xl',
             'break-words font-extrabold tracking-tight'
           )}
         >
