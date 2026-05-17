@@ -8,6 +8,7 @@ export default function Heading1({ id, className, children }: ComponentProps) {
       className={clsx(
         className,
         'py-8',
+        'text-emphasis-dark dark:text-emphasis-light',
         'text-[1.75rem] font-bold leading-8 md:text-4xl',
         'font-extrabold tracking-tight'
       )}

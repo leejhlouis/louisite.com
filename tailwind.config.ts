@@ -8,15 +8,19 @@ export default {
   theme: {
     extend: {
       colors: {
+        default: {
+          dark: colors.slate['700'],
+          light: colors.slate['400']
+        },
+        emphasis: {
+          dark: colors.slate['900'],
+          light: colors.white
+        },
         primary: {
-          light: colors.blue['300'],
-          lighter: colors.blue['200'],
+          light: colors.violet['400'],
+          lighter: colors.violet['300'],
           dark: colors.indigo['600'],
           'lighter-dark': colors.indigo['500']
-        },
-        muted: {
-          DEFAULT: colors.slate['300'],
-          dark: colors.slate['700']
         }
       },
       spacing: {

@@ -11,10 +11,7 @@ export default function Title({ size }: SizeProps) {
   }
 
   return (
-    <Link
-      href='/'
-      className='title'
-    >
+    <Link href='/' className='text-slate-900 dark:text-white'>
       <p className={clsx('pb-0 font-light', textSize())}>
         loui<span className='font-bold'>site</span>
       </p>

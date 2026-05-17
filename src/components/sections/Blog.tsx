@@ -20,22 +20,24 @@ const fetchMediumArticles = async (): Promise<ArticleProps[]> => {
     ? rssData.rss.channel.item
     : [rssData.rss.channel.item]
 
-  return items.map((item: {
-    title: string
-    link: string
-    pubDate: string
-    'content:encoded'?: string
-  }): ArticleProps => {
-    const encodedContent = item['content:encoded'] ?? ''
+  return items.map(
+    (item: {
+      title: string
+      link: string
+      pubDate: string
+      'content:encoded'?: string
+    }): ArticleProps => {
+      const encodedContent = item['content:encoded'] ?? ''
 
-    return {
-      title: item.title,
-      link: item.link,
-      datePublished: formatDate(item.pubDate),
-      minRead: calculateMinRead(stripHtmlTags(encodedContent)),
-      preview: truncateText(stripHtmlTags(encodedContent), 125)
+      return {
+        title: item.title,
+        link: item.link,
+        datePublished: formatDate(item.pubDate),
+        minRead: calculateMinRead(stripHtmlTags(encodedContent)),
+        preview: truncateText(stripHtmlTags(encodedContent), 125)
+      }
     }
-  })
+  )
 }
 
 const stripHtmlTags = (html: string): string => {
@@ -57,15 +59,11 @@ export default async function BlogSection() {
   return (
     <FadeInSection className='min-h-[calc(100vh-320px)]'>
       <Heading1
-        className={clsx(
-          'animate-fade-in',
-          'text-primary-dark dark:text-white',
-          'pb-2 pt-2'
-        )}
+        className={clsx('animate-fade-in', 'text-primary-dark dark:text-white', 'pb-2 pt-2')}
       >
         Blog
       </Heading1>
-      <p className='animate-fade-in !delay-200 pb-0'>
+      <p className='animate-fade-in pb-0 !delay-200'>
         Collection of my writings and thoughts. Subscribe to{' '}
         <InlineLink href='/blog/rss'>RSS feed</InlineLink>.
       </p>

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import AnimatedSection from '@/components/layouts/AnimatedSection'
 import ProjectCard from '@/components/projects/ProjectCard'
 import Heading2 from '@/components/ui/heading/Heading2'
-import PrimaryButton from '@/components/ui/button/PrimaryButton'
+import Button from '@/components/ui/button/Button'
 import { RiArrowRightLine } from '@remixicon/react'
 
 export default function Projects() {
@@ -28,9 +28,9 @@ export default function Projects() {
       </div>
       <div className='animate-fade-in !delay-500'>
         <Link href='/projects'>
-          <PrimaryButton className='my-8' icon={<RiArrowRightLine size={20} />} inverted>
+          <Button className='my-8' icon={<RiArrowRightLine size={20} />} inverted>
             More projects
-          </PrimaryButton>
+          </Button>
         </Link>
       </div>
     </AnimatedSection>

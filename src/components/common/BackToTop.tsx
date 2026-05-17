@@ -3,7 +3,7 @@
 import { RiArrowUpLine } from '@remixicon/react'
 import { lazy } from 'react'
 
-const PrimaryButton = lazy(() => import('@/components/ui/button/PrimaryButton'))
+const Button = lazy(() => import('@/components/ui/button/Button'))
 
 export default function BackToTop() {
   const scrollToTop = (): void => {
@@ -11,12 +11,8 @@ export default function BackToTop() {
   }
 
   return (
-    <PrimaryButton
-      onClick={scrollToTop}
-      className='mx-auto mb-6'
-      icon={<RiArrowUpLine />}
-    >
+    <Button onClick={scrollToTop} icon={<RiArrowUpLine />}>
       Back to top
-    </PrimaryButton>
+    </Button>
   )
 }

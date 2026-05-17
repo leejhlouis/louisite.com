@@ -1,12 +1,7 @@
 import clsx from 'clsx'
 import { SectionProps } from '@/types/components/SectionProps'
 
-export default function Section({
-  id,
-  className,
-  maxWidthClass,
-  children
-}: SectionProps) {
+export default function Section({ id, className, maxWidthClass, children }: SectionProps) {
   return (
     <section
       id={id || ''}
@@ -14,7 +9,7 @@ export default function Section({
         className,
         maxWidthClass,
         {
-          'xl:max-w-screen-xl': !maxWidthClass
+          'max-w-screen-lg': !maxWidthClass
         },
         'container py-6 sm:py-12'
       )}

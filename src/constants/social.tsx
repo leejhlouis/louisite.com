@@ -1,37 +1,22 @@
 import SocialProps from '@/types/SocialProps'
 import { social } from '@/constants'
-import { RiGithubFill, RiLinkedinFill, RiMailFill } from '@remixicon/react'
+import { RiGithubLine, RiLinkedinLine, RiMailLine } from '@remixicon/react'
 
 const _social: SocialProps[] = [
   {
     name: 'Mail',
     url: `mailto:${social.mail}`,
-    icon: (
-      <RiMailFill
-        size={22}
-        className='text-muted-dark dark:text-muted'
-      />
-    )
+    icon: <RiMailLine size={20} />
   },
   {
     name: 'LinkedIn',
     url: social.linkedin,
-    icon: (
-      <RiLinkedinFill
-        size={24}
-        className='text-muted-dark dark:text-muted'
-      />
-    )
+    icon: <RiLinkedinLine size={20} />
   },
   {
     name: 'GitHub',
     url: `https://github.com/${social.github}`,
-    icon: (
-      <RiGithubFill
-        size={24}
-        className='text-muted-dark dark:text-muted'
-      />
-    )
+    icon: <RiGithubLine size={20} />
   }
 ]
 

@@ -6,7 +6,7 @@ import useEventListener from '@/hooks/useEventListener'
 import useMounted from '@/hooks/useMounted'
 import { RiArrowLeftLine } from '@remixicon/react'
 
-const PrimaryButton = lazy(() => import('@/components/ui/button/PrimaryButton'))
+const Button = lazy(() => import('@/components/ui/button/Button'))
 const Heading1 = lazy(() => import('@/components/ui/heading/Heading1'))
 const Section = lazy(() => import('@/components/layouts/Section'))
 
@@ -53,14 +53,14 @@ export default function NotFound() {
             Oh, snap! You're in the middle of nowhere, but don't worry, returning home is just one
             click away.
           </p>
-          <PrimaryButton
+          <Button
             icon={<RiArrowLeftLine />}
             className='animate-fade-in pl-1 md:mx-auto'
             inverted
             href='/'
           >
             Go home
-          </PrimaryButton>
+          </Button>
         </Section>
       </div>
     </div>

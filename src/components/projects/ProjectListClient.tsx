@@ -43,7 +43,7 @@ export default function ProjectListClient({
         ))}
       </ul>
       {!filtered.length ? (
-        <p className='text-muted-dark dark:text-muted'>
+        <p>
           Results not found.{' '}
           <span onClick={() => setSelected([])}>
             <InlineLink>Clear filters</InlineLink>
@@ -51,11 +51,8 @@ export default function ProjectListClient({
         </p>
       ) : (
         <div className='animate-fade-in grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3'>
-          {filtered.map((project) => (
-            <ProjectCard
-              key={project.slug}
-              {...project}
-            />
+          {filtered.map(project => (
+            <ProjectCard key={project.slug} {...project} />
           ))}
         </div>
       )}

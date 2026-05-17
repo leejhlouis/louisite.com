@@ -5,8 +5,10 @@ import Title from '@/components/common/Title'
 
 export default function Footer() {
   return (
-    <footer className='container py-4 sm:py-6 xl:max-w-screen-xl xl:py-8'>
-      <BackToTop />
+    <footer className='container py-4 sm:py-6 xl:py-8'>
+      <div className='mb-6 flex justify-center'>
+        <BackToTop />
+      </div>
       <div className='pb-4 pt-8'>
         <Title size='lg' />
       </div>
