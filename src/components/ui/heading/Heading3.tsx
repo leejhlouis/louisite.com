@@ -10,7 +10,7 @@ export default function Heading3({ id, className, children }: ComponentProps) {
         className,
         'pb-4',
         'text-emphasis-dark dark:text-emphasis-light',
-        'font-semibold text-lg'
+        'font-semibold text-xl'
       )}
     >
       {children}

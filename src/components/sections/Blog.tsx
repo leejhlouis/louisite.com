@@ -34,7 +34,7 @@ const fetchMediumArticles = async (): Promise<ArticleProps[]> => {
         link: item.link,
         datePublished: formatDate(item.pubDate),
         minRead: calculateMinRead(stripHtmlTags(encodedContent)),
-        preview: truncateText(stripHtmlTags(encodedContent), 125)
+        preview: truncateText(stripHtmlTags(encodedContent), 240)
       }
     }
   )
@@ -68,13 +68,7 @@ export default async function BlogSection() {
         <InlineLink href='/blog/rss'>RSS feed</InlineLink>.
       </p>
       {articles.length > 0 && (
-        <div
-          className={clsx(
-            'animate-fade-in !delay-300',
-            'grid justify-items-center gap-8 md:grid-cols-2',
-            'pt-6'
-          )}
-        >
+        <div className={clsx('animate-fade-in flex flex-col gap-8 !delay-300', 'pt-6')}>
           {articles.map((article, index) => (
             <BlogCard {...article} key={index} />
           ))}

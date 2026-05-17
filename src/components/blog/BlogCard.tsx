@@ -5,9 +5,19 @@ import ArticleProps from '@/types/ArticleProps'
 const Heading3 = lazy(() => import('@/components/ui/heading/Heading3'))
 const Card = lazy(() => import('@/components/ui/Card'))
 
-export default function BlogCard({ link, title, datePublished, minRead, preview }: ArticleProps) {
+export default function BlogCard({
+  link,
+  title,
+  datePublished,
+  minRead,
+  preview
+}: ArticleProps) {
   return (
-    <a href={link} className='group' target='_blank'>
+    <a
+      href={link}
+      className='group'
+      target='_blank'
+    >
       <Card>
         <Heading3
           className={clsx(
