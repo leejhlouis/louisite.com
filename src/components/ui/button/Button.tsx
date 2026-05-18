@@ -45,14 +45,19 @@ const buttonVariants = cva(
       {
         variant: 'filled',
         inverted: false,
-        class:
-          'bg-gradient-to-tr from-transparent to-primary-dark/10 shadow-sm shadow-primary-dark hover:text-primary-dark hover:shadow-md dark:border-primary-light/50 dark:to-primary-light/10 dark:shadow-primary-light dark:hover:text-primary-light'
+        class: clsx(
+          'bg-gradient-to-tr from-primary-light/30 to-primary-dark/5',
+          'border-0.5 border-primary-dark/20 dark:border-primary-light/20',
+          'shadow-sm shadow-primary-dark/50',
+          'hover:to-primary-light/20 hover:text-primary-dark hover:shadow-md hover:shadow-primary-dark/25 dark:hover:text-primary-light',
+          'dark:from-primary-dark/30 dark:to-primary-light/5 dark:shadow-primary-light/50'
+        )
       },
       {
         variant: 'filled',
         inverted: true,
         class:
-          'border border-slate-600/20 bg-gradient-to-tr from-transparent hover:to-primary-dark/10 hover:text-violet-900 dark:border-slate-500/25 dark:bg-slate-600/10 dark:hover:to-primary-light/10 dark:hover:text-violet-100'
+          'border border-slate-600/20 bg-gradient-to-tr from-transparent hover:border-primary-dark hover:to-primary-dark/5 hover:text-primary-dark dark:border-slate-500/25 dark:bg-slate-600/10 dark:hover:to-primary-light/10 dark:hover:text-violet-100'
       }
     ],
     defaultVariants: {
