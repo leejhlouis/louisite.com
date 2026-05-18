@@ -41,7 +41,7 @@ export default async function BlogSection() {
   return (
     <FadeInSection className='min-h-[calc(100vh-320px)]'>
       <Heading1
-        className={clsx('animate-fade-in', 'text-primary-dark dark:text-white', 'pb-2 pt-2')}
+        className={clsx('animate-fade-in', 'text-violet-950 dark:text-violet-50', 'pb-2 pt-2')}
       >
         Blog
       </Heading1>

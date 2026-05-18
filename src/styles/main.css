@@ -52,28 +52,6 @@
 }
 
 @layer utilities {
-  .bg-light {
-    background: linear-gradient(-135deg, #cdc6ff 10%, #c6c9ff 50%, #e2f5ff 100%);
-  }
-
-  .bg-overlay {
-    background:
-      linear-gradient(30deg, #c5d1ffe6 33%, #c5d1ff00 66%),
-      linear-gradient(-135deg, #c4bdff 10%, #c6c9ff 50%, #e2f5ff 100%);
-    background-attachment: fixed;
-  }
-
-  .bg-dark {
-    background: linear-gradient(-135deg, #3a1529 20%, #281543 50%, #110627 100%);
-  }
-
-  .bg-overlay-dark {
-    background:
-      linear-gradient(30deg, #110627e6 10%, #11062700 66%),
-      linear-gradient(-135deg, #3a1529 20%, #281543 50%, #00137a 100%);
-    background-attachment: fixed;
-  }
-
   .cursor-tracking-gradient {
     --gradientPosition: center;
     --background: 215 225 255;

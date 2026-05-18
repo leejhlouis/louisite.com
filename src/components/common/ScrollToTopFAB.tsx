@@ -13,7 +13,8 @@ export default function ScrollToTopFAB() {
   const [isButtonVisible, setButtonVisible] = useState<boolean>(false)
 
   const scrollToTop = (): void => {
-    window.scrollTo(0, 0)
+    // Scroll to the top of the page with a smooth animation
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   useEventListener('scroll', (): void => {

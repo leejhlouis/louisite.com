@@ -20,7 +20,7 @@ export default function Hero() {
         <h1
           className={clsx(
             'animate-fade-in !delay-200',
-            'text-5xl text-slate-900 dark:text-white lg:text-6xl',
+            'text-5xl text-emphasis-dark dark:text-emphasis-light lg:text-6xl',
             'break-words font-extrabold tracking-tight'
           )}
         >
@@ -38,7 +38,7 @@ export default function Hero() {
           <Button icon={<RiArrowDownLine />} iconPosition='right' href='#projects' variant='filled'>
             View projects
           </Button>
-          <Button iconPosition='right' href='#projects' inverted variant='filled'>
+          <Button iconPosition='right' href='/about' inverted variant='filled'>
             About me
           </Button>
         </div>

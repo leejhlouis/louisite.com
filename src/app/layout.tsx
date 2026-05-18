@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en' className='dark' suppressHydrationWarning>
-      <body className='text-default-dark dark:text-default-light overflow-x-hidden scroll-smooth bg-slate-300 dark:bg-slate-950'>
+      <body className='overflow-x-hidden scroll-smooth bg-slate-200 text-default-dark dark:bg-slate-950 dark:text-default-light'>
         <PageWrapper>
           <Navbar />
           {children}

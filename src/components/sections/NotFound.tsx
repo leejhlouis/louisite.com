@@ -37,7 +37,7 @@ export default function NotFound() {
           {/* prettier-ignore */}
           <Heading1 className={clsx(
             'animate-fade-in', 
-            'text-primary-dark dark:text-white',
+            'text-violet-950 dark:text-violet-50',
             'text-4xl md:text-center md:text-5xl'
             )}
           >

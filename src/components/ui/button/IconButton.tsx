@@ -10,7 +10,7 @@ export default function IconButton({ onClick, className, screenReaderText, icon 
         'group rounded-xl p-2 backdrop-blur-sm backdrop-filter',
         'border border-slate-500/20 dark:border-slate-600/30',
         'bg-slate-100/10 dark:bg-slate-600/10',
-        'hover:bg-slate-100/30 dark:hover:bg-slate-600/20'
+        'hover:bg-gradient-to-tr hover:from-transparent hover:to-primary-light/10 dark:hover:to-primary-light/10'
       )}
     >
       <p className='sr-only'>{screenReaderText}</p>

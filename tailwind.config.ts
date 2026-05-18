@@ -14,14 +14,14 @@ export default {
           light: colors.slate['400']
         },
         emphasis: {
-          dark: colors.slate['900'],
+          dark: colors.black,
           light: colors.white
         },
         primary: {
           light: colors.violet['400'],
           lighter: colors.violet['300'],
-          dark: colors.indigo['600'],
-          'lighter-dark': colors.indigo['500']
+          dark: colors.violet['600'],
+          'lighter-dark': colors.violet['500']
         }
       },
       spacing: {

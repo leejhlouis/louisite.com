@@ -20,7 +20,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   return (
     <div className='mx-auto px-4 py-6 sm:py-12 md:max-w-screen-md md:px-0'>
-      <Heading1 className='!pb-2 text-primary-dark dark:text-white'>{title}</Heading1>
+      <Heading1 className='!pb-2 text-violet-950 dark:text-violet-50'>{title}</Heading1>
       <span className='text-sm dark:text-muted'>
         {datePublished} • {`${minRead} min read`} •{' '}
         <InlineLink href={match.link} className='text-primary-dark dark:text-primary-light'>

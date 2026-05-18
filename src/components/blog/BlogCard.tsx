@@ -21,7 +21,7 @@ export default function BlogCard({
       <Card>
         <Heading3
           className={clsx(
-            'text-primary-dark dark:text-white',
+            'text-violet-950 dark:text-violet-50',
             'group-hover:text-primary-lighter-dark group-hover:dark:text-primary-light',
             'group-hover:font',
             '!pb-2'

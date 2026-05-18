@@ -22,7 +22,7 @@ export default function HighlightText({ children }: ComponentProps) {
     <span
       ref={ref}
       className={clsx(
-        'from-fuchsia-700 to-indigo-700 bg-clip-text',
+        'from-fuchsia-700 to-blue-700 bg-clip-text',
         'dark:from-fuchsia-400 dark:to-blue-400',
         'text-transparent transition'
       )}
