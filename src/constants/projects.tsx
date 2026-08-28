@@ -47,6 +47,7 @@ const filters: string[] = [
 const projects: ProjectProps[] = [
   {
     slug: 'louisite',
+    icon: '🌐',
     featured: true,
     title: 'louisite',
     description:
@@ -58,6 +59,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'spotify-top5',
+    icon: '🎵',
     featured: true,
     title: 'Spotify Top 5',
     description: 'Your Top 5 Spotify songs & artists in one place built with Next.js.',
@@ -68,6 +70,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'vue-member-management',
+    icon: '👥',
     featured: true,
     title: 'Member Management App',
     description: (
@@ -83,6 +86,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'find-a-coach',
+    icon: '🧑‍🏫',
     featured: true,
     title: 'Find a Coach',
     description: (
@@ -102,6 +106,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'e-grocery',
+    icon: '🛒',
     title: 'e-grocery',
     description: "An e-grocery web app built with Laravel. Built for Web Programming's final exam.",
     techStacks: ['Laravel', 'Bootstrap'],
@@ -111,6 +116,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'movielist',
+    icon: '🎬',
     featured: true,
     title: 'MovieList',
     description: "A movie list web app built with Laravel. Built for Web Programming's project.",
@@ -121,6 +127,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'election-2022',
+    icon: '🗳️',
     featured: true,
     title: 'HIMTI Election 2022',
     description:
@@ -132,6 +139,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'giant-book-supplier',
+    icon: '📚',
     featured: true,
     title: 'Giant Book Supplier',
     description:
@@ -143,6 +151,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'balaitani',
+    icon: '🌾',
     featured: true,
     title: 'BalaiTani',
     description:
@@ -154,6 +163,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'balaitani-asp',
+    icon: '🌾',
     title: 'BalaiTani, built with ASP.NET',
     description:
       'Another rendition of BalaiTani built with ASP.NET and domain-driven design implementation.',
@@ -164,6 +174,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'got-wordle',
+    icon: '🎮',
     featured: false,
     title: 'GOT Wordle',
     description: (
@@ -179,6 +190,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'unified-registration',
+    icon: '🏫',
     featured: true,
     title: 'HIMTI unified registration',
     description:
@@ -190,6 +202,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'himti.or.id',
+    icon: '🏫',
     title: 'himti.or.id',
     description:
       'The official website of HIMTI BINUS University. Managed this project during my time as Manager of Web Development Division.',
@@ -200,6 +213,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'javascript30',
+    icon: '📅',
     title: '30 Days of JavaScript',
     description:
       'A 30-day vanilla JavaScript coding challenge with some modifications and add-ons to advance my JavaScript fundamentals.',
@@ -209,6 +223,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'tukang-travel',
+    icon: '✈️',
     title: 'TukangTravel',
     description:
       'The landing page of TukangTravel—a lifestyle traveling app designed for travelers who love adventure and hidden gems.',
@@ -219,6 +234,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'louisite-v1',
+    icon: '🌐',
     title: 'louisite v1',
     description: 'First iteration of my personal website.',
     category: 'Front-end development',
@@ -227,6 +243,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'hci-danbam',
+    icon: '🍜',
     title: 'DanBam',
     description: (
       <span>
@@ -240,6 +257,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'fame',
+    icon: '🎮',
     title: 'FAME',
     description:
       'The landing page of FAME Workshop—a game development workshop held by HIMTI BINUS University’s programming class division.',
@@ -249,6 +267,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'cinema-cgp',
+    icon: '🎬',
     title: 'Cinema CGP',
     description: "A movie ticket-booking Android app. Built for Mobile Programming's final exam.",
     category: 'Android app development',
@@ -257,6 +276,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'tokoku',
+    icon: '🛒',
     title: 'Tokoku',
     description:
       "An Android app showing list of available items on a shop in which the users can add them to their own list. Built for Mobile Programming's group project.",
@@ -266,6 +286,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'final-fla',
+    icon: '🏨',
     title: 'Hotel Reservation System',
     description:
       "A hotel reservation console app built with Java. Built for Framework Layer Architecture's final exam.",
@@ -275,6 +296,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'transactease',
+    icon: '💳',
     title: 'POS Console App',
     description:
       "A POS console app built with Java. Built for Framework Layer Architecture's group project.",
@@ -284,6 +306,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'binus-board',
+    icon: '📋',
     title: 'BINUS Board',
     description:
       "A bulletin board console application built with Java. Built for Framework Layer Architecture's mid exam.",
@@ -293,6 +316,7 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'atm-python',
+    icon: '🏦',
     title: 'ATM Console App',
     description:
       'An ATM console app built using Python. Built as a project for the bootcamp held by HIMTI BINUS University x Progate.',

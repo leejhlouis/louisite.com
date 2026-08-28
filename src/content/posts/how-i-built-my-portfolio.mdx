@@ -1,0 +1,380 @@
+export const metadata = {
+  title: 'How I built my portfolio site with React, TypeScript, and Tailwind CSS',
+  description: 'The tech stack and techniques I used to build the second iteration of my portfolio site.',
+  publishedAt: '2024-05-30',
+  tags: ['React', 'TypeScript', 'Tailwind CSS'],
+  originalUrl: 'https://medium.com/@leejhlouis/how-i-build-my-portfolio-site-with-react-typescript-and-tailwind-css-479778cf2960'
+}
+
+As a recent computer science graduate seeking opportunities, the necessity of a visually appealing portfolio website showcasing my accomplishments is important to provide hiring managers with a better idea of who I am.
+
+In the past, I managed to build a [portfolio site](https://leejhlouis.github.io/louisite-v1/) using vanilla HTML, CSS, and JavaScript.
+
+It was a good first try though. However, it failed to highlight my featured projects, the most crucial part of the portfolio website. It is mainly due to other sections—to name a few, my experience, educational background, and skills—taking precedence over the projects section. In addition, I was personally not satisfied with the first iteration's appearance.
+
+This prompted me to develop the second iteration with an all-new and refreshed layout and appearance. Check it out below!
+
+[Louis Gustavo | Software Engineer](https://louisite.com/)
+
+For the second iteration, I decided to build a multi-page site including the home page, about page, and the projects page.
+
+There are many ways to build a portfolio site. I decided to build mine from scratch to challenge myself to learn React and TypeScript.
+
+In this article, I will show you the tech stack and techniques used to build the site.
+
+## Tech stack
+
+The website was initially bootstrapped with [Create React App](https://create-react-app.dev/) (CRA) and built with React, TypeScript, and Tailwind CSS. It's deployed with Netlify.
+
+React was chosen due to its beautifully curated JavaScript library for UI components and TypeScript was chosen due to its type-checking feature. Meanwhile, Tailwind CSS was used as the CSS framework for its practical utility classes to build the interface. Furthermore, I use Markdown to manage the content of the [About Me](https://louisite.com/about) page.
+
+In 2023, I [migrated](https://github.com/leejhlouis/louisite/pull/9) CRA to [Vite](https://vitejs.dev/), a simpler and faster build tool alternative to CRA.
+
+## Techniques
+
+### Light and dark theme
+
+<figure>
+  <img src="https://cdn-images-1.medium.com/max/1024/1*BJPyf6aPdzZhQ-7GUGBL0w.png" alt="The portfolio home page in light mode" />
+  <figcaption>Light mode</figcaption>
+</figure>
+
+<figure>
+  <img src="https://cdn-images-1.medium.com/max/1024/1*xtUs2Cf2OtJdWq95awGNBw.png" alt="The portfolio home page in dark mode" />
+  <figcaption>Dark theme</figcaption>
+</figure>
+
+I also created a dark mode for the site by utilizing Tailwind CSS's [dark mode variant](https://tailwindcss.com/docs/dark-mode).
+
+I set the property of `darkMode` as `class` in the Tailwind CSS config file. This is done to automatically enable a dark theme when the `dark` class is added on the HTML tag (`<html>`).
+
+```ts
+// tailwind.config.ts
+export default {
+  content: ['index.html', './src/**/*.{js,jsx,ts,tsx}'],
+  darkMode: 'class',
+  // ...
+}
+```
+
+If the theme is toggled to dark, the HTML tag will have the `dark` class.
+
+<figure>
+  <img src="https://cdn-images-1.medium.com/max/541/1*cY6466o_056cs-XXIN2U0g.png" alt="Browser developer tools showing the dark class on the HTML element" />
+  <figcaption>The <code>dark</code> class in the HTML tag (<code>&lt;html&gt;</code>)</figcaption>
+</figure>
+
+On my `App.tsx` file, the site initially checks the users' preferred color theme based on the browser settings and the last used theme stored on the browser's local storage.
+
+```tsx
+// src/App.tsx
+import { useEffect } from 'react'
+import checkDarkTheme from '@/utils/checkDarkTheme.ts'
+
+export default function App() {
+  useEffect(() => {
+    if (checkDarkTheme()) {
+      document.documentElement.classList.add('dark')
+      return
+    }
+    document.documentElement.classList.remove('dark')
+  }, [])
+
+  return (
+    // App components
+  )
+}
+```
+
+```ts
+// src/utils/checkDarkTheme.ts
+export default function checkDarkTheme() {
+  return (
+    localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches)
+  )
+}
+```
+
+By default, this website uses the users' preferred color theme, although the users can also manually override the theme.
+
+```tsx
+// src/components/common/ThemeSwitcher.tsx
+import { lazy, useState } from 'react'
+import SunLineIcon from 'remixicon-react/SunLineIcon.js'
+import MoonLineIcon from 'remixicon-react/MoonLineIcon.js'
+import checkDarkTheme from '@/utils/checkDarkTheme.ts'
+
+const IconButton = lazy(
+  () => import('@/components/common/reusable/button/IconButton.tsx')
+)
+
+export default function ThemeSwitcher() {
+  const [isDark, setDark] = useState(checkDarkTheme)
+
+  const toggleDarkTheme = () => {
+    document.documentElement.classList.toggle('dark')
+    localStorage.theme = isDark ? 'light' : 'dark'
+    setDark(!isDark)
+  }
+
+  return (
+    <IconButton
+      className='duration-300'
+      icon={isDark ? <MoonLineIcon size={20} /> : <SunLineIcon size={20} />}
+      screenReaderText='Toggle theme'
+      onClick={toggleDarkTheme}
+    />
+  )
+}
+```
+
+When the theme is toggled, the `dark` class on the HTML tag will be toggled and the theme stored on the local storage will be changed. Then, the state `isDark` is also changed as it's used to determine the icon inside the theme switcher button (I use `remixicon-react` library for the icons).
+
+For the `IconButton` component, you may check the [file](https://github.com/leejhlouis/louisite/blob/main/src/components/common/ThemeSwitcher.tsx).
+
+### Glassmorphism UI design
+
+Popularized by [Michal Malewicz](https://uxdesign.cc/glassmorphism-in-user-interfaces-1f39bb1308c9), glassmorphism is a new UI design trend where design elements have the effect of mimicking frosted glass.
+
+On my website, I implemented a glassmorphism design on the navbar with Tailwind CSS's [backdrop blur](https://tailwindcss.com/docs/backdrop-blur) utility class. It's used to make the frosted glass effect when the navbar is scrolled.
+
+<figure>
+  <img src="https://cdn-images-1.medium.com/max/1024/1*Iknw-91uwMnBWcZluO0bQA.png" alt="The portfolio navbar with a frosted glass effect" />
+  <figcaption>The frosted glass effect on the navbar when it's scrolled</figcaption>
+</figure>
+
+```tsx
+<nav className='fixed top-0 z-50 w-full backdrop-blur-xl'>
+  <div className='container flex flex-wrap items-center justify-between py-4 xl:max-w-screen-xl'>
+    {/* Navbar content */}
+  </div>
+</nav>
+```
+
+I also implemented a glassmorphism design on the project card. Here's how I do it with Tailwind CSS classes.
+
+```tsx
+<ul>
+  <li
+    className={clsx(
+      'rounded-xl border border-slate-500/20 dark:border-slate-600/30',
+      'bg-slate-100/20 dark:bg-slate-600/20',
+      'hover:bg-slate-100/30 dark:hover:bg-slate-600/30'
+    )}
+  >
+    {/* Card content */}
+  </li>
+</ul>
+```
+
+As seen in the above snippet, I use the opacity modifier in the Tailwind classes. This is to make the cards more but not wholly transparent and have the frosted glass effects.
+
+<figure>
+  <img src="https://cdn-images-1.medium.com/max/1024/1*S5TPyH3m2V6wX7olfo0jmg.png" alt="Portfolio project cards with frosted glass effects" />
+  <figcaption>Project list cards with frosted glass effects</figcaption>
+</figure>
+
+### Rotating linear gradient highlight effect
+
+<figure>
+  <img src="https://cdn-images-1.medium.com/proxy/1*BJPyf6aPdzZhQ-7GUGBL0w.png" alt="Gradient-highlighted Computer Science and Software Engineering text" />
+  <figcaption>Rotating linear gradient highlight effect as seen in the text “Computer Science” and “Software Engineering”</figcaption>
+</figure>
+
+To make the title highlight more appealing, I added a rotating linear gradient effect on the title section. The gradient on the highlight text will rotate 15 degrees every 75 milliseconds.
+
+```tsx
+import { useEffect, useRef, useState } from 'react'
+import ComponentProps from '@/types/components/ComponentProps'
+import clsx from 'clsx'
+
+export default function HighlightText({ children }: ComponentProps) {
+  const ref = useRef<HTMLLinkElement>(null)
+  const [degree, setDegree] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDegree((degree + 15) % 360)
+      if (ref.current) {
+        ref.current.style.backgroundImage = `linear-gradient(${degree}deg, var(--tw-gradient-stops))`
+      }
+    }, 75)
+    return () => clearInterval(interval)
+  })
+
+  return (
+    <span
+      ref={ref}
+      className={clsx(
+        'from-fuchsia-700 to-indigo-700 bg-clip-text',
+        'dark:from-fuchsia-400 dark:to-blue-400',
+        'text-transparent transition'
+      )}
+    >
+      {children}
+    </span>
+  )
+}
+```
+
+I set the element's `backgroundImage` property by using React's [`useRef`](https://react.dev/reference/react/useRef) hook. Then, I use JavaScript's `setInterval()` method for updating the gradient degree every 75 ms.
+
+### React Markdown
+
+[React Markdown](https://www.npmjs.com/package/react-markdown) is a library for rendering Markdown files. This library is useful for styling the rendered markdown, for instance, the headings, the inline links, the lists, and more. I use my reusable components for the site.
+
+On my site, I use React Markdown for the [About](https://louisite.netlify.app/about) page's content management to avoid hard coding, making it easier to maintain.
+
+Here's how I do it:
+
+```tsx
+import { lazy } from 'react'
+
+const ReactMarkdown = lazy(() => import('react-markdown'))
+const Heading1 = lazy(() => import('@/components/common/reusable/heading/Heading1'))
+const Heading2 = lazy(() => import('@/components/common/reusable/heading/Heading2'))
+const Heading3 = lazy(() => import('@/components/common/reusable/heading/Heading3'))
+const Badge = lazy(() => import('@/components/common/reusable/Badge'))
+const InlineLink = lazy(() => import('@/components/common/reusable/InlineLink.tsx'))
+
+export default function About({ children }: ComponentProps) {
+  return (
+    <ReactMarkdown
+      components={{
+        h1: Heading1,
+        h2: Heading2,
+        h3: Heading3,
+        a: InlineLink,
+        ul: ({ children }) =>
+          (<ul className='mb-8 flex flex-wrap gap-2'>{children}</ul>) as JSX.Element,
+        li: ({ children }) => (<Badge>{children}</Badge>) as JSX.Element
+      }}
+    >
+      {(localStorage.about as string) ?? children}
+    </ReactMarkdown>
+  )
+}
+```
+
+This is the result of the rendered markdown.
+
+<figure>
+  <img src="https://cdn-images-1.medium.com/max/1024/1*v2hUEpJTg8GwQFlpvhFwGQ.png" alt="The rendered Markdown on the portfolio About page" />
+  <figcaption>Markdown render result</figcaption>
+</figure>
+
+### JavaScript array of objects for storing data
+
+In this iteration, I decided to use a JavaScript array of objects to store my projects' data. This is a very useful approach to avoid hard coding and make the contents easier to manage.
+
+It kind of looks like this.
+
+```tsx
+import GithubFillIcon from 'remixicon-react/GithubFillIcon.js'
+import ExternalLinkFillIcon from 'remixicon-react/ExternalLinkFillIcon.js'
+import getGitHubUrl from '@/utils/getGitHubUrl'
+import LinkProps from '@/types/LinkProps'
+import ProjectProps from '@/types/components/ProjectProps'
+import constants from '@/constants'
+import InlineLink from '@/components/common/reusable/InlineLink'
+
+const github: LinkProps = {
+  label: 'Source code',
+  icon: <GithubFillIcon size={24} />
+}
+
+const live: LinkProps = {
+  label: 'Live',
+  icon: <ExternalLinkFillIcon size={24} />
+}
+
+const getLinks = (githubRepo: string, url?: string) => {
+  const links = [{ ...github, url: getGitHubUrl(githubRepo) }]
+  if (url) links.push({ ...live, url })
+  return links
+}
+
+const filters = [
+  'React', 'Vue.js', 'Laravel', 'TypeScript', 'JavaScript', 'jQuery',
+  'Tailwind CSS', 'Bootstrap', 'HTML/CSS', 'PHP', 'Java', 'Python',
+  'ASP.NET', 'Android SDK', 'Firebase', 'Axios Mock'
+]
+
+const projects: ProjectProps[] = [
+  {
+    id: 'louisite',
+    featured: true,
+    title: 'LOUISITE',
+    description:
+      'My all-new personal website—this is the second and latest iteration—built with React and TypeScript.',
+    techStacks: ['React', 'TypeScript', 'Tailwind CSS'],
+    otherTechStacks: ['HTML/CSS', 'JavaScript'],
+    category: 'Front-end development',
+    links: getLinks('louisite', 'https://louisite.netfliy.app')
+  },
+  {
+    id: 'vue-member-management',
+    featured: true,
+    title: 'Member Management App',
+    description: (
+      <span>
+        A member management system app built with Vue.js. Built as a probation project during my
+        internship at <InlineLink href='https://blibli.com'>Blibli</InlineLink>.
+      </span>
+    ),
+    techStacks: ['Vue.js', 'Axios Mock'],
+    otherTechStacks: ['HTML/CSS', 'JavaScript'],
+    category: 'Front-end development',
+    links: getLinks('vue-member-management')
+  }
+]
+
+export { filters, projects }
+```
+
+### clsx
+
+Tailwind CSS classes are too long and it keeps making my code messy. To avoid that, I used the [`clsx`](https://github.com/lukeed/clsx) library for grouping similar classes.
+
+```tsx
+<button
+  className={clsx(
+    className,
+    'group/underline flex w-fit items-center space-x-1 transition duration-300 ease-in-out',
+    {
+      'font-extrabold text-primary-dark dark:text-white': active,
+      'font-semibold': !active
+    },
+    {
+      'rounded-xl px-3 py-1': inverted,
+      'text-primary-dark dark:text-primary-light': inverted,
+      'hover:bg-primary-dark/5 dark:hover:bg-primary-light': inverted && !active,
+      'hover:text-primary-dark dark:hover:text-primary-light': !inverted && !active
+    }
+  )}
+></button>
+```
+
+Additionally, `clsx` is useful for setting classes conditionally. For example, classes `'rounded-xl px-3 py-1'` will only be set if the value of the variable `inverted` is true.
+
+## Deployment
+
+I considered Netlify for the deployment tools. It's because Netlify is simple to use, especially for beginners like me. You just have to integrate Netlify with your GitHub account (make sure to push your portfolio to your GitHub) and select your portfolio repository to deploy it on Netlify.
+
+For more detailed step-by-step instructions, you may follow this [guide](https://www.netlify.com/blog/2016/09/29/a-step-by-step-guide-deploying-on-netlify/).
+
+## Resources
+
+Live demo: [https://louisite.com](https://louisite.com)  
+Source code: [https://github.com/leejhlouis/louisite](https://github.com/leejhlouis/louisite)
+
+<figure>
+  <img src="https://cdn-images-1.medium.com/max/1024/1*lSjzXdvcVjOwEL2jKHdmSQ.png" alt="Google Lighthouse scores for louisite.com" />
+  <figcaption>Google Lighthouse score for <a href="https://louisite.com">louisite.com</a> (recorded on May 28, 2024, 03:46:46 PM)</figcaption>
+</figure>
+
+This article shows you how I built my portfolio site from scratch. Feel free to customize it to fit your needs. If you have suggestions to improve my portfolio site, I would appreciate them.
+
+Thanks for reading. Happy coding!

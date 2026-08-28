@@ -26,7 +26,7 @@ export default function ScrollToTopFAB() {
   })
 
   return (
-    <div className='fixed bottom-0 right-0 mb-8 mr-8'>
+    <div className='fixed bottom-0 right-0 z-40 mb-6 mr-6'>
       <IconButton
         className={clsx('duration-300', {
           'opacity-100': isButtonVisible,

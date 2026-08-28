@@ -4,12 +4,12 @@ import Link from 'next/link'
 import ButtonProps from '@/types/components/buttons/ButtonProps'
 
 const buttonVariants = cva(
-  'group/btn relative inline-flex w-fit select-none items-center gap-1.5 transition-all duration-300 ease-in-out',
+  'group/btn relative inline-flex w-fit select-none items-center gap-1.5 font-medium transition-all duration-300 ease-in-out',
   {
     variants: {
       variant: {
         ghost: 'rounded-md px-1 py-0.5',
-        filled: 'rounded-xl px-4 py-2 backdrop-blur-sm backdrop-filter'
+        filled: 'rounded-xl border px-4 py-2'
       },
       active: {
         true: 'cursor-default',
@@ -34,25 +34,27 @@ const buttonVariants = cva(
       {
         variant: 'ghost',
         inverted: true,
-        class: 'py-1text-primary-dark rounded-xl px-3 dark:text-primary-light'
+        class: 'text-default-dark dark:text-default-light'
       },
       {
         variant: 'ghost',
         inverted: false,
         active: false,
-        class: 'hover:text-primary-dark hover:dark:text-primary-light'
+        class: 'hover:text-primary-dark dark:hover:text-primary-light'
       },
       {
         variant: 'filled',
         inverted: false,
-        class:
-          'bg-gradient-to-tr from-transparent to-primary-dark/10 shadow-sm shadow-primary-dark hover:text-primary-dark hover:shadow-md dark:border-primary-light/50 dark:to-primary-light/10 dark:shadow-primary-light dark:hover:text-primary-light'
+        class: clsx(
+          'border-primary-dark/20 bg-primary-dark text-white',
+          'shadow-sm hover:-translate-y-0.5 hover:bg-primary-lighter-dark dark:border-primary-light/20 dark:bg-primary-light dark:text-slate-950 dark:hover:bg-primary-lighter'
+        )
       },
       {
         variant: 'filled',
         inverted: true,
         class:
-          'border border-slate-600/20 bg-gradient-to-tr from-transparent hover:to-primary-dark/10 hover:text-violet-900 dark:border-slate-500/25 dark:bg-slate-600/10 dark:hover:to-primary-light/10 dark:hover:text-violet-100'
+          'border-slate-500/25 bg-white/20 text-default-dark hover:-translate-y-0.5 hover:border-primary-dark hover:text-primary-dark dark:border-slate-500/30 dark:bg-primary-dark/10 dark:text-default-light dark:hover:border-primary-light dark:hover:text-primary-light'
       }
     ],
     defaultVariants: {
@@ -64,7 +66,7 @@ const buttonVariants = cva(
 )
 
 const buttonUnderlineVariants = cva(
-  'absolute bottom-0 left-0 h-[1.5px] w-0 rounded-full transition-[width] duration-300 ease-in-out group-hover/btn:w-full',
+  'absolute bottom-0 left-0 h-px w-0 transition-[width] duration-300 ease-in-out group-hover/btn:w-full',
   {
     variants: {
       inverted: {
@@ -78,11 +80,15 @@ const buttonUnderlineVariants = cva(
   }
 )
 
-const buttonIconVariants = cva('flex items-center transition-transform duration-300', {
+const buttonIconVariants = cva('flex shrink-0 items-center transition-transform duration-300', {
   variants: {
     variant: {
       ghost: '',
       filled: ''
+    },
+    inverted: {
+      true: '',
+      false: ''
     },
     active: {
       true: '',
@@ -94,6 +100,16 @@ const buttonIconVariants = cva('flex items-center transition-transform duration-
       variant: 'filled',
       active: false,
       class: 'group-hover/btn:translate-x-0.5'
+    },
+    {
+      variant: 'filled',
+      inverted: false,
+      class: '[&_svg]:!fill-white dark:[&_svg]:!fill-slate-950'
+    },
+    {
+      variant: 'filled',
+      inverted: true,
+      class: '[&_svg]:!fill-default-dark dark:[&_svg]:!fill-default-light'
     }
   ],
   defaultVariants: {
@@ -125,7 +141,9 @@ export default function Button({
       <span>{children}</span>
     )
 
-  const iconEl = icon && <span className={buttonIconVariants({ variant, active })}>{icon}</span>
+  const iconEl = icon && (
+    <span className={buttonIconVariants({ variant, inverted, active })}>{icon}</span>
+  )
 
   const content = (
     <>

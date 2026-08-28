@@ -25,7 +25,7 @@ export default function NavDropdownContent() {
           className={clsx(
             'cursor-pointer',
             'flex w-full px-2 py-1',
-            'hover:bg-slate-300/50 hover:dark:bg-slate-950/50'
+            'hover:bg-elevated hover:text-signal'
           )}
         >
           <span>{item.name}</span>
@@ -39,8 +39,8 @@ export default function NavDropdownContent() {
       className={clsx(
         'absolute right-0',
         'mt-2 py-2',
-        'bg-slate-200/95 dark:bg-slate-900/95',
-        'flex w-32 flex-col rounded-lg shadow-lg'
+        'border border-line bg-surface',
+        'flex w-36 flex-col rounded-xl p-1 shadow-editorial dark:shadow-editorial-dark'
       )}
     >
       {links}

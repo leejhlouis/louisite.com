@@ -6,17 +6,17 @@ const _social: SocialProps[] = [
   {
     name: 'Mail',
     url: `mailto:${social.mail}`,
-    icon: <RiMailLine size={20} />
+    icon: <RiMailLine size={24} />
   },
   {
     name: 'LinkedIn',
     url: social.linkedin,
-    icon: <RiLinkedinLine size={20} />
+    icon: <RiLinkedinLine size={24} />
   },
   {
     name: 'GitHub',
     url: `https://github.com/${social.github}`,
-    icon: <RiGithubLine size={20} />
+    icon: <RiGithubLine size={24} />
   }
 ]
 

@@ -16,14 +16,6 @@ const nextConfig: NextConfig = {
     return config
   },
 
-  async rewrites() {
-    return [
-      {
-        source: '/blog/rss',
-        destination: 'https://medium.com/@leejhlouis/feed'
-      }
-    ]
-  },
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx']
 }
 

@@ -1,4 +1,5 @@
 import FadeInSection from '@/components/layouts/FadeInSection'
+import Prose from '@/components/layouts/Prose'
 import AboutList from '@/components/about/AboutList'
 
 export const metadata = {
@@ -8,9 +9,9 @@ export const metadata = {
 }
 
 <FadeInSection className='md:px-0' maxWidthClass='md:max-w-screen-md'>
-<div className='[&>*]:animate-fade-in'>
+<Prose className='[&>*]:animate-fade-in pt-8'>
 
-# Hey 👋, it's Louis Gustavo, Software Engineer at Traveloka
+# About me
 
 Ever since I was a high school student, software engineering has been my passion. I vividly recall the time I first built a program for an Arduino Uno to make a miniature traffic light system. Additionally, modifying my [Fandom](https://www.fandom.com/) profile page's theme with HTML and CSS sparked my interest in software engineering. These experiences have significantly contributed to who I am today.
 
@@ -81,5 +82,5 @@ Wanna ask me a question or simply say hi? Feel free to reach me via email at [lo
 
 Additionally, you may find me on [GitHub](https://github.com/leejhlouis) and [LinkedIn](https://linkedin.com/in/louis-gustavo).
 
-</div>
+</Prose>
 </FadeInSection>

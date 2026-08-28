@@ -1,41 +1,67 @@
-import Heading1 from '@/components/ui/heading/Heading1'
-import calculateMinRead from '@/utils/calculateMinRead'
 import { notFound } from 'next/navigation'
-import clsx from 'clsx'
-import ArticleProps from '@/types/ArticleProps'
-import { fetchMediumFeed, getSlugFromLink, stripHtmlTags, formatDate } from '@/utils/medium'
-import InlineLink from '@/components/ui/InlineLink'
+import type { Metadata } from 'next'
+import { getPost, posts } from '@/content/posts'
+import Button from '@/components/ui/button/Button'
+import { RiArrowLeftLine, RiExternalLinkLine } from '@remixicon/react'
+import Section from '@/components/layouts/Section'
+import Prose from '@/components/layouts/Prose'
+
+export const generateStaticParams = () => posts.map(post => ({ slug: post.slug }))
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const post = getPost(slug)
+  if (!post) return {}
+  return {
+    title: `${post.title} | Louis Gustavo`,
+    description: post.description,
+    alternates: { canonical: `https://louisite.com/blog/${post.slug}` }
+  }
+}
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const items = await fetchMediumFeed()
-  const match = items.find((item: ArticleProps) => getSlugFromLink(item.link) === slug)
+  const post = getPost(slug)
+  if (!post) notFound()
 
-  if (!match) return notFound()
-
-  const title = match.title
-  const content = match['content:encoded'] ?? ''
-  const datePublished = formatDate(match.pubDate)
-  const minRead = calculateMinRead(stripHtmlTags(content))
+  const Content = post.Component
+  const date = new Intl.DateTimeFormat('en', { dateStyle: 'long' }).format(
+    new Date(post.publishedAt)
+  )
 
   return (
-    <div className='mx-auto px-4 py-6 sm:py-12 md:max-w-screen-md md:px-0'>
-      <Heading1 className='!pb-2 text-violet-950 dark:text-violet-50'>{title}</Heading1>
-      <span className='text-sm dark:text-muted'>
-        {datePublished} • {`${minRead} min read`} •{' '}
-        <InlineLink href={match.link} className='text-primary-dark dark:text-primary-light'>
-          View on Medium
-        </InlineLink>
-      </span>
-      <article
-        className={clsx(
-          'prose dark:prose-invert mt-6 max-w-full',
-          'prose-p:pb-0',
-          'text-default-dark dark:text-default-light',
-          'prose-a:text-primary-dark prose-a:no-underline hover:prose-a:underline dark:prose-a:text-primary-light hover:prose-a:text-primary-lighter-dark hover:dark:prose-a:text-primary-lighter'
-        )}
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
-    </div>
+    <Section className='md:px-0' maxWidthClass='md:max-w-screen-md'>
+      <Button href='/blog' icon={<RiArrowLeftLine size={18} />}>
+        All writing
+      </Button>
+      <header className='mt-12 border-b border-line pb-10'>
+        <p className='eyebrow pb-5'>
+          {date} · {post.readingTime} min read
+        </p>
+        <h1 className='text-balance text-4xl font-semibold leading-tight tracking-[-0.045em] text-ink sm:text-6xl'>
+          {post.title}
+        </h1>
+        <p className='text-pretty mt-6 pb-0 text-lg leading-8 text-muted'>{post.description}</p>
+      </header>
+      <Prose className='mt-12'>
+        <Content />
+      </Prose>
+      {post.originalUrl ? (
+        <div className='mt-14 border-t border-line pt-8'>
+          <a
+            href={post.originalUrl}
+            target='_blank'
+            rel='noreferrer'
+            className='inline-flex items-center gap-2 text-sm font-semibold text-muted hover:text-signal'
+          >
+            Originally published on Medium <RiExternalLinkLine size={17} />
+          </a>
+        </div>
+      ) : null}
+    </Section>
   )
 }

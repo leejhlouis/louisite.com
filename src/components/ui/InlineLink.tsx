@@ -4,12 +4,11 @@ import InlineLinkProps from '@/types/components/InlineLinkProps'
 
 const SlidingInUnderline = lazy(() => import('@/components/ui/SlidingInUnderline'))
 
-const inlineLinkVariants = cva('z-[9999] cursor-pointer font-semibold duration-300', {
+const inlineLinkVariants = cva('cursor-pointer font-semibold duration-200', {
   variants: {
     inverted: {
-      true: 'text-emphasis-dark dark:text-emphasis-light',
-      false:
-        'text-primary-dark hover:text-primary-lighter-dark dark:text-primary-light dark:hover:text-primary-lighter'
+      true: 'text-ink',
+      false: 'text-signal'
     }
   },
   defaultVariants: {
@@ -19,12 +18,7 @@ const inlineLinkVariants = cva('z-[9999] cursor-pointer font-semibold duration-3
 
 export default function InlineLink({ href, children, inverted }: InlineLinkProps) {
   return (
-    <a
-      href={href}
-      target='_blank'
-      rel='noreferrer'
-      className={inlineLinkVariants({ inverted })}
-    >
+    <a href={href} target='_blank' rel='noreferrer' className={inlineLinkVariants({ inverted })}>
       <SlidingInUnderline type={inverted ? 'default' : 'primary'}>{children}</SlidingInUnderline>
     </a>
   )

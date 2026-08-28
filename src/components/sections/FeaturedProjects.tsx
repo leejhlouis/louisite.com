@@ -7,7 +7,7 @@ import Heading2 from '@/components/ui/heading/Heading2'
 import Button from '@/components/ui/button/Button'
 import { RiArrowRightLine } from '@remixicon/react'
 
-export default function Projects() {
+export default function FeaturedProjects() {
   const projectsEntry: React.ReactNode[] = projects
     .filter(({ featured }) => !!featured)
     .map(project => <ProjectCard key={project.slug} {...project} />)
@@ -28,7 +28,7 @@ export default function Projects() {
       </div>
       <div className='animate-fade-in !delay-500'>
         <Link href='/projects'>
-          <Button className='my-8' icon={<RiArrowRightLine size={20} />} inverted>
+          <Button className='my-8' icon={<RiArrowRightLine size={20} />}>
             More projects
           </Button>
         </Link>

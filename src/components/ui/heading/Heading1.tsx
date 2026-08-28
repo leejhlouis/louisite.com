@@ -7,10 +7,7 @@ export default function Heading1({ id, className, children }: ComponentProps) {
       id={id}
       className={clsx(
         className,
-        'py-8',
-        'text-emphasis-dark dark:text-emphasis-light',
-        'text-[1.75rem] font-bold md:text-4xl',
-        'font-extrabold tracking-tight'
+        'py-8 text-[1.75rem] font-bold tracking-tight text-emphasis-dark dark:text-emphasis-light md:text-4xl'
       )}
     >
       {children}

@@ -10,4 +10,5 @@ export default interface ProjectProps extends ComponentProps {
   techStacks: string[]
   otherTechStacks?: string[]
   links: LinkProps[]
+  icon: string
 }

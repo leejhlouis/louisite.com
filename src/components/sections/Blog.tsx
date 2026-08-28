@@ -1,61 +1,29 @@
-import clsx from 'clsx'
-import ArticleProps from '@/types/ArticleProps'
+import BlogCard from '@/components/blog/BlogCard'
+import { posts } from '@/content/posts'
 import FadeInSection from '@/components/layouts/FadeInSection'
 import Heading1 from '@/components/ui/heading/Heading1'
-import InlineLink from '@/components/ui/InlineLink'
-import BlogCard from '@/components/blog/BlogCard'
-import calculateMinRead from '@/utils/calculateMinRead'
-import truncateText from '@/utils/truncateText'
-import { fetchMediumFeed, getSlugFromLink, stripHtmlTags, formatDate } from '@/utils/medium'
 
-const fetchMediumArticles = async (): Promise<ArticleProps[]> => {
-  const items = await fetchMediumFeed()
-
-  return items.map(
-    (item: {
-      title: string
-      link: string
-      pubDate: string
-      'content:encoded'?: string
-    }): ArticleProps => {
-      const encodedContent = item['content:encoded'] ?? ''
-      const slug = getSlugFromLink(item.link)
-
-      return {
-        title: item.title,
-        link: item.link,
-        slug,
-        datePublished: formatDate(item.pubDate),
-        minRead: calculateMinRead(stripHtmlTags(encodedContent)),
-        preview: truncateText(stripHtmlTags(encodedContent), 225)
-      }
-    }
-  )
-}
-
-// util functions moved to src/utils/medium.ts
-
-export default async function BlogSection() {
-  const articles = await fetchMediumArticles()
-
+export default function BlogSection() {
   return (
-    <FadeInSection className='min-h-[calc(100vh-320px)]'>
-      <Heading1
-        className={clsx('animate-fade-in', 'text-violet-950 dark:text-violet-50', 'pb-2 pt-2')}
-      >
+    <FadeInSection className='min-h-[calc(100vh-320px)] md:px-0' maxWidthClass='md:max-w-screen-md'>
+      <Heading1 className='animate-fade-in pb-2 pt-2 text-violet-950 dark:text-violet-50'>
         Blog
       </Heading1>
       <p className='animate-fade-in pb-0 !delay-200'>
-        Collection of my writings and thoughts. Subscribe to{' '}
-        <InlineLink href='/blog/rss'>RSS feed</InlineLink>.
+        Notes on software engineering and web development.{' '}
+        <a
+          href='/blog/rss'
+          className='font-semibold text-primary-dark hover:underline dark:text-primary-light'
+        >
+          RSS feed
+        </a>
+        .
       </p>
-      {articles.length > 0 && (
-        <div className={clsx('animate-fade-in flex flex-col gap-8 !delay-300', 'pt-6')}>
-          {articles.map((article, index) => (
-            <BlogCard {...article} key={index} />
-          ))}
-        </div>
-      )}
+      <div className='animate-fade-in mt-8 !delay-300'>
+        {posts.map(post => (
+          <BlogCard key={post.slug} {...post} />
+        ))}
+      </div>
     </FadeInSection>
   )
 }

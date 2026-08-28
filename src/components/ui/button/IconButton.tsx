@@ -7,10 +7,8 @@ export default function IconButton({ onClick, className, screenReaderText, icon 
       onClick={onClick}
       className={clsx(
         className,
-        'group rounded-xl p-2 backdrop-blur-sm backdrop-filter',
-        'border border-slate-500/20 dark:border-slate-600/30',
-        'bg-slate-100/10 dark:bg-slate-600/10',
-        'hover:bg-gradient-to-tr hover:from-transparent hover:to-primary-light/10 dark:hover:to-primary-light/10'
+        'group rounded-xl border border-slate-500/20 bg-slate-100/10 p-2 text-default-dark dark:border-slate-600/30 dark:bg-slate-600/10 dark:text-default-light',
+        'transition-colors duration-200 hover:border-primary-dark hover:text-primary-dark dark:hover:border-primary-light dark:hover:text-primary-light'
       )}
     >
       <p className='sr-only'>{screenReaderText}</p>

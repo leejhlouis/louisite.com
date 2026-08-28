@@ -25,21 +25,21 @@ export default function ProjectListClient({
 
   return (
     <>
-      <ul className='animate-fade-in mb-8 flex flex-wrap gap-2'>
-        <li className='inline !delay-200'>Filters:</li>
+      <ul className='animate-fade-in mb-8 mt-8 flex flex-wrap items-center gap-2'>
+        <li className='mr-2 text-sm font-semibold'>Filters:</li>
         {filters.map(filter => (
-          <Badge
-            key={filter}
-            active={selected.includes(filter)}
-            className='cursor-pointer'
-            onClick={() => {
-              setSelected(prev =>
-                prev.includes(filter) ? prev.filter(f => f !== filter) : [...prev, filter]
-              )
-            }}
-          >
-            {filter}
-          </Badge>
+          <li key={filter}>
+            <Badge
+              active={selected.includes(filter)}
+              onClick={() => {
+                setSelected(prev =>
+                  prev.includes(filter) ? prev.filter(f => f !== filter) : [...prev, filter]
+                )
+              }}
+            >
+              {filter}
+            </Badge>
+          </li>
         ))}
       </ul>
       {!filtered.length ? (

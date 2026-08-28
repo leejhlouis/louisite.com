@@ -18,7 +18,7 @@ export default function Title({ size }: SizeProps) {
   const titleSize = size === 'lg' ? 'lg' : 'default'
 
   return (
-    <Link href='/' className='text-violet-950 dark:text-violet-100'>
+    <Link href='/' className='text-violet-950 dark:text-violet-100' aria-label='Louisite home'>
       <p className={titleTextVariants({ size: titleSize })}>
         loui<span className='font-bold'>site</span>
       </p>

@@ -9,7 +9,7 @@ export default function Section({ id, className, maxWidthClass, children }: Sect
         className,
         maxWidthClass,
         {
-          'max-w-screen-lg': !maxWidthClass
+          'max-w-screen-xl': !maxWidthClass
         },
         'container py-6 sm:py-12'
       )}

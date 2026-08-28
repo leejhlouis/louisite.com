@@ -6,10 +6,10 @@ const underlineBarVariants = cva(
   {
     variants: {
       type: {
-        primary: 'bg-primary-lighter-dark dark:bg-primary-lighter',
-        default: 'bg-emphasis-dark dark:bg-emphasis-light',
-        secondary: 'bg-primary-dark dark:bg-primary-light',
-        unset: 'bg-primary-dark dark:bg-primary-light'
+        primary: 'bg-signal',
+        default: 'bg-ink',
+        secondary: 'bg-signal',
+        unset: 'bg-signal'
       },
       height: {
         lg: 'h-0.5',
