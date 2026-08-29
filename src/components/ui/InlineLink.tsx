@@ -1,8 +1,6 @@
-import { lazy } from 'react'
 import { cva } from 'class-variance-authority'
 import InlineLinkProps from '@/types/components/InlineLinkProps'
-
-const SlidingInUnderline = lazy(() => import('@/components/ui/SlidingInUnderline'))
+import SlidingInUnderline from '@/components/ui/SlidingInUnderline'
 
 const inlineLinkVariants = cva('cursor-pointer font-semibold duration-200', {
   variants: {

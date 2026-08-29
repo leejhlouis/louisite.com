@@ -1,6 +1,5 @@
 import { projects } from '@/constants/projects'
 import clsx from 'clsx'
-import Link from 'next/link'
 import AnimatedSection from '@/components/layouts/AnimatedSection'
 import ProjectCard from '@/components/projects/ProjectCard'
 import Heading2 from '@/components/ui/heading/Heading2'
@@ -8,9 +7,7 @@ import Button from '@/components/ui/button/Button'
 import { RiArrowRightLine } from '@remixicon/react'
 
 export default function FeaturedProjects() {
-  const projectsEntry: React.ReactNode[] = projects
-    .filter(({ featured }) => !!featured)
-    .map(project => <ProjectCard key={project.slug} {...project} />)
+  const featuredProjects = projects.filter(({ featured }) => featured)
 
   return (
     <AnimatedSection id='projects' className='scroll-mt-8'>
@@ -24,14 +21,19 @@ export default function FeaturedProjects() {
           'grid justify-items-center gap-x-6 gap-y-8 sm:grid-cols-2 xl:grid-cols-3'
         )}
       >
-        {projectsEntry}
+        {featuredProjects.map(project => (
+          <ProjectCard key={project.slug} {...project} />
+        ))}
       </div>
       <div className='animate-fade-in !delay-500'>
-        <Link href='/projects'>
-          <Button className='my-8' icon={<RiArrowRightLine size={20} />}>
-            More projects
-          </Button>
-        </Link>
+        <Button
+          className='my-8'
+          href='/projects'
+          icon={<RiArrowRightLine size={20} />}
+          iconPosition='right'
+        >
+          More projects
+        </Button>
       </div>
     </AnimatedSection>
   )

@@ -4,8 +4,7 @@ import { useMemo, useState } from 'react'
 import { filters } from '@/constants/projects'
 import Badge from '@/components/ui/Badge'
 import ProjectCard from '@/components/projects/ProjectCard'
-import InlineLink from '@/components/ui/InlineLink'
-import ProjectProps from '@/types/components/ProjectProps'
+import type ProjectProps from '@/types/components/ProjectProps'
 
 export default function ProjectListClient({
   initialProjects
@@ -18,7 +17,7 @@ export default function ProjectListClient({
     return selected.length === 0
       ? initialProjects
       : initialProjects.filter(project => {
-          const techs = [...project.techStacks, ...(project.otherTechStacks || [])]
+          const techs = [...project.techStacks, ...(project.otherTechStacks ?? [])]
           return selected.every(filter => techs.includes(filter))
         })
   }, [selected, initialProjects])
@@ -44,10 +43,15 @@ export default function ProjectListClient({
       </ul>
       {!filtered.length ? (
         <p>
-          Results not found.{' '}
-          <span onClick={() => setSelected([])}>
-            <InlineLink>Clear filters</InlineLink>
-          </span>
+          Results not found. Try removing a filter or{' '}
+          <button
+            type='button'
+            className='font-semibold text-signal underline-offset-4 hover:underline'
+            onClick={() => setSelected([])}
+          >
+            clear all filters
+          </button>
+          .
         </p>
       ) : (
         <div className='animate-fade-in grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3'>

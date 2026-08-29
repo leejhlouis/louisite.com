@@ -1,22 +1,19 @@
 'use client'
-import { RefObject, useEffect } from 'react'
+import { type RefObject, useEffect, useRef } from 'react'
 
-export default function useEventListener(
-  eventType: string,
-  listener: (e: Event) => void,
-  element?: RefObject<HTMLElement>
+export default function useEventListener<K extends keyof WindowEventMap>(
+  eventType: K,
+  listener: (event: WindowEventMap[K]) => void,
+  element?: RefObject<HTMLElement | null>
 ): void {
+  const listenerRef = useRef(listener)
+  listenerRef.current = listener
+
   useEffect(() => {
     const el = element?.current ?? window
-    if (!el?.addEventListener) {
-      return () => {
-        // No cleanup needed
-      }
-    }
+    const handleEvent = (event: Event) => listenerRef.current(event as WindowEventMap[K])
 
-    el.addEventListener(eventType, listener)
-    return () => {
-      el.removeEventListener(eventType, listener)
-    }
-  }, [element, eventType, listener])
+    el.addEventListener(eventType, handleEvent)
+    return () => el.removeEventListener(eventType, handleEvent)
+  }, [element, eventType])
 }

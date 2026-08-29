@@ -1,11 +1,12 @@
-import ComponentProps from '@/types/components/ComponentProps'
-import LinkProps from '@/types/LinkProps'
+import type { ReactNode } from 'react'
+import type ComponentProps from '@/types/components/ComponentProps'
+import type LinkProps from '@/types/LinkProps'
 
 export default interface ProjectProps extends ComponentProps {
-  slug?: string
+  slug: string
   title: string
-  featured?: boolean | false
-  description: string | React.ReactNode
+  featured?: boolean
+  description: ReactNode
   category: string
   techStacks: string[]
   otherTechStacks?: string[]

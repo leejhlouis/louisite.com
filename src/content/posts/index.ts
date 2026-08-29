@@ -10,5 +10,6 @@ export const posts: PostEntry[] = [
   }
 ]
 
-export const getPost = (slug: string): PostEntry | undefined =>
-  posts.find(post => post.slug === slug)
+const postsBySlug = new Map(posts.map(post => [post.slug, post]))
+
+export const getPost = (slug: string): PostEntry | undefined => postsBySlug.get(slug)

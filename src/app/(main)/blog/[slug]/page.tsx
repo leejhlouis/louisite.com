@@ -5,6 +5,7 @@ import Button from '@/components/ui/button/Button'
 import { RiArrowLeftLine, RiExternalLinkLine } from '@remixicon/react'
 import Section from '@/components/layouts/Section'
 import Prose from '@/components/layouts/Prose'
+import formatPostDate from '@/utils/formatPostDate'
 
 export const generateStaticParams = () => posts.map(post => ({ slug: post.slug }))
 
@@ -29,10 +30,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (!post) notFound()
 
   const Content = post.Component
-  const date = new Intl.DateTimeFormat('en', { dateStyle: 'long' }).format(
-    new Date(post.publishedAt)
-  )
-
   return (
     <Section className='md:px-0' maxWidthClass='md:max-w-screen-md'>
       <Button href='/blog' icon={<RiArrowLeftLine size={18} />}>
@@ -40,7 +37,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       </Button>
       <header className='mt-12 border-b border-line pb-10'>
         <p className='eyebrow pb-5'>
-          {date} · {post.readingTime} min read
+          {formatPostDate(post.publishedAt)} · {post.readingTime} min read
         </p>
         <h1 className='text-balance text-4xl font-semibold leading-tight tracking-[-0.045em] text-ink sm:text-6xl'>
           {post.title}

@@ -4,7 +4,7 @@ import { SectionProps } from '@/types/components/SectionProps'
 export default function Section({ id, className, maxWidthClass, children }: SectionProps) {
   return (
     <section
-      id={id || ''}
+      id={id}
       className={clsx(
         className,
         maxWidthClass,

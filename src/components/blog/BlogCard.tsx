@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { PostMetadata } from '@/types/Post'
 import Badge from '@/components/ui/Badge'
+import formatPostDate from '@/utils/formatPostDate'
 
 export default function BlogCard({
   slug,
@@ -10,8 +11,6 @@ export default function BlogCard({
   readingTime,
   tags
 }: PostMetadata) {
-  const date = new Intl.DateTimeFormat('en', { dateStyle: 'long' }).format(new Date(publishedAt))
-
   return (
     <Link
       href={`/blog/${slug}`}
@@ -22,7 +21,7 @@ export default function BlogCard({
           {title}
         </h2>
         <p className='mt-2 pb-0 text-sm'>
-          {date} · {readingTime} min read
+          {formatPostDate(publishedAt)} · {readingTime} min read
         </p>
         <p className='mt-3 pb-0 leading-7'>{description}</p>
         <ul className='mt-4 flex flex-wrap gap-2 text-xs'>

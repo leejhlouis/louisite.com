@@ -1,11 +1,10 @@
 'use client'
 
-import { lazy, useState } from 'react'
+import { useState } from 'react'
 import clsx from 'clsx'
 import useEventListener from '@/hooks/useEventListener'
 import { RiArrowUpFill } from '@remixicon/react'
-
-const IconButton = lazy(() => import('@/components/ui/button/IconButton'))
+import IconButton from '@/components/ui/button/IconButton'
 
 const SCROLL_OFFSET = 120
 
@@ -13,7 +12,6 @@ export default function ScrollToTopFAB() {
   const [isButtonVisible, setButtonVisible] = useState<boolean>(false)
 
   const scrollToTop = (): void => {
-    // Scroll to the top of the page with a smooth animation
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 

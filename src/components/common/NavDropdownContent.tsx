@@ -4,33 +4,27 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 import { navItems } from '@/constants'
-import NavItemsProps from '@/types/NavItemsProps'
+import type NavItemsProps from '@/types/NavItemsProps'
 
 export default function NavDropdownContent() {
   const pathname = usePathname()
 
-  const links = navItems.map((item: NavItemsProps, index: number) => {
+  const links = navItems.map((item: NavItemsProps) => {
     const isActive = pathname === item.href
 
     return (
-      <Link
-        key={index}
-        href={item.href}
-        className={clsx('w-full', 'hover:color-[inherit] hover:no-underline', {
-          'font-bold': isActive,
-          'font-normal': !isActive
-        })}
-      >
-        <li
+      <li key={item.href}>
+        <Link
+          href={item.href}
+          aria-current={isActive ? 'page' : undefined}
           className={clsx(
-            'cursor-pointer',
-            'flex w-full px-2 py-1',
-            'hover:bg-elevated hover:text-signal'
+            'flex w-full cursor-pointer px-2 py-1 hover:bg-elevated hover:text-signal hover:no-underline',
+            { 'font-bold': isActive, 'font-normal': !isActive }
           )}
         >
           <span>{item.name}</span>
-        </li>
-      </Link>
+        </Link>
+      </li>
     )
   })
 
