@@ -1,27 +1,33 @@
 # Repository Guidelines
 
-## Project Structure & Module Organization
+## Project structure and module organization
 
-This is a Next.js 15 portfolio built with React, TypeScript, MDX, and Tailwind CSS. Routes live in `src/app/`; the `(main)` route group contains the home, about, projects, and blog pages. Reusable UI is organized by purpose under `src/components/` (`common`, `layouts`, `sections`, and `ui`). Put shared hooks in `src/hooks/`, data and site configuration in `src/constants/`, types in `src/types/`, and small pure helpers in `src/utils/`. Blog posts belong in `src/content/posts/`. Static files, icons, and metadata are served from `public/`; global styles are in `src/styles/main.css`.
+This Next.js 15 portfolio uses React, TypeScript, MDX, and Tailwind CSS. Routes live in `src/app/`; `(main)` contains the primary pages. Organize reusable UI under `src/components/`. Put hooks in `src/hooks/`, data in `src/constants/`, types in `src/types/`, utilities in `src/utils/`, and posts in `src/content/posts/`. Store assets in `public/` and global styles in `src/styles/main.css`.
 
-## Build, Test, and Development Commands
+## Build, test, and development commands
 
-- `npm install` installs the exact dependency tree from `package-lock.json`.
-- `npm run dev` starts the local Next.js development server, normally at `http://localhost:3000`.
-- `npm run build` creates a production build and catches Next.js compilation and type errors.
-- `npm run start` serves the completed production build locally.
-- `npm run lint` checks all TypeScript and TSX files with zero warnings allowed.
-- `npm run prettier:check` verifies formatting; `npm run prettier:write` applies it to configured source files.
-- `npx tsc --noEmit` runs strict TypeScript validation independently.
+- `npm install` installs dependencies from `package-lock.json`.
+- `npm run dev` starts the local server at `http://localhost:3000`.
+- `npm run build` catches compilation and type errors.
+- `npm run start` serves the production build.
+- `npm run lint` checks TypeScript and TSX with zero warnings allowed.
+- `npm run prettier:check` verifies formatting; `npm run prettier:write` applies it.
+- `npx tsc --noEmit` runs strict TypeScript validation.
 
-## Coding Style & Naming Conventions
+## Coding style and naming conventions
 
-Use 2-space indentation, single quotes, no semicolons, and a 100-character line width, as defined in `.prettierrc.json`. The Tailwind Prettier plugin automatically sorts utility classes. Prefer the `@/` alias for imports from `src`. Name React components and their files in PascalCase (`ProjectCard.tsx`), hooks with a `use` prefix (`useMounted.ts`), and utilities/types descriptively in camelCase or PascalCase. Keep route-specific code near its route and extract shared behavior into existing module folders.
+Follow `.prettierrc.json`: 2-space indentation, single quotes, no semicolons, and 100-character lines. Tailwind classes sort through Prettier. Prefer the `@/` alias for `src` imports. Use PascalCase for components (`ProjectCard.tsx`), a `use` prefix for hooks (`useMounted.ts`), camelCase for utilities, and PascalCase for types.
 
-## Testing Guidelines
+## Product and design guardrails
 
-No automated test framework or coverage threshold is currently configured. Before submitting changes, run `npm run lint`, `npx tsc --noEmit`, and `npm run build`. Manually verify affected routes in both light and dark themes and at mobile and desktop widths. If adding tests, colocate them as `*.test.ts` or `*.test.tsx` and add the runner command to `package.json`.
+Treat `PRODUCT.md` and `DESIGN.md` as sources of truth. Preserve the LOUI**SITE** identity, Louis Gustavo as author, and a direct first-person voice. Lead with verifiable work and balance frontend and backend experience. Never invent employers, clients, metrics, awards, testimonials, credentials, or project outcomes.
 
-## Commit & Pull Request Guidelines
+Maintain the warm neutral, violet-accented system in both themes. Use semantic light/dark token pairs without changing hierarchy or geometry. Reserve violet for interactive signals. Use Geist for reading and Geist Mono for labels or code. Follow the 4 px spacing rhythm and 6 px, 8 px, 12 px, and 16 px radius scale. Prefer borders, tone, translucency, and blur over heavy shadows. Preserve keyboard focus, reduced motion, responsive layouts, and narrow reading widths.
 
-Recent history generally uses Conventional Commit prefixes such as `feat:`, `feat(blog):`, `fix(sitemap):`, and `chore:`. Write imperative, focused subjects and include a scope when useful. Pull requests should explain the user-visible change, link relevant issues, list validation performed, and include before/after screenshots for visual work. Keep unrelated refactors out of feature or fix PRs.
+## Testing guidelines
+
+No automated test framework or coverage target exists. Run `npm run lint`, `npx tsc --noEmit`, and `npm run build`. Check affected routes in both themes, at mobile and desktop widths, with keyboard navigation and reduced motion. Name future tests `*.test.ts` or `*.test.tsx`.
+
+## Commit and pull request guidelines
+
+Recent history uses prefixes such as `feat:`, `feat(blog):`, `fix(sitemap):`, and `chore:`. Write imperative, focused subjects and add a scope when useful. Pull requests must explain the visible change, link relevant issues, list validation, and include before-and-after screenshots for visual work. Keep unrelated refactors in separate pull requests.

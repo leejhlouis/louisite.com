@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-29T09:20:59.7179477Z",
+  "title": "Design System: louisite",
+  "extensions": {
+    "colorMeta": {
+      "canvas-light": {
+        "role": "neutral",
+        "displayName": "Warm Canvas",
+        "canonical": "#f6f3ed",
+        "tonalRamp": ["#0d0c11", "#1b1821", "#201b27", "#3d3745", "#635b6c", "#aba2b5", "#d2cad6", "#f6f3ed"]
+      },
+      "surface-light": {
+        "role": "neutral",
+        "displayName": "Warm Surface",
+        "canonical": "#fcfaf6",
+        "tonalRamp": ["#0d0c11", "#1b1821", "#201b27", "#3d3745", "#635b6c", "#aba2b5", "#f6f3ed", "#fcfaf6"]
+      },
+      "elevated-light": {
+        "role": "neutral",
+        "displayName": "Elevated White",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#0d0c11", "#1b1821", "#201b27", "#3d3745", "#635b6c", "#d2cad6", "#fcfaf6", "#ffffff"]
+      },
+      "ink-light": {
+        "role": "neutral",
+        "displayName": "Violet Ink",
+        "canonical": "#201b27",
+        "tonalRamp": ["#0d0c11", "#141219", "#1b1821", "#201b27", "#3d3745", "#635b6c", "#aba2b5", "#f4f0f8"]
+      },
+      "muted-light": {
+        "role": "neutral",
+        "displayName": "Muted Plum Gray",
+        "canonical": "#635b6c",
+        "tonalRamp": ["#0d0c11", "#141219", "#1b1821", "#201b27", "#3d3745", "#635b6c", "#aba2b5", "#f4f0f8"]
+      },
+      "line-light": {
+        "role": "neutral",
+        "displayName": "Warm Lavender Line",
+        "canonical": "#d2cad6",
+        "tonalRamp": ["#0d0c11", "#1b1821", "#201b27", "#3d3745", "#635b6c", "#aba2b5", "#d2cad6", "#f4f0f8"]
+      },
+      "signal-light": {
+        "role": "primary",
+        "displayName": "Signal Violet",
+        "canonical": "#6d28d9",
+        "tonalRamp": ["#2e1065", "#4c1d95", "#5b21b6", "#6d28d9", "#7c3aed", "#8b5cf6", "#c4b5fd", "#ede9fe"]
+      },
+      "canvas-dark": {
+        "role": "neutral",
+        "displayName": "Near-Black Canvas",
+        "canonical": "#0d0c11",
+        "tonalRamp": ["#0d0c11", "#141219", "#1b1821", "#201b27", "#3d3745", "#635b6c", "#aba2b5", "#f4f0f8"]
+      },
+      "surface-dark": {
+        "role": "neutral",
+        "displayName": "Dark Plum Surface",
+        "canonical": "#141219",
+        "tonalRamp": ["#0d0c11", "#141219", "#1b1821", "#201b27", "#3d3745", "#635b6c", "#aba2b5", "#f4f0f8"]
+      },
+      "elevated-dark": {
+        "role": "neutral",
+        "displayName": "Elevated Plum",
+        "canonical": "#1b1821",
+        "tonalRamp": ["#0d0c11", "#141219", "#1b1821", "#201b27", "#3d3745", "#635b6c", "#aba2b5", "#f4f0f8"]
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Soft White Ink",
+        "canonical": "#f4f0f8",
+        "tonalRamp": ["#0d0c11", "#1b1821", "#201b27", "#3d3745", "#635b6c", "#aba2b5", "#d2cad6", "#f4f0f8"]
+      },
+      "muted-dark": {
+        "role": "neutral",
+        "displayName": "Muted Lavender Gray",
+        "canonical": "#aba2b5",
+        "tonalRamp": ["#0d0c11", "#141219", "#1b1821", "#201b27", "#3d3745", "#635b6c", "#aba2b5", "#f4f0f8"]
+      },
+      "line-dark": {
+        "role": "neutral",
+        "displayName": "Dark Lavender Line",
+        "canonical": "#3d3745",
+        "tonalRamp": ["#0d0c11", "#141219", "#1b1821", "#201b27", "#3d3745", "#635b6c", "#aba2b5", "#f4f0f8"]
+      },
+      "signal-dark": {
+        "role": "primary",
+        "displayName": "Luminous Violet",
+        "canonical": "#c4a0ff",
+        "tonalRamp": ["#2e1065", "#4c1d95", "#5b21b6", "#6d28d9", "#7c3aed", "#a78bfa", "#c4a0ff", "#ede9fe"]
+      },
+      "action-light": {
+        "role": "primary",
+        "displayName": "Action Violet",
+        "canonical": "#7c3aed",
+        "tonalRamp": ["#2e1065", "#4c1d95", "#5b21b6", "#6d28d9", "#7c3aed", "#8b5cf6", "#c4b5fd", "#ede9fe"]
+      },
+      "action-light-hover": {
+        "role": "primary",
+        "displayName": "Action Violet Hover",
+        "canonical": "#8b5cf6",
+        "tonalRamp": ["#2e1065", "#4c1d95", "#5b21b6", "#6d28d9", "#7c3aed", "#8b5cf6", "#c4b5fd", "#ede9fe"]
+      },
+      "action-dark": {
+        "role": "primary",
+        "displayName": "Light Action Violet",
+        "canonical": "#a78bfa",
+        "tonalRamp": ["#2e1065", "#4c1d95", "#5b21b6", "#6d28d9", "#7c3aed", "#a78bfa", "#c4b5fd", "#ede9fe"]
+      },
+      "action-dark-hover": {
+        "role": "primary",
+        "displayName": "Light Action Violet Hover",
+        "canonical": "#c4b5fd",
+        "tonalRamp": ["#2e1065", "#4c1d95", "#5b21b6", "#6d28d9", "#7c3aed", "#a78bfa", "#c4b5fd", "#ede9fe"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Homepage hero statement." },
+      "headline": { "displayName": "Headline", "purpose": "Page-level headings." },
+      "title": { "displayName": "Title", "purpose": "Section headings." },
+      "body": { "displayName": "Body", "purpose": "Interface and long-form reading text." },
+      "label": { "displayName": "Technical Label", "purpose": "Eyebrows, badges, and code-oriented metadata." }
+    },
+    "shadows": [
+      {
+        "name": "editorial-light",
+        "value": "0 18px 60px rgb(20 12 38 / 0.08)",
+        "purpose": "Ambient depth for floating light-theme surfaces, menus, and code blocks."
+      },
+      {
+        "name": "editorial-dark",
+        "value": "0 24px 80px rgb(0 0 0 / 0.28)",
+        "purpose": "Ambient depth for floating dark-theme surfaces, menus, and code blocks."
+      },
+      {
+        "name": "card-rest",
+        "value": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+        "purpose": "Low resting elevation for project cards and filled controls."
+      },
+      {
+        "name": "card-hover",
+        "value": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+        "purpose": "Stronger elevation after a project card lifts on hover."
+      }
+    ],
+    "motion": [
+      {
+        "name": "theme-color",
+        "value": "200ms ease",
+        "purpose": "Body background and text color changes between themes."
+      },
+      {
+        "name": "interaction-standard",
+        "value": "300ms ease-in-out",
+        "purpose": "Buttons, underlines, icons, borders, and compact state changes."
+      },
+      {
+        "name": "entry-reveal",
+        "value": "560ms cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Opacity and 18px upward reveal for sections and staged elements."
+      },
+      {
+        "name": "gradient-rotation",
+        "value": "15deg every 75ms",
+        "purpose": "Rotating gradient angle for selected hero-highlight text."
+      }
+    ],
+    "breakpoints": [
+      { "name": "xs", "value": "480px" },
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "2xl", "value": "1536px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary-light",
+      "description": "Filled violet action used for the leading call to action.",
+      "html": "<button class=\"ds-btn-primary\">VIEW PROJECTS <span aria-hidden=\"true\">↓</span></button>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; gap:6px; width:max-content; padding:8px 16px; border:1px solid rgb(124 58 237 / .2); border-radius:12px; background:#7c3aed; color:#fff; font:500 16px/1.75 Geist,system-ui,sans-serif; box-shadow:0 1px 2px rgb(0 0 0 / .05); transition:transform 300ms ease-in-out,background-color 300ms ease-in-out; } .ds-btn-primary:hover { transform:translateY(-2px); background:#8b5cf6; } .ds-btn-primary:focus-visible { outline:2px solid #6d28d9; outline-offset:4px; }"
+    },
+    {
+      "name": "Secondary Filled Button",
+      "kind": "button",
+      "refersTo": "button-primary-light",
+      "description": "Translucent companion action that gains a violet border and label on hover.",
+      "html": "<button class=\"ds-btn-secondary\">ABOUT ME</button>",
+      "css": ".ds-btn-secondary { display:inline-flex; align-items:center; width:max-content; padding:8px 16px; border:1px solid rgb(100 116 139 / .25); border-radius:12px; background:rgb(255 255 255 / .2); color:#334155; font:500 16px/1.75 Geist,system-ui,sans-serif; transition:transform 300ms ease-in-out,border-color 300ms ease-in-out,color 300ms ease-in-out; } .ds-btn-secondary:hover { transform:translateY(-2px); border-color:#7c3aed; color:#7c3aed; } .ds-btn-secondary:focus-visible { outline:2px solid #6d28d9; outline-offset:4px; }"
+    },
+    {
+      "name": "Ghost Navigation Link",
+      "kind": "nav",
+      "refersTo": "button-ghost",
+      "description": "Compact navigation action with a left-to-right underline reveal.",
+      "html": "<a class=\"ds-nav-link\" href=\"#\"><span>PROJECTS</span></a>",
+      "css": ".ds-nav-link { position:relative; display:inline-flex; width:max-content; padding:2px 4px; border-radius:6px; color:#201b27; font:500 16px/1.75 Geist,system-ui,sans-serif; text-decoration:none; } .ds-nav-link span { position:relative; } .ds-nav-link span::after { content:\"\"; position:absolute; right:0; bottom:0; left:0; height:1px; width:0; background:#7c3aed; transition:width 300ms ease-in-out; } .ds-nav-link:hover { color:#7c3aed; } .ds-nav-link:hover span::after { width:100%; } .ds-nav-link:focus-visible { outline:2px solid #6d28d9; outline-offset:4px; }"
+    },
+    {
+      "name": "Icon Button",
+      "kind": "button",
+      "description": "Bordered translucent square used for theme, menu, and project-link actions.",
+      "html": "<button class=\"ds-icon-button\" aria-label=\"Toggle theme\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"4\"></circle><path d=\"M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41\"></path></svg></button>",
+      "css": ".ds-icon-button { display:inline-flex; align-items:center; justify-content:center; padding:8px; border:1px solid rgb(100 116 139 / .2); border-radius:12px; background:rgb(241 245 249 / .1); color:#334155; transition:border-color 200ms,color 200ms; } .ds-icon-button:hover { border-color:#7c3aed; color:#7c3aed; } .ds-icon-button:focus-visible { outline:2px solid #6d28d9; outline-offset:4px; }"
+    },
+    {
+      "name": "Technology Badge",
+      "kind": "chip",
+      "refersTo": "badge-light",
+      "description": "Compact monospace technology label with a low-opacity violet field.",
+      "html": "<span class=\"ds-badge\">NEXT.JS</span>",
+      "css": ".ds-badge { display:inline-flex; width:max-content; padding:4px 8px; border-radius:8px; background:rgb(124 58 237 / .1); color:#7c3aed; font:600 12px/1.4 \"Geist Mono\",ui-monospace,monospace; transition:background-color 200ms; }"
+    },
+    {
+      "name": "Active Filter Badge",
+      "kind": "chip",
+      "refersTo": "badge-light",
+      "description": "Selected project filter using a solid violet fill and contrasting text.",
+      "html": "<button class=\"ds-badge-active\" aria-pressed=\"true\">REACT</button>",
+      "css": ".ds-badge-active { display:inline-flex; width:max-content; padding:4px 8px; border:0; border-radius:8px; background:#7c3aed; color:#fff; font:600 12px/1.4 \"Geist Mono\",ui-monospace,monospace; } .ds-badge-active:focus-visible { outline:2px solid #6d28d9; outline-offset:4px; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "project-card-light",
+      "description": "Translucent, bordered project summary that lifts and strengthens on hover.",
+      "html": "<article class=\"ds-project-card\"><div class=\"ds-project-icon\" aria-hidden=\"true\">🌐</div><h3>louisite</h3><p>Personal portfolio built with React and TypeScript.</p><span class=\"ds-card-badge\">NEXT.JS</span></article>",
+      "css": ".ds-project-card { display:flex; flex-direction:column; min-height:220px; padding:24px; border:1px solid rgb(203 213 225 / .8); border-radius:16px; background:rgb(241 245 249 / .65); color:#334155; box-shadow:0 1px 2px rgb(0 0 0 / .05); font-family:Geist,system-ui,sans-serif; transition:transform 300ms,border-color 300ms,box-shadow 300ms; } .ds-project-card:hover { transform:translateY(-4px); border-color:rgb(124 58 237 / .3); box-shadow:0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -4px rgb(0 0 0 / .1); } .ds-project-card h3 { margin:16px 0 0; color:#201b27; font-size:18px; font-weight:600; letter-spacing:-.025em; } .ds-project-card p { margin:12px 0 24px; font-size:14px; line-height:24px; } .ds-project-icon { display:flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:12px; background:rgb(255 255 255 / .4); } .ds-card-badge { align-self:flex-start; padding:4px 8px; border-radius:8px; background:rgb(124 58 237 / .1); color:#7c3aed; font:600 12px/1.4 \"Geist Mono\",ui-monospace,monospace; }"
+    },
+    {
+      "name": "Navigation Surface",
+      "kind": "nav",
+      "description": "Fixed translucent navigation with a subtle divider and strong backdrop blur.",
+      "html": "<nav class=\"ds-navbar\"><a class=\"ds-wordmark\" href=\"#\">loui<strong>site</strong></a><div class=\"ds-navbar-links\"><a href=\"#\">BLOG</a><a href=\"#\">PROJECTS</a><a href=\"#\">ABOUT</a></div></nav>",
+      "css": ".ds-navbar { display:flex; align-items:center; justify-content:space-between; padding:16px 24px; border-bottom:1px solid rgb(100 116 139 / .1); background:rgb(246 243 237 / .72); color:#201b27; backdrop-filter:blur(24px); font-family:Geist,system-ui,sans-serif; } .ds-wordmark { color:#2e1065; font-size:24px; font-weight:300; text-decoration:none; } .ds-wordmark strong { font-weight:700; } .ds-navbar-links { display:flex; gap:8px; } .ds-navbar-links a { padding:2px 4px; border-radius:6px; color:#201b27; font-weight:500; text-decoration:none; transition:color 300ms; } .ds-navbar-links a:hover { color:#7c3aed; } .ds-navbar a:focus-visible { outline:2px solid #6d28d9; outline-offset:4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Warm Technical Portfolio",
+    "overview": "This name describes the system already present in the code: a technical portfolio softened by warm neutral canvases, translucent surfaces, rounded geometry, and violet illumination. The visual hierarchy stays direct and legible so projects and professional evidence remain more prominent than decoration.\n\nThe interface uses a light/dark token pair rather than separate identities. Both themes preserve the same hierarchy, spacing, component silhouettes, and interaction grammar. Violet acts as the single signal family across links, selection, focus, highlights, active states, and atmospheric background light.",
+    "keyCharacteristics": [
+      "Warm light neutrals paired with near-black violet-tinted dark neutrals.",
+      "Geist for primary reading and Geist Mono for technical labels and introductory text.",
+      "Rounded, lightly translucent surfaces with thin borders and selective ambient shadow.",
+      "One violet action and signal family across both themes.",
+      "Short upward transitions and underline reveals for interactive feedback."
+    ],
+    "rules": [
+      { "name": "The Paired-Role Rule", "body": "Every theme change swaps semantic values, not component structure or hierarchy.", "section": "colors" },
+      { "name": "The Violet Signal Rule", "body": "Violet is the only recurring chromatic action family; neutral surfaces carry the rest of the interface.", "section": "colors" },
+      { "name": "The Mono-as-Signal Rule", "body": "Monospace is reserved for technical labels, introductory accents, badges, and code rather than long-form body copy.", "section": "typography" },
+      { "name": "The Narrow Reading Rule", "body": "Articles and biography content narrow independently of the broader project grid so line length remains comfortable.", "section": "layout" },
+      { "name": "The Layer-before-Shadow Rule", "body": "Use border, tone, translucency, or blur before adding elevation; stronger shadow belongs to floating or interactive states.", "section": "elevation" },
+      { "name": "The Nested Radius Rule", "body": "Smaller elements inside a larger rounded container use the next smaller radius step, as seen in project cards, icon wells, and link controls.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do use semantic light/dark token pairs so role and hierarchy survive theme changes.",
+      "Do use violet for focus, active, selection, link, and highlight states.",
+      "Do keep reading content narrower than project and landing-page grids.",
+      "Do preserve visible keyboard focus and the reduced-motion override.",
+      "Do use the established 6px, 8px, 12px, and 16px radius progression."
+    ],
+    "donts": [
+      "Don't introduce unrelated accent families into routine controls or navigation.",
+      "Don't apply the animated gradient treatment to body text or every heading.",
+      "Don't use heavy shadows as the default method of separating surfaces.",
+      "Don't replace monospace body copy with long technical passages; keep it as a label and code signal.",
+      "Don't change component geometry between light and dark themes."
+    ]
+  }
+}
