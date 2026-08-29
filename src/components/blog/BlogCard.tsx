@@ -1,42 +1,37 @@
-import { lazy } from 'react'
-import clsx from 'clsx'
 import Link from 'next/link'
-import ArticleProps from '@/types/ArticleProps'
-
-const Heading3 = lazy(() => import('@/components/ui/heading/Heading3'))
-const Card = lazy(() => import('@/components/ui/Card'))
+import type { PostMetadata } from '@/types/Post'
+import Badge from '@/components/ui/Badge'
+import formatPostDate from '@/utils/formatPostDate'
 
 export default function BlogCard({
-  link,
   slug,
   title,
-  datePublished,
-  minRead,
-  preview
-}: ArticleProps) {
-  const href = slug && slug.length > 0 ? `/blog/${slug}` : link
-
+  description,
+  publishedAt,
+  readingTime,
+  tags
+}: PostMetadata) {
   return (
-    <Link href={href} className='group' target={href === link ? '_blank' : '_self'}>
-      <Card>
-        <Heading3
-          className={clsx(
-            'text-primary-dark dark:text-white',
-            'group-hover:text-primary-lighter-dark group-hover:dark:text-primary-light',
-            'group-hover:font',
-            '!pb-2'
-          )}
-        >
+    <Link
+      href={`/blog/${slug}`}
+      className='group block border-t border-slate-500/20 py-6 first:border-t-0 dark:border-slate-600/30'
+    >
+      <div>
+        <h2 className='text-xl font-semibold text-violet-950 transition-colors group-hover:text-primary-dark dark:text-violet-50 dark:group-hover:text-primary-light sm:text-2xl'>
           {title}
-        </Heading3>
-        <span className='text-sm text-muted-dark dark:text-muted'>
-          {datePublished} • {`${minRead} min read`}
-        </span>
-        <p className='pb-0 pt-4 text-muted-dark dark:text-muted'>
-          {preview}
-          {'...'}
+        </h2>
+        <p className='mt-2 pb-0 text-sm'>
+          {formatPostDate(publishedAt)} · {readingTime} min read
         </p>
-      </Card>
+        <p className='mt-3 pb-0 leading-7'>{description}</p>
+        <ul className='mt-4 flex flex-wrap gap-2 text-xs'>
+          {tags.map(tag => (
+            <li key={tag}>
+              <Badge>{tag}</Badge>
+            </li>
+          ))}
+        </ul>
+      </div>
     </Link>
   )
 }

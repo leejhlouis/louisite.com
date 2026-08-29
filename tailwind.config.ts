@@ -9,19 +9,38 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: {
-          light: colors.blue['300'],
-          lighter: colors.blue['200'],
-          dark: colors.indigo['600'],
-          'lighter-dark': colors.indigo['500']
+        canvas: 'rgb(var(--canvas) / <alpha-value>)',
+        surface: 'rgb(var(--surface) / <alpha-value>)',
+        elevated: 'rgb(var(--elevated) / <alpha-value>)',
+        ink: 'rgb(var(--ink) / <alpha-value>)',
+        muted: 'rgb(var(--muted) / <alpha-value>)',
+        line: 'rgb(var(--line) / <alpha-value>)',
+        signal: 'rgb(var(--signal) / <alpha-value>)',
+        default: {
+          dark: colors.slate['700'],
+          light: colors.slate['400']
         },
-        muted: {
-          DEFAULT: colors.slate['300'],
-          dark: colors.slate['700']
+        emphasis: {
+          dark: colors.black,
+          light: colors.white
+        },
+        primary: {
+          light: colors.violet['400'],
+          lighter: colors.violet['300'],
+          dark: colors.violet['600'],
+          'lighter-dark': colors.violet['500']
         }
       },
       spacing: {
         18: '4.5rem'
+      },
+      fontFamily: {
+        sans: ['var(--font-geist)', ...defaultTheme.fontFamily.sans],
+        mono: ['var(--font-geist-mono)', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
+      },
+      boxShadow: {
+        editorial: '0 18px 60px rgb(20 12 38 / 0.08)',
+        'editorial-dark': '0 24px 80px rgb(0 0 0 / 0.28)'
       }
     },
     container: {

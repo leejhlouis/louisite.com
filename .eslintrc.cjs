@@ -18,5 +18,12 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }]
-  }
+  },
+  overrides: [
+    {
+      // Next.js route modules intentionally colocate metadata and route helpers with components.
+      files: ['src/app/**/*.{ts,tsx}'],
+      rules: { 'react-refresh/only-export-components': 'off' }
+    }
+  ]
 }

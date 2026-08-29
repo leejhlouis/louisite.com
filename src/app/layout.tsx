@@ -1,9 +1,21 @@
 import { Metadata } from 'next'
+import { Geist, Geist_Mono } from 'next/font/google'
 import ScrollToTopFAB from '@/components/common/ScrollToTopFAB'
 import '@/styles/main.css'
+import BackgroundGradients from '@/components/layouts/BackgroundGradients'
 import PageWrapper from '@/components/layouts/PageWrapper'
 import Navbar from '@/components/layouts/Navbar'
 import Footer from '@/components/layouts/Footer'
+
+const geist = Geist({
+  subsets: ['latin'],
+  variable: '--font-geist'
+})
+
+const geistMono = Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-geist-mono'
+})
 
 export const metadata: Metadata = {
   title: 'Louis Gustavo | Software Engineer',
@@ -32,9 +44,10 @@ export const metadata: Metadata = {
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en' className='dark'>
-      <body className='bg-[#c5d1ff] text-slate-800 dark:bg-[#110627] dark:text-white'>
-        <div id='root' className='bg-light dark:bg-dark'>
+    <html lang='en' suppressHydrationWarning className={`${geist.variable} ${geistMono.variable}`}>
+      <body className='overflow-x-hidden bg-slate-200 text-default-dark antialiased dark:bg-slate-950 dark:text-default-light'>
+        <BackgroundGradients />
+        <div className='bg-light dark:bg-dark relative z-10 min-h-screen'>
           <PageWrapper>
             <Navbar />
             {children}

@@ -1,34 +1,38 @@
-import clsx from 'clsx'
+import { cva } from 'class-variance-authority'
 import UnderlineProps from '@/types/components/UnderlineProps'
 
-export default function SlidingInUnderline({
-  children,
-  type,
-  height
-}: UnderlineProps) {
-  const isPrimary = (type: string | undefined): boolean => {
-    if (!type) {
-      return true
+const underlineBarVariants = cva(
+  'absolute inset-x-0 bottom-0.5 w-0 transition-width duration-300 group-hover/underline:w-full',
+  {
+    variants: {
+      type: {
+        primary: 'bg-signal',
+        default: 'bg-ink',
+        secondary: 'bg-signal',
+        unset: 'bg-signal'
+      },
+      height: {
+        lg: 'h-0.5',
+        sm: 'h-[0.075rem]'
+      }
+    },
+    defaultVariants: {
+      type: 'unset',
+      height: 'sm'
     }
-    return type === 'primary'
   }
+)
 
+export default function SlidingInUnderline({ children, type, height }: UnderlineProps) {
   return (
     <span className='group/underline relative inline-block'>
       {children}
       <span
-        className={clsx(
-          {
-            'bg-primary-lighter-dark dark:bg-primary-lighter': isPrimary(type),
-            'bg-primary-dark dark:bg-primary-light': !isPrimary(type),
-            'h-0.5': height === 'lg',
-            'h-[0.075rem]': height !== 'lg'
-          },
-          `absolute inset-x-0 bottom-0.5`,
-          'transition-width duration-300',
-          'w-0 group-hover/underline:w-full'
-        )}
-      ></span>
+        className={underlineBarVariants({
+          type: type ?? 'unset',
+          height: height === 'lg' ? 'lg' : 'sm'
+        })}
+      />
     </span>
   )
 }

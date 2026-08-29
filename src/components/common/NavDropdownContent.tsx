@@ -4,33 +4,27 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 import { navItems } from '@/constants'
-import NavItemsProps from '@/types/NavItemsProps'
+import type NavItemsProps from '@/types/NavItemsProps'
 
 export default function NavDropdownContent() {
   const pathname = usePathname()
 
-  const links = navItems.map((item: NavItemsProps, index: number) => {
+  const links = navItems.map((item: NavItemsProps) => {
     const isActive = pathname === item.href
 
     return (
-      <Link
-        key={index}
-        href={item.href}
-        className={clsx('w-full', 'hover:color-[inherit] hover:no-underline', {
-          'font-bold': isActive,
-          'font-normal': !isActive
-        })}
-      >
-        <li
+      <li key={item.href}>
+        <Link
+          href={item.href}
+          aria-current={isActive ? 'page' : undefined}
           className={clsx(
-            'cursor-pointer',
-            'flex w-full px-2 py-1',
-            'hover:bg-slate-300/50 hover:dark:bg-slate-950/50'
+            'flex w-full cursor-pointer px-2 py-1 hover:bg-elevated hover:text-signal hover:no-underline',
+            { 'font-bold': isActive, 'font-normal': !isActive }
           )}
         >
           <span>{item.name}</span>
-        </li>
-      </Link>
+        </Link>
+      </li>
     )
   })
 
@@ -39,8 +33,8 @@ export default function NavDropdownContent() {
       className={clsx(
         'absolute right-0',
         'mt-2 py-2',
-        'bg-slate-200/95 dark:bg-slate-900/95',
-        'flex w-32 flex-col rounded-lg shadow-lg'
+        'border border-line bg-surface',
+        'flex w-36 flex-col rounded-xl p-1 shadow-editorial dark:shadow-editorial-dark'
       )}
     >
       {links}

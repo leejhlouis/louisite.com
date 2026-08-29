@@ -1,23 +1,23 @@
-import { lazy } from 'react'
-import clsx from 'clsx'
+import { cva } from 'class-variance-authority'
 import InlineLinkProps from '@/types/components/InlineLinkProps'
+import SlidingInUnderline from '@/components/ui/SlidingInUnderline'
 
-const SlidingInUnderline = lazy(() => import('@/components/ui/SlidingInUnderline'))
+const inlineLinkVariants = cva('cursor-pointer font-semibold duration-200', {
+  variants: {
+    inverted: {
+      true: 'text-ink',
+      false: 'text-signal'
+    }
+  },
+  defaultVariants: {
+    inverted: false
+  }
+})
 
-export default function InlineLink({ href, children }: InlineLinkProps) {
+export default function InlineLink({ href, children, inverted }: InlineLinkProps) {
   return (
-    <a
-      href={href}
-      target='_blank'
-      rel='noreferrer'
-      className={clsx(
-        'cursor-pointer',
-        'font-semibold duration-300',
-        'text-primary-dark hover:text-primary-lighter-dark',
-        'dark:text-primary-light dark:hover:text-primary-lighter'
-      )}
-    >
-      <SlidingInUnderline>{children}</SlidingInUnderline>
+    <a href={href} target='_blank' rel='noreferrer' className={inlineLinkVariants({ inverted })}>
+      <SlidingInUnderline type={inverted ? 'default' : 'primary'}>{children}</SlidingInUnderline>
     </a>
   )
 }

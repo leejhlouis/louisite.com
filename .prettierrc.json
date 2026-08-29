@@ -9,5 +9,6 @@
   "arrowParens": "avoid",
   "singleAttributePerLine": false,
   "tailwindConfig": "./tailwind.config.ts",
+  "tailwindFunctions": ["cva", "cx", "clsx", "twMerge"],
   "plugins": ["prettier-plugin-tailwindcss"]
 }

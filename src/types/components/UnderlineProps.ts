@@ -2,6 +2,6 @@ export default interface UnderlineProps {
   id?: string
   className?: string
   children?: React.ReactNode
-  type?: string
-  height?: string
+  type?: 'primary' | 'default' | 'secondary'
+  height?: 'lg' | 'sm'
 }

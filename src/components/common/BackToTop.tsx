@@ -1,22 +1,16 @@
 'use client'
 
 import { RiArrowUpLine } from '@remixicon/react'
-import { lazy } from 'react'
-
-const PrimaryButton = lazy(() => import('@/components/ui/button/PrimaryButton'))
+import Button from '@/components/ui/button/Button'
 
 export default function BackToTop() {
   const scrollToTop = (): void => {
-    window.scrollTo(0, 0)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
-    <PrimaryButton
-      onClick={scrollToTop}
-      className='mx-auto mb-6'
-      icon={<RiArrowUpLine />}
-    >
+    <Button onClick={scrollToTop} icon={<RiArrowUpLine />}>
       Back to top
-    </PrimaryButton>
+    </Button>
   )
 }

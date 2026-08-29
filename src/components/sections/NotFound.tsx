@@ -6,7 +6,7 @@ import useEventListener from '@/hooks/useEventListener'
 import useMounted from '@/hooks/useMounted'
 import { RiArrowLeftLine } from '@remixicon/react'
 
-const PrimaryButton = lazy(() => import('@/components/ui/button/PrimaryButton'))
+const Button = lazy(() => import('@/components/ui/button/Button'))
 const Heading1 = lazy(() => import('@/components/ui/heading/Heading1'))
 const Section = lazy(() => import('@/components/layouts/Section'))
 
@@ -34,33 +34,22 @@ export default function NotFound() {
           className='flex h-[90vh] flex-col justify-center md:items-center'
           maxWidthClass='md:max-w-screen-md'
         >
-          {/* prettier-ignore */}
-          <Heading1 className={clsx(
-            'animate-fade-in', 
-            'text-primary-dark dark:text-white',
-            'text-4xl md:text-center md:text-5xl'
+          <Heading1
+            className={clsx(
+              'animate-fade-in',
+              'text-violet-950 dark:text-violet-50',
+              'text-4xl md:text-center md:text-5xl'
             )}
           >
             The page is not available
           </Heading1>
-          {/* prettier-ignore */}
-          <p
-            className={clsx(
-              'animate-fade-in',
-              'mb-4 text-lg md:text-center md:text-xl'
-            )}
-          >
+          <p className={clsx('animate-fade-in', 'mb-4 text-lg md:text-center md:text-xl')}>
             Oh, snap! You're in the middle of nowhere, but don't worry, returning home is just one
             click away.
           </p>
-          <PrimaryButton
-            icon={<RiArrowLeftLine />}
-            className='animate-fade-in pl-1 md:mx-auto'
-            inverted
-            href='/'
-          >
+          <Button icon={<RiArrowLeftLine />} className='animate-fade-in pl-1 md:mx-auto' href='/'>
             Go home
-          </PrimaryButton>
+          </Button>
         </Section>
       </div>
     </div>
