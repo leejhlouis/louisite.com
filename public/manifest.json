@@ -1,30 +1,34 @@
 {
   "name": "louisite",
   "short_name": "louisite",
+  "id": "/",
   "description": "Louis Gustavo is a Software Engineer at Traveloka specializing in building web interfaces and backend systems using Spring Boot, Next.js, Vue.js, React, Laravel, and more.",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "/assets/icons/favicon.ico",
       "sizes": "64x64 48x48 32x32 24x24 16x16",
       "type": "image/x-icon",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "android-chrome-192x192.png",
+      "src": "/assets/icons/android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "android-chrome-512x512.png",
+      "src": "/assets/icons/android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ],
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#110627",
-  "orientation": "portrait"
+  "display_override": ["window-controls-overlay", "standalone"],
+  "theme_color": "#f5f2ed",
+  "background_color": "#f5f2ed",
+  "lang": "en",
+  "categories": ["portfolio", "technology"]
 }

@@ -1,4 +1,5 @@
 import { posts } from '@/content/posts'
+import { siteConfig } from '@/constants/seo'
 
 const escapeXml = (value: string) =>
   value
@@ -9,22 +10,29 @@ const escapeXml = (value: string) =>
     .replace(/'/g, '&apos;')
 
 export function GET() {
-  const items = posts.map(post => `
+  const items = posts
+    .map(
+      post => `
     <item>
       <title>${escapeXml(post.title)}</title>
       <description>${escapeXml(post.description)}</description>
-      <link>https://louisite.com/blog/${post.slug}</link>
-      <guid>https://louisite.com/blog/${post.slug}</guid>
+      <link>${siteConfig.url}/blog/${post.slug}</link>
+      <guid isPermaLink="true">${siteConfig.url}/blog/${post.slug}</guid>
       <pubDate>${new Date(post.publishedAt).toUTCString()}</pubDate>
-    </item>`).join('')
+    </item>`
+    )
+    .join('')
 
   const feed = `<?xml version="1.0" encoding="UTF-8" ?>
-    <rss version="2.0">
+    <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
       <channel>
         <title>Louis Gustavo — Writing</title>
         <description>Notes on software engineering, interfaces, and building dependable products.</description>
-        <link>https://louisite.com/blog</link>
+        <link>${siteConfig.url}/blog</link>
+        <atom:link href="${siteConfig.url}/blog/rss" rel="self" type="application/rss+xml" />
         <language>en</language>
+        <managingEditor>${siteConfig.email} (Louis Gustavo)</managingEditor>
+        <webMaster>${siteConfig.email} (Louis Gustavo)</webMaster>
         ${items}
       </channel>
     </rss>`

@@ -1,6 +1,4 @@
-http://louisite.netlify.app/* http://louisite.com/:splat 301
+http://louisite.netlify.app/* https://louisite.com/:splat 301!
 https://louisite.netlify.app/* https://louisite.com/:splat 301
 
-/blog/rss  https://medium.com/@leejhlouis/feed  200
-
-/* /index.html 200
+/blog/how-i-build-my-portfolio-site-with-react-typescript-and-tailwind-css-479778cf2960 /blog/how-i-build-my-portfolio-site-with-react-typescript-and-tailwind-css 301

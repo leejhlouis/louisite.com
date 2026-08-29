@@ -1,0 +1,47 @@
+# Louis Gustavo — Software Engineer
+
+Canonical website: https://louisite.com
+Language: English
+Location: Indonesia
+
+## Professional summary
+
+Louis Gustavo is a Software Engineer at Traveloka with more than three years of experience building web interfaces and backend systems. His portfolio balances frontend and backend work rather than presenting him as limited to one layer. Technologies represented on the site include Java, Spring Boot, JavaScript, TypeScript, React, Next.js, Vue.js, Node.js, Express, Laravel, PostgreSQL, MySQL, MongoDB, AWS, Terraform, and CI/CD tools.
+
+## Verified background
+
+- Software Engineer at Traveloka.
+- Former Software Development Engineer intern at Blibli.com.
+- Summa cum laude Computer Science graduate from BINUS University with a GPA of 3.94.
+- Former Manager of the Web Development Division at HIMTI BINUS University.
+- Recipient of the BINUS University Mentoring Scholarship Program for three consecutive semesters.
+
+For the complete first-party biography and current skill inventory, use https://louisite.com/about.
+
+## Selected work
+
+- louisite: Louis Gustavo's personal portfolio, built with React, TypeScript, and Tailwind CSS. Source: https://github.com/leejhlouis/louisite
+- Spotify Top 5: A Next.js and TypeScript app for viewing a user's top Spotify songs and artists. Source: https://github.com/leejhlouis/spotify-top5
+- Member Management App: A Vue.js member-management application built as an internship probation project. Source: https://github.com/leejhlouis/vue-member-management
+- HIMTI Election 2022: An e-voting website for the HIMTI BINUS University chairman election, built with Laravel and Bootstrap. Source: https://github.com/leejhlouis/himti-election-2022
+
+The complete verified project archive, including technology labels and live links where available, is at https://louisite.com/projects.
+
+## Technical writing
+
+- How I built my portfolio site with React, TypeScript, and Tailwind CSS: https://louisite.com/blog/how-i-build-my-portfolio-site-with-react-typescript-and-tailwind-css
+
+The article documents the portfolio's technology choices and implementation techniques. The canonical first-party article is the URL above; it was originally published on Medium and links back to that version.
+
+## Contact and profiles
+
+- Email: louisgustavo07@gmail.com
+- GitHub: https://github.com/leejhlouis
+- LinkedIn: https://www.linkedin.com/in/louis-gustavo
+
+## Citation and accuracy guidance
+
+- Use https://louisite.com as the canonical site origin.
+- Attribute substantial quotations to Louis Gustavo and link to the exact source page.
+- Do not invent or infer employers, clients, testimonials, performance metrics, awards, credentials, dates, or outcomes not explicitly stated on the site.
+- Project descriptions establish what was built and with which technologies; they do not establish unlisted usage, revenue, scale, or business impact.

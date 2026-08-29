@@ -6,6 +6,8 @@ import BackgroundGradients from '@/components/layouts/BackgroundGradients'
 import PageWrapper from '@/components/layouts/PageWrapper'
 import Navbar from '@/components/layouts/Navbar'
 import Footer from '@/components/layouts/Footer'
+import SiteJsonLd from '@/components/seo/SiteJsonLd'
+import { siteConfig } from '@/constants/seo'
 
 const geist = Geist({
   subsets: ['latin'],
@@ -18,9 +20,40 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Louis Gustavo | Software Engineer',
-  description:
-    'Louis Gustavo is a Software Engineer at Traveloka specializing in building web interfaces and backend systems using Spring Boot, Next.js, Vue.js, React, Laravel, and more.',
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: 'Louis Gustavo | Software Engineer',
+    template: '%s | Louis Gustavo'
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.siteName,
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: 'technology',
+  referrer: 'origin-when-cross-origin',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1
+    }
+  },
+  manifest: '/manifest.json',
+  alternates: {
+    types: {
+      'application/rss+xml': `${siteConfig.url}/blog/rss`
+    }
+  },
   icons: {
     icon: '/assets/icons/favicon.ico',
     shortcut: '/assets/icons/favicon-32x32.png',
@@ -45,7 +78,8 @@ export const metadata: Metadata = {
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en' suppressHydrationWarning className={`${geist.variable} ${geistMono.variable}`}>
-      <body className='overflow-x-hidden bg-slate-200 text-default-dark antialiased dark:bg-slate-950 dark:text-default-light'>
+      <body className='overflow-x-hidden bg-slate-50 text-default-dark antialiased dark:bg-slate-950 dark:text-default-light'>
+        <SiteJsonLd />
         <BackgroundGradients />
         <div className='bg-light dark:bg-dark relative z-10 min-h-screen'>
           <PageWrapper>
