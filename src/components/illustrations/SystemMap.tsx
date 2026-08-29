@@ -43,11 +43,18 @@ export default function SystemMap({
   return (
     <svg
       viewBox='0 0 400 240'
-      role='img'
-      aria-label='Abstract software system illustration'
+      aria-hidden='true'
+      focusable='false'
       className={clsx('h-full w-full text-line', className)}
     >
-      <rect x='0.5' y='0.5' width='399' height='239' rx='20' className='fill-surface stroke-current' />
+      <rect
+        x='0.5'
+        y='0.5'
+        width='399'
+        height='239'
+        rx='20'
+        className='fill-surface stroke-current'
+      />
       {Array.from({ length: 9 }).map((_, index) => (
         <circle key={index} cx={28 + index * 44} cy='214' r='1.5' className='fill-muted/50' />
       ))}
@@ -56,8 +63,18 @@ export default function SystemMap({
       ))}
       {drawing.nodes.map((node, index) => (
         <g key={`${node.x}-${node.y}`}>
-          <circle cx={node.x} cy={node.y} r={index === 0 ? 18 : 12} className='fill-elevated stroke-current' />
-          <circle cx={node.x} cy={node.y} r={index === 0 ? 5 : 3.5} className='fill-signal text-signal' />
+          <circle
+            cx={node.x}
+            cy={node.y}
+            r={index === 0 ? 18 : 12}
+            className='fill-elevated stroke-current'
+          />
+          <circle
+            cx={node.x}
+            cy={node.y}
+            r={index === 0 ? 5 : 3.5}
+            className='fill-signal text-signal'
+          />
         </g>
       ))}
       <path d='M24 26h90' stroke='currentColor' strokeWidth='1.5' />

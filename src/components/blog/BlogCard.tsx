@@ -23,7 +23,7 @@ export default function BlogCard({
         <p className='mt-2 pb-0 text-sm'>
           {formatPostDate(publishedAt)} · {readingTime} min read
         </p>
-        <p className='mt-3 pb-0 leading-7'>{description}</p>
+        <p className='mt-3 pb-0 leading-7 text-muted'>{description}</p>
         <ul className='mt-4 flex flex-wrap gap-2 text-xs'>
           {tags.map(tag => (
             <li key={tag}>

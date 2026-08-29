@@ -2,18 +2,22 @@ import clsx from 'clsx'
 import ProjectProps from '@/types/components/ProjectProps'
 import Badge from '@/components/ui/Badge'
 
-export default function ProjectCard({ icon, title, description, techStacks, links }: ProjectProps) {
+export default function ProjectCard({
+  title,
+  description,
+  category,
+  techStacks,
+  links
+}: ProjectProps) {
   return (
     <article
       className={clsx(
-        'group flex h-full flex-col rounded-2xl border border-slate-300/80 bg-slate-100/65 p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary-dark/30 hover:shadow-lg dark:border-slate-600/20 dark:bg-slate-600/10 dark:hover:border-slate-600/30 dark:hover:bg-slate-600/20 sm:p-6'
+        'flex h-full flex-col rounded-2xl border border-line bg-surface/80 p-5 transition-colors duration-300 hover:border-signal/50 sm:p-6'
       )}
     >
       <div className='mb-5 flex items-start justify-between gap-4'>
-        <div className='flex h-10 w-10 items-center justify-center rounded-xl bg-white/40 text-lg dark:bg-slate-600/20'>
-          {icon}
-        </div>
-        <div className='flex gap-2'>
+        <p className='eyebrow pb-0'>{category}</p>
+        <div className='flex flex-wrap justify-end gap-2'>
           {links.map(link => (
             <a
               key={link.url}
@@ -21,19 +25,16 @@ export default function ProjectCard({ icon, title, description, techStacks, link
               target='_blank'
               rel='noreferrer'
               aria-label={`${link.label}: ${title}`}
-              className='flex h-8 w-8 items-center justify-center rounded-lg border border-slate-500/20 transition-colors hover:border-primary-dark hover:text-primary-dark dark:border-slate-600/30 dark:hover:border-primary-light dark:hover:text-primary-light'
+              className='min-h-11 flex items-center gap-2 rounded-lg border border-line px-3 text-sm font-semibold text-muted transition-colors hover:border-signal hover:text-signal'
             >
               {link.icon}
+              <span>{link.label}</span>
             </a>
           ))}
         </div>
       </div>
-      <h3 className='text-lg font-semibold tracking-tight text-emphasis-dark dark:text-emphasis-light'>
-        {title}
-      </h3>
-      <div className='mt-3 flex-1 text-sm leading-6 text-default-dark dark:text-default-light'>
-        {description}
-      </div>
+      <h3 className='text-lg font-semibold tracking-tight text-ink'>{title}</h3>
+      <div className='mt-3 flex-1 text-sm leading-6 text-muted'>{description}</div>
       <ul className='mt-6 flex flex-wrap gap-2'>
         {techStacks.map(tech => (
           <li key={tech}>

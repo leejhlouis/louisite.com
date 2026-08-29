@@ -6,7 +6,13 @@ import clsx from 'clsx'
 import { navItems } from '@/constants'
 import type NavItemsProps from '@/types/NavItemsProps'
 
-export default function NavDropdownContent() {
+export default function NavDropdownContent({
+  id,
+  onNavigate
+}: {
+  id: string
+  onNavigate: () => void
+}) {
   const pathname = usePathname()
 
   const links = navItems.map((item: NavItemsProps) => {
@@ -16,6 +22,7 @@ export default function NavDropdownContent() {
       <li key={item.href}>
         <Link
           href={item.href}
+          onClick={onNavigate}
           aria-current={isActive ? 'page' : undefined}
           className={clsx(
             'flex w-full cursor-pointer px-2 py-1 hover:bg-elevated hover:text-signal hover:no-underline',
@@ -30,6 +37,7 @@ export default function NavDropdownContent() {
 
   return (
     <ul
+      id={id}
       className={clsx(
         'absolute right-0',
         'mt-2 py-2',

@@ -1,21 +1,30 @@
 import clsx from 'clsx'
+import { forwardRef, type ButtonHTMLAttributes } from 'react'
 import ButtonProps from '@/types/components/buttons/ButtonProps'
 
-export default function IconButton({ onClick, className, screenReaderText, icon }: ButtonProps) {
+type IconButtonProps = ButtonProps &
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof ButtonProps | 'children'>
+
+const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconButton(
+  { onClick, className, screenReaderText, icon, ...buttonProps },
+  ref
+) {
   return (
     <button
+      ref={ref}
+      type='button'
       onClick={onClick}
+      {...buttonProps}
       className={clsx(
         className,
-        'group rounded-xl border border-slate-500/20 bg-slate-100/10 p-2 text-default-dark dark:border-slate-600/30 dark:bg-slate-600/10 dark:text-default-light',
-        'transition-colors duration-200 hover:border-primary-dark hover:text-primary-dark dark:hover:border-primary-light dark:hover:text-primary-light'
+        'group flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-surface/70 text-ink',
+        'transition-colors duration-200 hover:border-signal hover:text-signal'
       )}
     >
-      <p className='sr-only'>{screenReaderText}</p>
-
-      <span className='transition-colors group-hover:text-primary-dark dark:group-hover:text-primary-light'>
-        {icon}
-      </span>
+      <span className='sr-only'>{screenReaderText}</span>
+      <span className='transition-colors group-hover:text-signal'>{icon}</span>
     </button>
   )
-}
+})
+
+export default IconButton

@@ -46,18 +46,6 @@ const filters: string[] = [
 
 const projects: ProjectProps[] = [
   {
-    slug: 'louisite',
-    icon: '🌐',
-    featured: true,
-    title: 'louisite',
-    description:
-      'My all-new personal website—this is the second and latest iteration—built with React and TypeScript.',
-    techStacks: ['React', 'TypeScript', 'Tailwind CSS'],
-    otherTechStacks: ['HTML/CSS', 'JavaScript'],
-    category: 'Front-end development',
-    links: getLinks('louisite', 'https://louisite.com')
-  },
-  {
     slug: 'spotify-top5',
     icon: '🎵',
     featured: true,
@@ -71,7 +59,7 @@ const projects: ProjectProps[] = [
   {
     slug: 'vue-member-management',
     icon: '👥',
-    featured: true,
+    featured: false,
     title: 'Member Management App',
     description: (
       <span>
@@ -87,7 +75,7 @@ const projects: ProjectProps[] = [
   {
     slug: 'find-a-coach',
     icon: '🧑‍🏫',
-    featured: true,
+    featured: false,
     title: 'Find a Coach',
     description: (
       <span>
@@ -107,6 +95,7 @@ const projects: ProjectProps[] = [
   {
     slug: 'e-grocery',
     icon: '🛒',
+    featured: false,
     title: 'e-grocery',
     description: "An e-grocery web app built with Laravel. Built for Web Programming's final exam.",
     techStacks: ['Laravel', 'Bootstrap'],
@@ -117,7 +106,7 @@ const projects: ProjectProps[] = [
   {
     slug: 'movielist',
     icon: '🎬',
-    featured: true,
+    featured: false,
     title: 'MovieList',
     description: "A movie list web app built with Laravel. Built for Web Programming's project.",
     techStacks: ['Laravel', 'Bootstrap'],
@@ -140,7 +129,7 @@ const projects: ProjectProps[] = [
   {
     slug: 'giant-book-supplier',
     icon: '📚',
-    featured: true,
+    featured: false,
     title: 'Giant Book Supplier',
     description:
       "A book supplier website built with Laravel. Built for Web Programming's mid exam.",
@@ -152,18 +141,19 @@ const projects: ProjectProps[] = [
   {
     slug: 'balaitani',
     icon: '🌾',
-    featured: true,
+    featured: false,
     title: 'BalaiTani',
     description:
       'An e-commerce web app designed as a platform for connecting small farmers to buyers directly to avoid middlemen from inflating the retail costs.',
     category: 'Full-stack development',
     techStacks: ['Laravel', 'Bootstrap'],
     otherTechStacks: ['HTML/CSS', 'JavaScript', 'PHP'],
-    links: getLinks('balaitani', 'http://balaitani.herokuapp.com')
+    links: getLinks('balaitani')
   },
   {
     slug: 'balaitani-asp',
     icon: '🌾',
+    featured: false,
     title: 'BalaiTani, built with ASP.NET',
     description:
       'Another rendition of BalaiTani built with ASP.NET and domain-driven design implementation.',
@@ -191,7 +181,7 @@ const projects: ProjectProps[] = [
   {
     slug: 'unified-registration',
     icon: '🏫',
-    featured: true,
+    featured: false,
     title: 'HIMTI unified registration',
     description:
       'The official website of HIMTI BINUS University. Contributed to this project during my time at the student association.',

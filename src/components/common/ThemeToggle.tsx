@@ -30,7 +30,7 @@ export default function ThemeToggle() {
     <IconButton
       className='duration-300'
       icon={theme === 'dark' ? <RiMoonLine size={20} /> : <RiSunLine size={20} />}
-      screenReaderText='Toggle theme'
+      screenReaderText={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
       onClick={toggleTheme}
     />
   )

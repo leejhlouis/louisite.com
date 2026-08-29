@@ -9,7 +9,7 @@ export default function BlogSection() {
       <Heading1 className='animate-fade-in pb-2 pt-2 text-violet-950 dark:text-violet-50'>
         Blog
       </Heading1>
-      <p className='animate-fade-in pb-0 !delay-200'>
+      <p className='animate-fade-in pb-0 text-muted !delay-200'>
         Notes on software engineering and web development.{' '}
         <a
           href='/blog/rss'
