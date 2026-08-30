@@ -1,10 +1,14 @@
 export const metadata = {
   title: 'How I built my portfolio site with React, TypeScript, and Tailwind CSS',
-  description: 'The tech stack and techniques I used to build the second iteration of my portfolio site.',
+  description:
+    'The tech stack and techniques I used to build the second iteration of my portfolio site.',
   publishedAt: '2024-05-30',
   tags: ['React', 'TypeScript', 'Tailwind CSS'],
-  originalUrl: 'https://medium.com/@leejhlouis/how-i-build-my-portfolio-site-with-react-typescript-and-tailwind-css-479778cf2960'
+  originalUrl:
+    'https://medium.com/@leejhlouis/how-i-build-my-portfolio-site-with-react-typescript-and-tailwind-css-479778cf2960'
 }
+
+import ArticleImage from '@/components/blog/ArticleImage'
 
 As a recent computer science graduate seeking opportunities, the necessity of a visually appealing portfolio website showcasing my accomplishments is important to provide hiring managers with a better idea of who I am.
 
@@ -35,12 +39,22 @@ In 2023, I [migrated](https://github.com/leejhlouis/louisite/pull/9) CRA to [Vit
 ### Light and dark theme
 
 <figure>
-  <img src="https://cdn-images-1.medium.com/max/1024/1*BJPyf6aPdzZhQ-7GUGBL0w.png" alt="The portfolio home page in light mode" />
+  <ArticleImage
+    src='https://cdn-images-1.medium.com/max/1024/1*BJPyf6aPdzZhQ-7GUGBL0w.png'
+    alt='The portfolio home page in light mode'
+    width={1024}
+    height={566}
+  />
   <figcaption>Light mode</figcaption>
 </figure>
 
 <figure>
-  <img src="https://cdn-images-1.medium.com/max/1024/1*xtUs2Cf2OtJdWq95awGNBw.png" alt="The portfolio home page in dark mode" />
+  <ArticleImage
+    src='https://cdn-images-1.medium.com/max/1024/1*xtUs2Cf2OtJdWq95awGNBw.png'
+    alt='The portfolio home page in dark mode'
+    width={1024}
+    height={569}
+  />
   <figcaption>Dark theme</figcaption>
 </figure>
 
@@ -52,7 +66,7 @@ I set the property of `darkMode` as `class` in the Tailwind CSS config file. Thi
 // tailwind.config.ts
 export default {
   content: ['index.html', './src/**/*.{js,jsx,ts,tsx}'],
-  darkMode: 'class',
+  darkMode: 'class'
   // ...
 }
 ```
@@ -60,8 +74,15 @@ export default {
 If the theme is toggled to dark, the HTML tag will have the `dark` class.
 
 <figure>
-  <img src="https://cdn-images-1.medium.com/max/541/1*cY6466o_056cs-XXIN2U0g.png" alt="Browser developer tools showing the dark class on the HTML element" />
-  <figcaption>The <code>dark</code> class in the HTML tag (<code>&lt;html&gt;</code>)</figcaption>
+  <ArticleImage
+    src='https://cdn-images-1.medium.com/max/541/1*cY6466o_056cs-XXIN2U0g.png'
+    alt='Browser developer tools showing the dark class on the HTML element'
+    width={541}
+    height={269}
+  />
+  <figcaption>
+    The <code>dark</code> class in the HTML tag (<code>&lt;html&gt;</code>)
+  </figcaption>
 </figure>
 
 On my `App.tsx` file, the site initially checks the users' preferred color theme based on the browser settings and the last used theme stored on the browser's local storage.
@@ -91,8 +112,7 @@ export default function App() {
 export default function checkDarkTheme() {
   return (
     localStorage.theme === 'dark' ||
-    (!('theme' in localStorage) &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches)
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
   )
 }
 ```
@@ -106,9 +126,7 @@ import SunLineIcon from 'remixicon-react/SunLineIcon.js'
 import MoonLineIcon from 'remixicon-react/MoonLineIcon.js'
 import checkDarkTheme from '@/utils/checkDarkTheme.ts'
 
-const IconButton = lazy(
-  () => import('@/components/common/reusable/button/IconButton.tsx')
-)
+const IconButton = lazy(() => import('@/components/common/reusable/button/IconButton.tsx'))
 
 export default function ThemeSwitcher() {
   const [isDark, setDark] = useState(checkDarkTheme)
@@ -141,7 +159,12 @@ Popularized by [Michal Malewicz](https://uxdesign.cc/glassmorphism-in-user-inter
 On my website, I implemented a glassmorphism design on the navbar with Tailwind CSS's [backdrop blur](https://tailwindcss.com/docs/backdrop-blur) utility class. It's used to make the frosted glass effect when the navbar is scrolled.
 
 <figure>
-  <img src="https://cdn-images-1.medium.com/max/1024/1*Iknw-91uwMnBWcZluO0bQA.png" alt="The portfolio navbar with a frosted glass effect" />
+  <ArticleImage
+    src='https://cdn-images-1.medium.com/max/1024/1*Iknw-91uwMnBWcZluO0bQA.png'
+    alt='The portfolio navbar with a frosted glass effect'
+    width={1024}
+    height={116}
+  />
   <figcaption>The frosted glass effect on the navbar when it's scrolled</figcaption>
 </figure>
 
@@ -172,15 +195,28 @@ I also implemented a glassmorphism design on the project card. Here's how I do i
 As seen in the above snippet, I use the opacity modifier in the Tailwind classes. This is to make the cards more but not wholly transparent and have the frosted glass effects.
 
 <figure>
-  <img src="https://cdn-images-1.medium.com/max/1024/1*S5TPyH3m2V6wX7olfo0jmg.png" alt="Portfolio project cards with frosted glass effects" />
+  <ArticleImage
+    src='https://cdn-images-1.medium.com/max/1024/1*S5TPyH3m2V6wX7olfo0jmg.png'
+    alt='Portfolio project cards with frosted glass effects'
+    width={1024}
+    height={517}
+  />
   <figcaption>Project list cards with frosted glass effects</figcaption>
 </figure>
 
 ### Rotating linear gradient highlight effect
 
 <figure>
-  <img src="https://cdn-images-1.medium.com/proxy/1*BJPyf6aPdzZhQ-7GUGBL0w.png" alt="Gradient-highlighted Computer Science and Software Engineering text" />
-  <figcaption>Rotating linear gradient highlight effect as seen in the text “Computer Science” and “Software Engineering”</figcaption>
+  <ArticleImage
+    src='https://cdn-images-1.medium.com/proxy/1*BJPyf6aPdzZhQ-7GUGBL0w.png'
+    alt='Gradient-highlighted Computer Science and Software Engineering text'
+    width={2343}
+    height={1295}
+  />
+  <figcaption>
+    Rotating linear gradient highlight effect as seen in the text “Computer Science” and “Software
+    Engineering”
+  </figcaption>
 </figure>
 
 To make the title highlight more appealing, I added a rotating linear gradient effect on the title section. The gradient on the highlight text will rotate 15 degrees every 75 milliseconds.
@@ -261,7 +297,12 @@ export default function About({ children }: ComponentProps) {
 This is the result of the rendered markdown.
 
 <figure>
-  <img src="https://cdn-images-1.medium.com/max/1024/1*v2hUEpJTg8GwQFlpvhFwGQ.png" alt="The rendered Markdown on the portfolio About page" />
+  <ArticleImage
+    src='https://cdn-images-1.medium.com/max/1024/1*v2hUEpJTg8GwQFlpvhFwGQ.png'
+    alt='The rendered Markdown on the portfolio About page'
+    width={1024}
+    height={570}
+  />
   <figcaption>Markdown render result</figcaption>
 </figure>
 
@@ -297,9 +338,22 @@ const getLinks = (githubRepo: string, url?: string) => {
 }
 
 const filters = [
-  'React', 'Vue.js', 'Laravel', 'TypeScript', 'JavaScript', 'jQuery',
-  'Tailwind CSS', 'Bootstrap', 'HTML/CSS', 'PHP', 'Java', 'Python',
-  'ASP.NET', 'Android SDK', 'Firebase', 'Axios Mock'
+  'React',
+  'Vue.js',
+  'Laravel',
+  'TypeScript',
+  'JavaScript',
+  'jQuery',
+  'Tailwind CSS',
+  'Bootstrap',
+  'HTML/CSS',
+  'PHP',
+  'Java',
+  'Python',
+  'ASP.NET',
+  'Android SDK',
+  'Firebase',
+  'Axios Mock'
 ]
 
 const projects: ProjectProps[] = [
@@ -371,8 +425,16 @@ Live demo: [https://louisite.com](https://louisite.com)
 Source code: [https://github.com/leejhlouis/louisite](https://github.com/leejhlouis/louisite)
 
 <figure>
-  <img src="https://cdn-images-1.medium.com/max/1024/1*lSjzXdvcVjOwEL2jKHdmSQ.png" alt="Google Lighthouse scores for louisite.com" />
-  <figcaption>Google Lighthouse score for <a href="https://louisite.com">louisite.com</a> (recorded on May 28, 2024, 03:46:46 PM)</figcaption>
+  <ArticleImage
+    src='https://cdn-images-1.medium.com/max/1024/1*lSjzXdvcVjOwEL2jKHdmSQ.png'
+    alt='Google Lighthouse scores for louisite.com'
+    width={1024}
+    height={337}
+  />
+  <figcaption>
+    Google Lighthouse score for <a href='https://louisite.com'>louisite.com</a> (recorded on May 28,
+    2024, 03:46:46 PM)
+  </figcaption>
 </figure>
 
 This article shows you how I built my portfolio site from scratch. Feel free to customize it to fit your needs. If you have suggestions to improve my portfolio site, I would appreciate them.

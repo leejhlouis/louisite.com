@@ -16,7 +16,7 @@ This Next.js 15 portfolio uses React, TypeScript, MDX, and Tailwind CSS. Routes 
 
 ## Coding style and naming conventions
 
-Follow `.prettierrc.json`: 2-space indentation, single quotes, no semicolons, and 100-character lines. Tailwind classes sort through Prettier. Prefer the `@/` alias for `src` imports. Use PascalCase for components (`ProjectCard.tsx`), a `use` prefix for hooks (`useMounted.ts`), camelCase for utilities, and PascalCase for types.
+Follow `.prettierrc.json`: 2-space indentation, single quotes, no semicolons, and 100-character lines. Tailwind classes sort through Prettier. Do not use Tailwind `@apply`; compose Tailwind utilities in reusable React components instead. Prefer the `@/` alias for `src` imports. Use PascalCase for components (`ProjectCard.tsx`), a `use` prefix for hooks (`useMounted.ts`), camelCase for utilities, and PascalCase for types.
 
 ## Product and design guardrails
 

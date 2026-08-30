@@ -12,12 +12,9 @@ export default function BlogCard({
   tags
 }: PostMetadata) {
   return (
-    <Link
-      href={`/blog/${slug}`}
-      className='group block border-t border-slate-500/20 py-6 first:border-t-0 dark:border-slate-600/30'
-    >
+    <Link href={`/blog/${slug}`} className='group block border-t border-line py-6 first:border-t-0'>
       <div>
-        <h2 className='text-xl font-semibold text-violet-950 transition-colors group-hover:text-primary-dark dark:text-violet-50 dark:group-hover:text-primary-light sm:text-2xl'>
+        <h2 className='text-xl font-semibold text-ink transition-colors group-hover:text-signal sm:text-2xl'>
           {title}
         </h2>
         <p className='mt-2 pb-0 text-sm'>

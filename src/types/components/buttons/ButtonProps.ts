@@ -9,6 +9,8 @@ export default interface ButtonProps extends ComponentProps {
   screenReaderText?: string
   active?: boolean
   href?: string
+  target?: React.HTMLAttributeAnchorTarget
+  rel?: string
   inverted?: boolean
   variant?: ButtonVariant
 }

@@ -23,38 +23,63 @@ const getLinks = (githubRepo: string, url?: string): LinkProps[] => {
   return links
 }
 
-const filters: string[] = [
-  'React',
-  'Next.js',
-  'Vue.js',
-  'Laravel',
-  'TypeScript',
-  'JavaScript',
-  'jQuery',
-  'Tailwind CSS',
-  'Bootstrap',
-  'HTML/CSS',
-  'PHP',
-  'Java',
-  'Python',
-  'ASP.NET',
-  'Android SDK',
-  'Firebase',
-  'Axios Mock',
-  'Spotify API'
-]
-
 const projects: ProjectProps[] = [
   {
     slug: 'spotify-top5',
     icon: '🎵',
     featured: true,
     title: 'Spotify Top 5',
+    illustrations: [
+      {
+        src: '/assets/projects/spotify-top5.png',
+        alt: 'Conceptual illustration of five ranked music selections and sound waves'
+      }
+    ],
     description: 'Your Top 5 Spotify songs & artists in one place built with Next.js.',
-    techStacks: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    otherTechStacks: ['HTML/CSS', 'JavaScript', 'React', 'Spotify API'],
+    techStacks: ['Next.js', 'TypeScript', 'Spotify API'],
+    otherTechStacks: ['Tailwind CSS', 'HTML/CSS', 'JavaScript', 'React', 'Spotify API'],
     category: 'Front-end development',
     links: getLinks('spotify-top5', 'https://spotifytop5.louisite.com')
+  },
+  {
+    slug: 'erp-system',
+    icon: '🏭',
+    featured: true,
+    title: 'ERP System',
+    illustrations: [
+      {
+        src: '/assets/projects/erp.png',
+        alt: 'Conceptual illustration of connected accounting, inventory, warehouse, and quality systems'
+      }
+    ],
+    description:
+      'A freelance enterprise resource planning (ERP) web application for an undisclosed client, covering accounting, transactions, suppliers, sales, items, brands, buyers, inventory, warehouses, and quality checks.',
+    techStacks: ['PostgreSQL', 'Express.js', 'React', 'Node.js'],
+    otherTechStacks: ['TypeScript', 'JavaScript'],
+    category: 'Full-stack development',
+    links: []
+  },
+  {
+    slug: 'travelin',
+    icon: '🗺️',
+    featured: true,
+    title: 'Travelin',
+    illustrations: [
+      {
+        src: '/assets/projects/travelin.png',
+        alt: 'Conceptual illustration of a collaborative travel itinerary and destination route'
+      },
+      {
+        src: '/assets/projects/travelin-2.png',
+        alt: 'Conceptual illustration of a collaborative travel itinerary and destination route'
+      }
+    ],
+    description:
+      'A web-based travel itinerary planner. Users can plan collaboratively, share itineraries publicly, and discover destinations through proximity, rating, and preference-based recommendations powered by the Google Places API.',
+    techStacks: ['Laravel', 'MySQL', 'Google Cloud'],
+    otherTechStacks: ['HTML/CSS', 'JavaScript', 'PHP', 'Bootstrap'],
+    category: 'Full-stack development',
+    links: []
   },
   {
     slug: 'vue-member-management',
@@ -117,14 +142,19 @@ const projects: ProjectProps[] = [
   {
     slug: 'election-2022',
     icon: '🗳️',
-    featured: true,
     title: 'HIMTI Election 2022',
+    illustrations: [
+      {
+        src: '/assets/projects/himti-election-2022.png',
+        alt: 'Conceptual illustration of a ballot box and voting process'
+      }
+    ],
     description:
-      'An e-voting website that allows students and lecturers of the School of Computer Science to vote for the next Chairman of HIMTI BINUS University.',
+      'An e-voting website that allows students and lecturers of the School of Computer Science to vote for the next Chairman of Himpunan Mahasiswa Teknik Informatika (HIMTI) BINUS University.',
     category: 'Project management',
     techStacks: ['Bootstrap', 'Laravel', 'Project management'],
     otherTechStacks: ['HTML/CSS', 'JavaScript', 'PHP'],
-    links: getLinks('himti-election-2022', 'https://election.himtibinus.or.id/')
+    links: []
   },
   {
     slug: 'giant-book-supplier',
@@ -316,4 +346,4 @@ const projects: ProjectProps[] = [
   }
 ]
 
-export { filters, projects }
+export { projects }

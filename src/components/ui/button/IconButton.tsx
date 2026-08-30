@@ -17,7 +17,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconB
       {...buttonProps}
       className={clsx(
         className,
-        'group flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-surface/70 text-ink',
+        'touch-target group flex h-9 w-9 items-center justify-center rounded-xl border border-line bg-surface/70 text-ink',
         'transition-colors duration-200 hover:border-signal hover:text-signal'
       )}
     >

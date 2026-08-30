@@ -6,7 +6,13 @@ import type SocialProps from '@/types/SocialProps'
 export default function SocialMediaLinks({ className }: ComponentProps) {
   const social = socialList.map((item: SocialProps) => (
     <li key={item.name}>
-      <a href={item.url} target='_blank' rel='noreferrer' aria-label={item.name}>
+      <a
+        className='text-muted'
+        href={item.url}
+        target='_blank'
+        rel='noreferrer'
+        aria-label={item.name}
+      >
         {item.icon}
       </a>
     </li>

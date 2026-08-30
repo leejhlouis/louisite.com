@@ -7,9 +7,9 @@ export default function Navbar() {
   return (
     <nav
       aria-label='Primary navigation'
-      className='fixed top-0 z-50 w-full border-b border-slate-500/10 backdrop-blur-xl dark:border-slate-600/20'
+      className='fixed top-0 z-50 w-full border-b border-line/70 backdrop-blur-xl'
     >
-      <div className='container flex flex-wrap items-center justify-between py-4'>
+      <div className='container flex max-w-screen-xl flex-wrap items-center justify-between py-3'>
         <Title size='sm' />
         <div className='flex items-center space-x-2 sm:space-x-4'>
           <div className='hidden sm:block'>
