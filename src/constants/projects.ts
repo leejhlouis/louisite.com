@@ -1,18 +1,16 @@
-import InlineLink from '@/components/ui/InlineLink'
 import ProjectProps from '@/types/components/ProjectProps'
 import LinkProps from '@/types/LinkProps'
 import getGitHubUrl from '@/utils/getGitHubUrl'
 import { social } from '@/constants'
-import { RiExternalLinkFill, RiGithubFill } from '@remixicon/react'
 
 const github: LinkProps = {
   label: 'Source code',
-  icon: <RiGithubFill size={22} />
+  icon: 'github'
 }
 
 const live: LinkProps = {
   label: 'Live',
-  icon: <RiExternalLinkFill size={22} />
+  icon: 'external'
 }
 
 const getLinks = (githubRepo: string, url?: string): LinkProps[] => {
@@ -22,6 +20,22 @@ const getLinks = (githubRepo: string, url?: string): LinkProps[] => {
   }
   return links
 }
+
+const filters: string[] = [
+  'React',
+  'Next.js',
+  'Vue.js',
+  'Laravel',
+  'TypeScript',
+  'JavaScript',
+  'Java',
+  'Python',
+  'ASP.NET',
+  'Android SDK',
+  'Firebase',
+  'Google Cloud',
+  'Spotify API'
+]
 
 const projects: ProjectProps[] = [
   {
@@ -53,7 +67,7 @@ const projects: ProjectProps[] = [
       }
     ],
     description:
-      'A freelance enterprise resource planning (ERP) web application for an undisclosed client, covering accounting, transactions, suppliers, sales, items, brands, buyers, inventory, warehouses, and quality checks.',
+      'A freelance enterprise resource planning (ERP) web application for an undisclosed client, covering accounting, transactions, suppliers, sales, items, brands, buyers, inventory, warehouses, and quality checks. Built with PERN stack.',
     techStacks: ['PostgreSQL', 'Express.js', 'React', 'Node.js'],
     otherTechStacks: ['TypeScript', 'JavaScript'],
     category: 'Full-stack development',
@@ -86,12 +100,15 @@ const projects: ProjectProps[] = [
     icon: '👥',
     featured: false,
     title: 'Member Management App',
-    description: (
-      <span>
-        A member management system app built with Vue.js. Built as a probation project during my
-        internship at <InlineLink href='https://blibli.com'>Blibli</InlineLink>.
-      </span>
-    ),
+    description: [
+      {
+        type: 'text',
+        content:
+          'A member management system app built with Vue.js. Built as a probation project during my internship at '
+      },
+      { type: 'link', content: 'Blibli', href: 'https://blibli.com' },
+      { type: 'text', content: '.' }
+    ],
     techStacks: ['Vue.js', 'Axios Mock'],
     otherTechStacks: ['HTML/CSS', 'JavaScript'],
     category: 'Front-end development',
@@ -102,16 +119,19 @@ const projects: ProjectProps[] = [
     icon: '🧑‍🏫',
     featured: false,
     title: 'Find a Coach',
-    description: (
-      <span>
-        A coach finder web app that allows users to search for and connect with coaches who
-        specialize in a variety of fields. A project from{' '}
-        <InlineLink href='https://github.com/maxschwarzmueller'>
-          Maximilian Schwarzmüller
-        </InlineLink>
-        's Udemy course.
-      </span>
-    ),
+    description: [
+      {
+        type: 'text',
+        content:
+          'A coach finder web app that allows users to search for and connect with coaches who specialize in a variety of fields. A project from '
+      },
+      {
+        type: 'link',
+        content: 'Maximilian Schwarzmüller',
+        href: 'https://github.com/maxschwarzmueller'
+      },
+      { type: 'text', content: "'s Udemy course." }
+    ],
     techStacks: ['Vue.js', 'Firebase'],
     otherTechStacks: ['HTML/CSS', 'JavaScript'],
     category: 'Front-end development',
@@ -197,12 +217,17 @@ const projects: ProjectProps[] = [
     icon: '🎮',
     featured: false,
     title: 'GOT Wordle',
-    description: (
-      <span>
-        A fun <i>Game of Thrones</i>-themed Wordle clone. This is a fork of{' '}
-        <InlineLink href='https://github.com/cwackerfuss/reactle'>cwackerfuss/reactle</InlineLink>.
-      </span>
-    ),
+    description: [
+      { type: 'text', content: 'A fun ' },
+      { type: 'emphasis', content: 'Game of Thrones' },
+      { type: 'text', content: '-themed Wordle clone. This is a fork of ' },
+      {
+        type: 'link',
+        content: 'cwackerfuss/reactle',
+        href: 'https://github.com/cwackerfuss/reactle'
+      },
+      { type: 'text', content: '.' }
+    ],
     techStacks: ['React', 'TypeScript', 'Tailwind CSS'],
     otherTechStacks: ['HTML/CSS', 'JavaScript'],
     category: 'Front-end development',
@@ -265,12 +290,15 @@ const projects: ProjectProps[] = [
     slug: 'hci-danbam',
     icon: '🍜',
     title: 'DanBam',
-    description: (
-      <span>
-        The landing page of DanBam—a fictitious Korean restaurant featured in the K-drama hit{' '}
-        <i>Itaewon Class</i>. Built for Human and Computer Interaction's project.
-      </span>
-    ),
+    description: [
+      {
+        type: 'text',
+        content:
+          'The landing page of DanBam—a fictitious Korean restaurant featured in the K-drama hit '
+      },
+      { type: 'emphasis', content: 'Itaewon Class' },
+      { type: 'text', content: ". Built for Human and Computer Interaction's project." }
+    ],
     category: 'Front-end development',
     techStacks: ['HTML/CSS', 'JavaScript', 'jQuery'],
     links: getLinks('hci-danbam', `https://${social.github}.github.io/hci-danbam`)
@@ -346,4 +374,4 @@ const projects: ProjectProps[] = [
   }
 ]
 
-export { projects }
+export { filters, projects }

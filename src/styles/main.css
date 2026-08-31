@@ -28,6 +28,7 @@
   html {
     scroll-behavior: smooth;
     font-family: var(--font-geist), system-ui, sans-serif;
+    font-size: 14px;
   }
 
   body {

@@ -41,7 +41,7 @@ export default function NavDropdownContent({
       className={clsx(
         'absolute right-0',
         'mt-2 py-2',
-        'border border-line bg-surface',
+        'border border-line/90 bg-surface/90 backdrop-blur-2xl backdrop-saturate-150',
         'flex w-36 flex-col rounded-xl p-1 shadow-editorial dark:shadow-editorial-dark'
       )}
     >

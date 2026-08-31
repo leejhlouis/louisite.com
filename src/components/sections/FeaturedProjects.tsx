@@ -7,6 +7,8 @@ import Badge from '@/components/ui/Badge'
 import Heading1 from '@/components/ui/heading/Heading1'
 import Heading2 from '@/components/ui/heading/Heading2'
 import Heading3 from '@/components/ui/heading/Heading3'
+import ProjectDescription from '@/components/projects/ProjectDescription'
+import ProjectLinkIcon from '@/components/projects/ProjectLinkIcon'
 import Image from 'next/image'
 import clsx from 'clsx'
 
@@ -25,10 +27,7 @@ export default function FeaturedProjects({
   const content = (
     <>
       <div className='animate-fade-in flex max-w-3xl flex-col gap-3 !delay-200'>
-        <SectionHeading
-          id='featured-projects-heading'
-          className='pb-0 text-2xl font-bold tracking-[-0.025em] text-ink sm:text-3xl'
-        >
+        <SectionHeading id='featured-projects-heading' className='pb-0'>
           Featured projects
         </SectionHeading>
         <p className='text-pretty max-w-2xl pb-0 text-muted'>
@@ -49,7 +48,7 @@ export default function FeaturedProjects({
               <Eyebrow className='pb-3'>{project.category}</Eyebrow>
               <Heading3 id={`${project.slug}-title`}>{project.title}</Heading3>
               <div className='text-pretty max-w-[70ch] leading-7 text-muted'>
-                {project.description}
+                <ProjectDescription description={project.description} />
               </div>
               <ul className='mt-5 flex flex-wrap gap-2'>
                 {project.techStacks.map(tech => (
@@ -67,7 +66,7 @@ export default function FeaturedProjects({
                       target='_blank'
                       rel='noreferrer'
                       className='text-sm'
-                      icon={link.icon}
+                      icon={<ProjectLinkIcon icon={link.icon} size={22} />}
                     >
                       {link.label}
                     </Button>
