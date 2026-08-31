@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import PrettyCode from '@/components/blog/PrettyCode'
 import ComponentProps from '@/types/components/ComponentProps'
 
 export default function Prose({ id, className, children }: ComponentProps) {
@@ -10,7 +11,7 @@ export default function Prose({ id, className, children }: ComponentProps) {
         className
       )}
     >
-      {children}
+      <PrettyCode>{children}</PrettyCode>
     </div>
   )
 }

@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { getPost, posts } from '@/content/posts'
 import Button from '@/components/ui/button/Button'
+import Eyebrow from '@/components/ui/Eyebrow'
 import { RiArrowLeftLine, RiExternalLinkLine } from '@remixicon/react'
 import Section from '@/components/layouts/Section'
 import Prose from '@/components/layouts/Prose'
@@ -61,9 +62,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           All writing
         </Button>
         <header className='mt-12 border-b border-line pb-10'>
-          <p className='eyebrow pb-5'>
+          <Eyebrow className='pb-5'>
             {formatPostDate(post.publishedAt)} · {post.readingTime} min read
-          </p>
+          </Eyebrow>
           <h1 className='text-balance text-4xl font-semibold leading-tight tracking-[-0.045em] text-ink sm:text-6xl'>
             {post.title}
           </h1>

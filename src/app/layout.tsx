@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import ScrollToTopFAB from '@/components/common/ScrollToTopFAB'
 import '@/styles/main.css'
 import BackgroundGradients from '@/components/layouts/BackgroundGradients'
 import PageWrapper from '@/components/layouts/PageWrapper'
@@ -78,17 +77,22 @@ export const metadata: Metadata = {
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en' suppressHydrationWarning className={`${geist.variable} ${geistMono.variable}`}>
-      <body className='overflow-x-hidden bg-slate-50 text-default-dark antialiased dark:bg-slate-950 dark:text-default-light'>
+      <body className='overflow-x-hidden bg-canvas text-ink antialiased'>
         <SiteJsonLd />
         <BackgroundGradients />
-        <div className='bg-light dark:bg-dark relative z-10 min-h-screen'>
+        <div className='relative z-10 min-h-screen'>
           <PageWrapper>
+            <a
+              href='#main-content'
+              className='sr-only fixed left-4 top-4 z-[60] rounded-lg bg-surface px-4 py-2 font-semibold text-ink shadow-editorial focus:not-sr-only'
+            >
+              Skip to content
+            </a>
             <Navbar />
-            {children}
+            <main id='main-content'>{children}</main>
             <Footer />
           </PageWrapper>
         </div>
-        <ScrollToTopFAB />
       </body>
     </html>
   )

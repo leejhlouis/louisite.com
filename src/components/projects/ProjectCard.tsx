@@ -1,46 +1,58 @@
-import clsx from 'clsx'
 import ProjectProps from '@/types/components/ProjectProps'
 import Badge from '@/components/ui/Badge'
+import Button from '@/components/ui/button/Button'
+import ProjectDescription from '@/components/projects/ProjectDescription'
+import ProjectLinkIcon from '@/components/projects/ProjectLinkIcon'
 
-export default function ProjectCard({ icon, title, description, techStacks, links }: ProjectProps) {
+export default function ProjectCard({
+  title,
+  description,
+  category,
+  featured,
+  techStacks,
+  links
+}: ProjectProps) {
   return (
-    <article
-      className={clsx(
-        'group flex h-full flex-col rounded-2xl border border-slate-300/80 bg-slate-100/65 p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary-dark/30 hover:shadow-lg dark:border-slate-600/20 dark:bg-slate-600/10 dark:hover:border-slate-600/30 dark:hover:bg-slate-600/20 sm:p-6'
-      )}
-    >
-      <div className='mb-5 flex items-start justify-between gap-4'>
-        <div className='flex h-10 w-10 items-center justify-center rounded-xl bg-white/40 text-lg dark:bg-slate-600/20'>
-          {icon}
+    <article className='grid border-t border-line py-7 sm:py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] md:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,2.5fr)] lg:gap-16'>
+      <div>
+        <div className='flex flex-wrap items-center gap-2'>
+          <p className='pb-0 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-muted'>
+            {category}
+          </p>
+          {featured && <Badge>Featured</Badge>}
         </div>
-        <div className='flex gap-2'>
-          {links.map(link => (
-            <a
-              key={link.url}
-              href={link.url}
-              target='_blank'
-              rel='noreferrer'
-              aria-label={`${link.label}: ${title}`}
-              className='flex h-8 w-8 items-center justify-center rounded-lg border border-slate-500/20 transition-colors hover:border-primary-dark hover:text-primary-dark dark:border-slate-600/30 dark:hover:border-primary-light dark:hover:text-primary-light'
-            >
-              {link.icon}
-            </a>
-          ))}
+        <h3 className='mt-2 text-lg font-semibold tracking-[-0.02em] text-ink'>{title}</h3>
+      </div>
+      <div className='mt-5 min-w-0 md:mt-0'>
+        <div className='text-pretty max-w-[80ch] text-sm leading-6 text-muted'>
+          <ProjectDescription description={description} />
         </div>
+        <div className='mt-4 flex flex-col items-start gap-4 lg:flex-row lg:items-end lg:justify-between'>
+          <ul className='flex flex-wrap gap-2'>
+            {techStacks.map(tech => (
+              <li key={tech}>
+                <Badge>{tech}</Badge>
+              </li>
+            ))}
+          </ul>
+        </div>
+        {!!links.length && (
+          <div className='mt-4 flex shrink-0 flex-wrap gap-3'>
+            {links.map(link => (
+              <Button
+                key={link.url}
+                href={link.url}
+                target='_blank'
+                rel='noreferrer'
+                className='touch-target text-xs text-muted'
+                icon={<ProjectLinkIcon icon={link.icon} />}
+              >
+                {link.label}
+              </Button>
+            ))}
+          </div>
+        )}
       </div>
-      <h3 className='text-lg font-semibold tracking-tight text-emphasis-dark dark:text-emphasis-light'>
-        {title}
-      </h3>
-      <div className='mt-3 flex-1 text-sm leading-6 text-default-dark dark:text-default-light'>
-        {description}
-      </div>
-      <ul className='mt-6 flex flex-wrap gap-2'>
-        {techStacks.map(tech => (
-          <li key={tech}>
-            <Badge>{tech}</Badge>
-          </li>
-        ))}
-      </ul>
     </article>
   )
 }

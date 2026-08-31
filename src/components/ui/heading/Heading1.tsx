@@ -5,10 +5,7 @@ export default function Heading1({ id, className, children }: ComponentProps) {
   return (
     <h1
       id={id}
-      className={clsx(
-        className,
-        'py-8 text-[1.75rem] font-bold tracking-tight text-emphasis-dark dark:text-emphasis-light md:text-4xl'
-      )}
+      className={clsx(className, 'py-8 text-3xl font-bold tracking-tight text-ink md:text-4xl')}
     >
       {children}
     </h1>

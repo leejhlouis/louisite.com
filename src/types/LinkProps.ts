@@ -1,5 +1,5 @@
 export default interface LinkProps {
   label: string
-  icon: React.ReactNode
+  icon: 'external' | 'github'
   url?: string
 }

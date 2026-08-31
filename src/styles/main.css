@@ -16,7 +16,7 @@
 
   .dark {
     color-scheme: dark;
-    --canvas: 13 12 17;
+    --canvas: 2 6 23;
     --surface: 20 18 25;
     --elevated: 27 24 33;
     --ink: 244 240 248;
@@ -28,6 +28,7 @@
   html {
     scroll-behavior: smooth;
     font-family: var(--font-geist), system-ui, sans-serif;
+    font-size: 14px;
   }
 
   body {
@@ -59,11 +60,7 @@
 
   a:hover svg {
     transition-duration: theme('transitionDuration.300');
-    fill: theme('colors.primary.dark');
-  }
-
-  html.dark a:hover svg {
-    fill: theme('colors.primary.light');
+    fill: rgb(var(--signal));
   }
 
   @media (min-width: theme('screens.sm')) {
@@ -80,52 +77,6 @@
   }
 }
 
-@layer components {
-  .eyebrow {
-    @apply font-mono text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-muted;
-  }
-
-  .editorial-rule {
-    @apply border-t border-line;
-  }
-
-  .surface-panel {
-    @apply border border-line bg-surface shadow-editorial dark:shadow-editorial-dark;
-  }
-
-  [data-rehype-pretty-code-figure] {
-    @apply my-8;
-  }
-
-  [data-rehype-pretty-code-figure] pre {
-    @apply m-0 overflow-x-auto rounded-xl border border-line bg-elevated py-4 text-sm shadow-editorial dark:shadow-editorial-dark;
-  }
-
-  [data-rehype-pretty-code-figure] code {
-    @apply grid w-max min-w-full bg-transparent p-0 font-mono leading-6;
-  }
-
-  [data-rehype-pretty-code-figure] [data-line] {
-    @apply border-l-2 border-l-transparent px-4;
-  }
-
-  [data-rehype-pretty-code-figure] [data-highlighted-line] {
-    @apply border-l-signal bg-signal/10;
-  }
-
-  [data-rehype-pretty-code-figure] [data-highlighted-chars] {
-    @apply rounded bg-signal/20 px-1;
-  }
-
-  [data-rehype-pretty-code-title] {
-    @apply rounded-t-xl border border-b-0 border-line bg-surface px-4 py-2 font-mono text-xs font-semibold text-muted;
-  }
-
-  [data-rehype-pretty-code-title] + pre {
-    @apply rounded-t-none;
-  }
-}
-
 code[data-theme*=' '],
 code[data-theme*=' '] span {
   color: var(--shiki-light);
@@ -137,17 +88,19 @@ code[data-theme*=' '] span {
 }
 
 @layer utilities {
+  @media (pointer: coarse) {
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+
   .text-balance {
     text-wrap: balance;
   }
 
   .text-pretty {
     text-wrap: pretty;
-  }
-
-  .content-auto {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 480px;
   }
 
   .animate-fade-in {

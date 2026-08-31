@@ -5,16 +5,11 @@ import Heading1 from '@/components/ui/heading/Heading1'
 
 export default function BlogSection() {
   return (
-    <FadeInSection className='min-h-[calc(100vh-320px)] md:px-0' maxWidthClass='md:max-w-screen-md'>
-      <Heading1 className='animate-fade-in pb-2 pt-2 text-violet-950 dark:text-violet-50'>
-        Blog
-      </Heading1>
-      <p className='animate-fade-in pb-0 !delay-200'>
+    <FadeInSection className='min-h-[calc(100vh-320px)]' maxWidthClass='md:max-w-screen-lg'>
+      <Heading1 className='animate-fade-in pb-2 pt-2 text-ink'>Blog</Heading1>
+      <p className='animate-fade-in pb-0 text-muted !delay-200'>
         Notes on software engineering and web development.{' '}
-        <a
-          href='/blog/rss'
-          className='font-semibold text-primary-dark hover:underline dark:text-primary-light'
-        >
+        <a href='/blog/rss' className='font-semibold text-signal hover:underline'>
           RSS feed
         </a>
         .

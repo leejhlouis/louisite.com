@@ -94,12 +94,12 @@ components:
     rounded: "{rounded.lg}"
     padding: "4px 8px"
   project-card-light:
-    backgroundColor: "rgb(241 245 249 / 0.65)"
+    backgroundColor: "rgb(252 250 246 / 0.8)"
     textColor: "{colors.ink-light}"
     rounded: "{rounded.2xl}"
     padding: "24px"
   project-card-dark:
-    backgroundColor: "rgb(71 85 105 / 0.1)"
+    backgroundColor: "rgb(20 18 25 / 0.8)"
     textColor: "{colors.ink-dark}"
     rounded: "{rounded.2xl}"
     padding: "24px"
@@ -188,10 +188,11 @@ The primary layout uses Tailwind's centered container with 16px horizontal paddi
 extra-large screen width and use 24px vertical padding on small screens, increasing to 48px from
 the small breakpoint. Reading surfaces narrow to the medium screen width.
 
-Project collections use a responsive grid: one column by default, two from 640px, and three from
-1280px. The custom `xs` breakpoint begins at 480px; the remaining breakpoints follow Tailwind's
-640px, 768px, 1024px, 1280px, and 1536px defaults. A 72px top offset reserves space for the fixed
-navigation.
+The homepage presents three selected projects as full-width editorial rows with a two-column split
+at large widths. The project archive uses a responsive grid: one column by default, two from 640px,
+and three from 1280px. The custom `xs` breakpoint begins at 480px; the remaining breakpoints follow
+Tailwind's 640px, 768px, 1024px, 1280px, and 1536px defaults. A 72px top offset reserves space for
+the fixed navigation.
 
 Spacing is based on Tailwind's 4px rhythm, with 8px gaps for compact control groups, 16px gaps for
 general grouping, 24px for card padding and content separation, and 32–48px for major section
@@ -205,8 +206,8 @@ project grid so line length remains comfortable.
 The system is layered rather than heavily raised. Thin borders, translucent fills, backdrop blur,
 and tonal surface changes establish most depth. Two ambient editorial shadows support floating
 menus, panels, and code blocks: `0 18px 60px rgb(20 12 38 / 0.08)` in light mode and
-`0 24px 80px rgb(0 0 0 / 0.28)` in dark mode. Project cards use a smaller resting shadow and move
-to a stronger shadow only on hover.
+`0 24px 80px rgb(0 0 0 / 0.28)` in dark mode. Project cards use tonal surfaces and border-color
+feedback without implying that the whole card is clickable.
 
 Atmospheric depth also comes from two fixed, heavily blurred 640px violet gradient fields placed
 outside the central content area.
@@ -249,10 +250,9 @@ radius step, as seen in project cards, icon wells, and link controls.
 ### Cards / Containers
 
 - **Corner Style:** project cards use a 16px radius; menus, code blocks, and compact panels use 12px.
-- **Background:** cards use translucent slate fills over the themed canvas; general panels use the
-  semantic surface token.
-- **Shadow Strategy:** cards are lightly raised at rest and lift 4px with a stronger shadow on hover.
-- **Border:** a one-pixel neutral border shifts subtly toward violet or a stronger neutral on hover.
+- **Background:** cards use the translucent semantic surface over the themed canvas.
+- **Shadow Strategy:** cards remain flat; hierarchy comes from surface and border roles.
+- **Border:** a one-pixel line border shifts subtly toward violet on hover.
 - **Internal Padding:** 20px on the smallest screens and 24px from the small breakpoint.
 
 ### Navigation
@@ -262,11 +262,10 @@ wordmark pairs a light `loui` with bold `site`. Desktop links use ghost-button u
 violet active state. Below 640px, links move into a 144px-wide rounded surface menu with an ambient
 editorial shadow. Theme and menu actions use bordered 12px icon buttons.
 
-### Gradient Highlight
+### Hero Highlight
 
-Hero emphasis uses transparent text clipped to a fuchsia-to-blue gradient. Its gradient angle
-rotates in 15-degree increments every 75ms. This treatment is limited to selected words in the
-primary hero statement.
+Hero emphasis uses the semantic signal violet as a static text color. This keeps the strongest
+statement inside the one-accent system and remains still for reduced-motion users.
 
 ### Entry Motion
 

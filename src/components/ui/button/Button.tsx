@@ -127,6 +127,8 @@ export default function Button({
   inverted = false,
   active = false,
   href,
+  target,
+  rel,
   variant = 'ghost'
 }: ButtonProps) {
   const classes = clsx(buttonVariants({ variant, inverted, active }), className)
@@ -155,7 +157,13 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} className={classes} aria-current={active ? 'page' : undefined}>
+      <Link
+        href={href}
+        className={classes}
+        aria-current={active ? 'page' : undefined}
+        target={target}
+        rel={rel}
+      >
         {content}
       </Link>
     )

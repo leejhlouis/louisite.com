@@ -3,12 +3,11 @@ import ComponentProps from '@/types/components/ComponentProps'
 
 export default function Heading2({ id, className, children }: ComponentProps) {
   return (
-    // prettier-ignore
     <h2
       id={id}
       className={clsx(
         className,
-        'py-4 text-2xl font-bold text-emphasis-dark dark:text-emphasis-light md:text-3xl'
+        'py-4 text-2xl font-bold tracking-[-0.025em] text-ink md:text-3xl'
       )}
     >
       {children}
