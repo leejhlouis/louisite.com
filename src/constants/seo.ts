@@ -7,7 +7,7 @@ export const siteConfig = {
   locale: 'en_US',
   language: 'en',
   description:
-    'Louis Gustavo is a Software Engineer at Traveloka building web interfaces and backend systems with Spring Boot, Next.js, Vue.js, React, Laravel, and more.',
+    'Louis Gustavo is a Software Engineer at Traveloka in Indonesia, building web interfaces and backend systems with Spring Boot, Next.js, Vue.js, React, and Laravel.',
   email: 'louisgustavo07@gmail.com',
   github: 'https://github.com/leejhlouis',
   linkedin: 'https://www.linkedin.com/in/louis-gustavo'

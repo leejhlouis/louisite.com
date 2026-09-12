@@ -33,3 +33,4 @@ dist-ssr
 .pnpm-store
 .next
 .source
+.seo-cache

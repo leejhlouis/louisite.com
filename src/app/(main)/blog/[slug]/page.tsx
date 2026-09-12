@@ -68,7 +68,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         </Button>
         <header className='mt-12 pb-10'>
           <Eyebrow className='pb-5'>
-            {formatPostDate(post.publishedAt)} · {post.readingTime} min read
+            By Louis Gustavo · {formatPostDate(post.publishedAt)} · {post.readingTime} min read
           </Eyebrow>
           <h1 className='text-balance text-4xl font-semibold leading-tight tracking-[-0.045em] text-ink sm:text-6xl'>
             {post.title}

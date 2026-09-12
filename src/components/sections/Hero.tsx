@@ -11,11 +11,11 @@ import SlidingInUnderline from '@/components/ui/SlidingInUnderline'
 export default function Hero() {
   return (
     <FadeInSection className='relative flex min-h-[calc(75vh-4.5rem)] flex-col justify-center overflow-hidden py-16 sm:py-20 lg:min-h-[620px]'>
-      <div className='pointer-events-none absolute -right-24 bottom-6 hidden h-52 w-96 rotate-[-5deg] opacity-70 dark:opacity-50 lg:block'>
+      <div className='pointer-events-none absolute -right-24 bottom-6 hidden h-52 w-96 rotate-[-5deg] opacity-70 lg:block dark:opacity-50'>
         <SystemMap variant='orbit' />
       </div>
       <div className='flex max-w-4xl flex-col space-y-6'>
-        <p className='animate-fade-in pb-0 font-mono text-sm font-semibold text-muted lg:text-base'>
+        <p className='animate-fade-in text-muted pb-0 font-mono text-sm font-semibold lg:text-base'>
           Hey, I&apos;m{' '}
           <SlidingInUnderline type='secondary' height='lg'>
             Louis Gustavo
@@ -24,14 +24,14 @@ export default function Hero() {
         <h1
           className={clsx(
             'animate-fade-in delay-200!',
-            'text-balance text-4xl text-ink lg:text-6xl',
-            'break-words font-bold tracking-tight'
+            'text-ink text-4xl text-balance lg:text-6xl',
+            'font-bold tracking-tight wrap-break-word'
           )}
         >
           3+ years building <HighlightText>web interfaces</HighlightText> and{' '}
           <HighlightText>backend systems.</HighlightText>
         </h1>
-        <p className={clsx('animate-fade-in max-w-2xl pb-0 text-muted delay-300! lg:text-lg')}>
+        <p className={clsx('animate-fade-in text-muted max-w-2xl pb-0 delay-300! lg:text-lg')}>
           Software Engineer at{' '}
           <InlineLink href='https://traveloka.com' inverted>
             Traveloka

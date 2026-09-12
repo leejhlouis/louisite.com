@@ -23,6 +23,7 @@ export default function SiteJsonLd() {
             name: siteConfig.name,
             url: siteConfig.url,
             image: `${siteConfig.url}/assets/icons/android-chrome-512x512.png`,
+            description: siteConfig.description,
             jobTitle: 'Software Engineer',
             worksFor: {
               '@type': 'Organization',

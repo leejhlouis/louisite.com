@@ -1,6 +1,14 @@
 [build.environment]
   NODE_VERSION = "20.20.2"
 
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), geolocation=(), microphone=()"
+
 [[redirects]]
   from = "https://louisite.netlify.app/"
   to = "https://louisite.com/"
