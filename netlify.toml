@@ -1,5 +1,5 @@
 [build.environment]
-  NODE_VERSION = "22.13.0"
+  NODE_VERSION = "20.20.2"
 
 [[redirects]]
   from = "https://louisite.netlify.app/"
