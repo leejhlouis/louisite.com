@@ -1,6 +1,43 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+/* next-themes owns the `light` / `dark` class on <html>. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-canvas: rgb(var(--canvas));
+  --color-surface: rgb(var(--surface));
+  --color-elevated: rgb(var(--elevated));
+  --color-ink: rgb(var(--ink));
+  --color-muted: rgb(var(--muted));
+  --color-line: rgb(var(--line));
+  --color-signal: rgb(var(--signal));
+  --color-default-dark: #334155;
+  --color-default-light: #94a3b8;
+  --color-primary-light: #a78bfa;
+  --color-primary-lighter: #c4b5fd;
+  --color-primary-dark: #7c3aed;
+  --color-primary-lighter-dark: #8b5cf6;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --breakpoint-xs: 30rem;
+  --shadow-editorial: 0 18px 60px rgb(20 12 38 / 0.08);
+  --shadow-editorial-dark: 0 24px 80px rgb(0 0 0 / 0.28);
+}
+
+@utility container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1rem;
+
+  @media (width >= 48rem) {
+    padding-inline: 2rem;
+  }
+
+  @media (width >= 80rem) {
+    padding-inline: 3rem;
+  }
+}
 
 @layer base {
   :root {
@@ -12,6 +49,8 @@
     --muted: 99 91 108;
     --line: 210 202 214;
     --signal: 109 40 217;
+    --highlight-from: 109 40 217;
+    --highlight-to: 67 56 202;
   }
 
   .dark {
@@ -23,6 +62,8 @@
     --muted: 171 162 181;
     --line: 61 55 69;
     --signal: 196 160 255;
+    --highlight-from: 196 160 255;
+    --highlight-to: 129 140 248;
   }
 
   html {
@@ -49,7 +90,7 @@
   }
 
   p {
-    padding-bottom: theme('spacing.6');
+    padding-bottom: 1.5rem;
   }
 
   span,
@@ -59,11 +100,11 @@
   }
 
   a:hover svg {
-    transition-duration: theme('transitionDuration.300');
+    transition-duration: 300ms;
     fill: rgb(var(--signal));
   }
 
-  @media (min-width: theme('screens.sm')) {
+  @media (width >= 40rem) {
     html {
       font-size: 16px;
     }
@@ -87,14 +128,14 @@ code[data-theme*=' '] span {
   color: var(--shiki-dark);
 }
 
-@layer utilities {
+@utility touch-target {
   @media (pointer: coarse) {
-    .touch-target {
-      min-height: 44px;
-      min-width: 44px;
-    }
+    min-height: 44px;
+    min-width: 44px;
   }
+}
 
+@layer utilities {
   .text-balance {
     text-wrap: balance;
   }

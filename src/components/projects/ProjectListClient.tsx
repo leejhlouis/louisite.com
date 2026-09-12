@@ -12,7 +12,10 @@ export default function ProjectListClient({
 }: {
   initialProjects: ProjectProps[]
 }) {
-  const moreProjects = initialProjects.filter(project => !project.featured)
+  const moreProjects = useMemo(
+    () => initialProjects.filter(project => !project.featured),
+    [initialProjects]
+  )
   const [selected, setSelected] = useState<string[]>([])
 
   const filteredProjects = useMemo(() => {
@@ -26,10 +29,10 @@ export default function ProjectListClient({
       const techStacks = [...project.techStacks, ...(project.otherTechStacks ?? [])]
       return selected.every(filter => techStacks.includes(filter))
     })
-  }, [moreProjects, selected])
+  }, [initialProjects, moreProjects, selected])
 
   return (
-    <div className='animate-fade-in mt-16 !delay-500 sm:mt-20'>
+    <div className='animate-fade-in mt-16 delay-500! sm:mt-20'>
       <section
         id='more-projects'
         className='scroll-mt-20'

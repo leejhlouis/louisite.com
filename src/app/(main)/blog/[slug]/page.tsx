@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { getPost, posts } from '@/content/posts'
+import { getPost, getPosts } from '@/lib/blog'
 import Button from '@/components/ui/button/Button'
 import Eyebrow from '@/components/ui/Eyebrow'
 import { RiArrowLeftLine, RiExternalLinkLine } from '@remixicon/react'
@@ -8,9 +8,14 @@ import Section from '@/components/layouts/Section'
 import Prose from '@/components/layouts/Prose'
 import formatPostDate from '@/utils/formatPostDate'
 import JsonLd from '@/components/seo/JsonLd'
+import { Separator } from '@/components/ui/separator'
+import { getMDXComponents } from '@/mdx-components'
 import { createPageMetadata, siteConfig } from '@/constants/seo'
 
-export const generateStaticParams = () => posts.map(post => ({ slug: post.slug }))
+export async function generateStaticParams() {
+  const posts = await getPosts()
+  return posts.map(post => ({ slug: post.slug }))
+}
 export const dynamicParams = false
 
 export async function generateMetadata({
@@ -19,7 +24,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const post = getPost(slug)
+  const post = await getPost(slug)
   if (!post) return {}
   return createPageMetadata({
     title: post.title,
@@ -33,7 +38,7 @@ export async function generateMetadata({
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const post = getPost(slug)
+  const post = await getPost(slug)
   if (!post) notFound()
 
   const Content = post.Component
@@ -61,7 +66,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         <Button href='/blog' icon={<RiArrowLeftLine size={18} />}>
           All writing
         </Button>
-        <header className='mt-12 border-b border-line pb-10'>
+        <header className='mt-12 pb-10'>
           <Eyebrow className='pb-5'>
             {formatPostDate(post.publishedAt)} · {post.readingTime} min read
           </Eyebrow>
@@ -69,9 +74,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             {post.title}
           </h1>
           <p className='text-pretty mt-6 pb-0 text-lg leading-8 text-muted'>{post.description}</p>
+          <Separator className='mt-10' />
         </header>
         <Prose className='mt-12'>
-          <Content />
+          <Content components={getMDXComponents()} />
         </Prose>
         {post.originalUrl ? (
           <div className='mt-14 border-t border-line pt-8'>

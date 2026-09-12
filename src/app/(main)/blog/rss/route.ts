@@ -1,4 +1,4 @@
-import { posts } from '@/content/posts'
+import { getPosts } from '@/lib/blog'
 import { siteConfig } from '@/constants/seo'
 
 const escapeXml = (value: string) =>
@@ -9,7 +9,8 @@ const escapeXml = (value: string) =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&apos;')
 
-export function GET() {
+export async function GET() {
+  const posts = await getPosts()
   const items = posts
     .map(
       post => `

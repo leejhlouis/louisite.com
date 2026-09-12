@@ -14,7 +14,7 @@ export default function BlogCard({
 }: PostMetadata) {
   return (
     <Link href={`/blog/${slug}`} className='group block py-8 first:border-t-0'>
-      <Heading3 className='pb-0 transition-colors group-hover:text-signal'>{title}</Heading3>
+      <Heading3 className='pb-0! transition-colors group-hover:text-signal'>{title}</Heading3>
       <p className='mt-2 pb-0 text-sm'>
         {formatPostDate(publishedAt)} · {readingTime} min read
       </p>

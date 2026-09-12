@@ -1,14 +1,14 @@
 import type { MetadataRoute } from 'next'
-import { posts } from '@/content/posts'
+import { getPosts } from '@/lib/blog'
 import { siteConfig } from '@/constants/seo'
+import { siteRoutes } from '@/constants/routes'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const pages: MetadataRoute.Sitemap = [
-    { url: siteConfig.url, changeFrequency: 'monthly', priority: 1 },
-    { url: `${siteConfig.url}/projects`, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${siteConfig.url}/about`, changeFrequency: 'yearly', priority: 0.8 },
-    { url: `${siteConfig.url}/blog`, changeFrequency: 'monthly', priority: 0.8 }
-  ]
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getPosts()
+  const pages: MetadataRoute.Sitemap = siteRoutes.map(route => ({
+    url: route.href === '/' ? siteConfig.url : `${siteConfig.url}${route.href}`,
+    ...route.sitemap
+  }))
 
   const articles: MetadataRoute.Sitemap = posts.map(post => ({
     url: `${siteConfig.url}/blog/${post.slug}`,

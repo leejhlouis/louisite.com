@@ -26,7 +26,7 @@ export default function FeaturedProjects({
 
   const content = (
     <>
-      <div className='animate-fade-in flex max-w-3xl flex-col gap-3 !delay-200'>
+      <div className='animate-fade-in flex max-w-3xl flex-col gap-3 delay-200!'>
         <SectionHeading id='featured-projects-heading' className='pb-0'>
           Featured projects
         </SectionHeading>
@@ -35,7 +35,7 @@ export default function FeaturedProjects({
         </p>
       </div>
       <div
-        className='animate-fade-in mt-10 divide-y divide-line border-y border-line !delay-300'
+        className='animate-fade-in mt-10 divide-y divide-line border-y border-line delay-300!'
         aria-labelledby='featured-projects-heading'
       >
         {featuredProjects.map((project, index) => (
@@ -110,7 +110,7 @@ export default function FeaturedProjects({
         ))}
       </div>
       {showBrowseAll && (
-        <div className='animate-fade-in flex justify-start !delay-500'>
+        <div className='animate-fade-in flex justify-start delay-500!'>
           <Button
             className='my-8 sm:my-10'
             href='/projects'

@@ -1,40 +1,17 @@
 import type { NextConfig } from 'next'
-import path from 'path'
-import createMDX from '@next/mdx'
-import rehypePrettyCode, { type Options as PrettyCodeOptions } from 'rehype-pretty-code'
-
-const prettyCodeOptions: PrettyCodeOptions = {
-  theme: {
-    light: 'github-light',
-    dark: 'github-dark-default'
-  },
-  keepBackground: false,
-  bypassInlineCode: true,
-  defaultLang: { block: 'text' }
-}
+import { createMDX } from 'fumadocs-mdx/next'
 
 const nextConfig: NextConfig = {
   distDir: './dist',
-  webpack: config => {
-    if (!config.resolve) config.resolve = { alias: {} }
-    config.resolve.alias['@'] = path.resolve(__dirname, 'src')
-
-    config.module?.rules?.push({
-      test: /\.md$/,
-      use: 'raw-loader'
-    })
-
-    return config
+  images: {
+    remotePatterns: [
+      { protocol: 'https', hostname: 'cdn-images-1.medium.com' },
+      { protocol: 'https', hostname: 'miro.medium.com' }
+    ]
   },
-
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx']
 }
 
-const withMDX = createMDX({
-  extension: /\.(md|mdx)$/,
-  options: {
-    rehypePlugins: [[rehypePrettyCode, prettyCodeOptions]]
-  }
-})
+const withMDX = createMDX()
 
 export default withMDX(nextConfig)

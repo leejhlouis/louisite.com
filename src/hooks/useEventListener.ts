@@ -7,7 +7,10 @@ export default function useEventListener<K extends keyof WindowEventMap>(
   element?: RefObject<HTMLElement | null>
 ): void {
   const listenerRef = useRef(listener)
-  listenerRef.current = listener
+
+  useEffect(() => {
+    listenerRef.current = listener
+  }, [listener])
 
   useEffect(() => {
     const el = element?.current ?? window

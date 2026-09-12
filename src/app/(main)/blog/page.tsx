@@ -1,7 +1,7 @@
 import Blog from '@/components/sections/Blog'
 import { Metadata } from 'next'
 import JsonLd from '@/components/seo/JsonLd'
-import { posts } from '@/content/posts'
+import { getPosts } from '@/lib/blog'
 import { createPageMetadata, siteConfig } from '@/constants/seo'
 
 const description =
@@ -14,7 +14,8 @@ export const metadata: Metadata = createPageMetadata({
   keywords: ['software engineering blog', 'web development', 'Louis Gustavo writing']
 })
 
-export default function Page() {
+export default async function Page() {
+  const posts = await getPosts()
   return (
     <>
       <JsonLd

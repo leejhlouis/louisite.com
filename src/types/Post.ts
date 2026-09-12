@@ -1,4 +1,5 @@
 import type { ComponentType } from 'react'
+import type { MDXComponents } from 'mdx/types'
 
 export type PostMetadata = {
   slug: string
@@ -11,5 +12,5 @@ export type PostMetadata = {
 }
 
 export type PostEntry = PostMetadata & {
-  Component: ComponentType
+  Component: ComponentType<{ components?: MDXComponents }>
 }

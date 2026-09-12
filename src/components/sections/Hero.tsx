@@ -23,7 +23,7 @@ export default function Hero() {
         </p>
         <h1
           className={clsx(
-            'animate-fade-in !delay-200',
+            'animate-fade-in delay-200!',
             'text-balance text-4xl text-ink lg:text-6xl',
             'break-words font-bold tracking-tight'
           )}
@@ -31,7 +31,7 @@ export default function Hero() {
           3+ years building <HighlightText>web interfaces</HighlightText> and{' '}
           <HighlightText>backend systems.</HighlightText>
         </h1>
-        <p className={clsx('animate-fade-in max-w-2xl pb-0 text-muted !delay-300 lg:text-lg')}>
+        <p className={clsx('animate-fade-in max-w-2xl pb-0 text-muted delay-300! lg:text-lg')}>
           Software Engineer at{' '}
           <InlineLink href='https://traveloka.com' inverted>
             Traveloka
@@ -46,7 +46,7 @@ export default function Hero() {
             About me
           </Button>
         </div>
-        <SocialMediaLinks className={clsx('animate-fade-in !delay-500', 'mt-6')} />
+        <SocialMediaLinks className={clsx('animate-fade-in delay-500!', 'mt-6')} />
       </div>
     </FadeInSection>
   )

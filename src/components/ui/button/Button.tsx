@@ -104,12 +104,12 @@ const buttonIconVariants = cva('flex shrink-0 items-center transition-transform 
     {
       variant: 'filled',
       inverted: false,
-      class: '[&_svg]:!fill-white dark:[&_svg]:!fill-slate-950'
+      class: '[&_svg]:fill-white! dark:[&_svg]:fill-slate-950!'
     },
     {
       variant: 'filled',
       inverted: true,
-      class: '[&_svg]:!fill-default-dark dark:[&_svg]:!fill-default-light'
+      class: '[&_svg]:fill-default-dark! dark:[&_svg]:fill-default-light!'
     }
   ],
   defaultVariants: {

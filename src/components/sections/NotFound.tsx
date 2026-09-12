@@ -44,7 +44,7 @@ export default function NotFound() {
             The page is not available
           </Heading1>
           <p className={clsx('animate-fade-in', 'mb-4 text-lg md:text-center md:text-xl')}>
-            Oh, snap! You're in the middle of nowhere, but don't worry, returning home is just one
+            Oh, snap! You&apos;re in the middle of nowhere, but don&apos;t worry, returning home is just one
             click away.
           </p>
           <Button icon={<RiArrowLeftLine />} className='animate-fade-in pl-1 md:mx-auto' href='/'>
