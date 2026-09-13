@@ -13,6 +13,7 @@ const escapeXml = (value: string) =>
 
 export async function GET() {
   const posts = await getPosts()
+  const lastBuildDate = new Date(posts[0]?.publishedAt ?? Date.now()).toUTCString()
   const items = posts
     .map(
       post => `
@@ -22,6 +23,8 @@ export async function GET() {
       <link>${siteConfig.url}/blog/${post.slug}</link>
       <guid isPermaLink="true">${siteConfig.url}/blog/${post.slug}</guid>
       <pubDate>${new Date(post.publishedAt).toUTCString()}</pubDate>
+      <author>${siteConfig.email} (${siteConfig.name})</author>
+      ${post.tags.map(tag => `<category>${escapeXml(tag)}</category>`).join('')}
     </item>`
     )
     .join('')
@@ -34,6 +37,7 @@ export async function GET() {
         <link>${siteConfig.url}/blog</link>
         <atom:link href="${siteConfig.url}/blog/rss" rel="self" type="application/rss+xml" />
         <language>en</language>
+        <lastBuildDate>${lastBuildDate}</lastBuildDate>
         <managingEditor>${siteConfig.email} (Louis Gustavo)</managingEditor>
         <webMaster>${siteConfig.email} (Louis Gustavo)</webMaster>
         ${items}
