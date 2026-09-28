@@ -1,0 +1,52 @@
+---
+title: ERP System
+description: A freelance enterprise resource planning web application covering accounting, transactions, suppliers, sales, inventory, warehouses, and quality checks.
+publishedAt: '2026-09-28'
+---
+
+## What I Did
+
+### Architecture & Application
+
+- **Full-stack monorepo** combining a React frontend and Express backend with shared TypeScript codebases.
+- **Single-page application** built with React, TypeScript, Redux Toolkit for complex state management, and Vite.
+- **Role-based API middleware** enforcing fine-grained permissions across user roles and operational workflows.
+
+### Authentication & Security
+
+- **JWT authentication with refresh tokens** to maintain secure, persistent user sessions.
+- **Isolated backend services** keeping the Express API and PostgreSQL database contained within a private Docker network.
+
+### Infrastructure & Deployment
+
+- **Dockerized application stack** using Docker Compose for consistent local development and production environments.
+- **Automated CI/CD pipeline** built with **GitHub Actions** to test, build, and publish production container images to **GitHub Container Registry (GHCR)**.
+- **VPS deployment pipeline** with automated CD: `main` branch push → GitHub Actions build → GHCR publish → VPS deployment.
+- **Reverse proxy & TLS termination** using Caddy for automated HTTPS certificates, alongside Nginx to serve static assets and route API/upload traffic.
+- **Persistent storage** managed via named Docker volumes for PostgreSQL data and user uploaded media.
+
+### Reliability & Operations
+
+- **Automated database backups** featuring atomic writes to host storage with a configurable 14-day retention policy.
+
+---
+
+## Challenges & Key Accomplishments
+
+### VPS Memory Exhaustion During Builds
+
+- **Challenge:** Building Docker images directly on a resource-constrained VPS repeatedly spiked RAM usage to 100%, triggering OOM kills and deployment failures.
+- **Solution:** Offloaded image builds entirely to GitHub Actions runners. The VPS now only pulls pre-built production images from GHCR, eliminating server build overhead and stabilizing deployments.
+
+### Bulk CSV Data Import Bottlenecks
+
+- **Challenge:** Iterating over thousands of CSV records row-by-row in Node.js caused memory spikes, database pool contention, and API request timeouts.
+- **Solution:** Replaced row-by-row processing with stream-based PostgreSQL bulk operations. Streaming data directly into database transactions eliminated memory overhead and cut import execution times down significantly.
+
+### Inventory Ledger Synchronization & Transaction Integrity
+
+- **Challenge:** Tracking stock across supplier receipts, warehouse transfers, and buyer orders created race conditions and desynchronization risks, especially when retroactively updating or voiding transactions.
+- **Solution:**
+  - Modeled strict PostgreSQL relational schemas linking every inventory movement to an immutable parent transaction and item record.
+  - Enclosed multi-table operations within explicit ACID database transactions, guaranteeing atomic updates across stock levels and ledger entries.
+  - Balanced schema normalization with strategic denormalization to maintain audit integrity while optimizing read query performance for real-time reporting.

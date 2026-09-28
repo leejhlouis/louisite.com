@@ -52,6 +52,7 @@ const projects: ProjectProps[] = [
     description: 'Your Top 5 Spotify songs & artists in one place built with Next.js.',
     techStacks: ['Next.js', 'TypeScript', 'Spotify API'],
     otherTechStacks: ['Tailwind CSS', 'HTML/CSS', 'JavaScript', 'React', 'Spotify API'],
+    caseStudy: true,
     category: 'Front-end development',
     links: getLinks('spotify-top5', 'https://spotifytop5.louisite.com')
   },
@@ -70,6 +71,7 @@ const projects: ProjectProps[] = [
       'A freelance enterprise resource planning (ERP) web application for an undisclosed client, covering accounting, transactions, suppliers, sales, items, brands, buyers, inventory, warehouses, and quality checks. Built with PERN stack.',
     techStacks: ['PostgreSQL', 'Express.js', 'React', 'Node.js'],
     otherTechStacks: ['TypeScript', 'JavaScript'],
+    caseStudy: true,
     category: 'Full-stack development',
     links: []
   },
@@ -92,6 +94,7 @@ const projects: ProjectProps[] = [
       'A web-based travel itinerary planner. Users can plan collaboratively, share itineraries publicly, and discover destinations through proximity, rating, and preference-based recommendations powered by the Google Places API.',
     techStacks: ['Laravel', 'MySQL', 'Google Cloud'],
     otherTechStacks: ['HTML/CSS', 'JavaScript', 'PHP', 'Bootstrap'],
+    caseStudy: true,
     category: 'Full-stack development',
     links: []
   },

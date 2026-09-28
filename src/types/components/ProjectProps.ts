@@ -20,6 +20,7 @@ export default interface ProjectProps extends ComponentProps {
   category: string
   techStacks: string[]
   otherTechStacks?: string[]
+  caseStudy?: boolean
   links: LinkProps[]
   icon: string
 }

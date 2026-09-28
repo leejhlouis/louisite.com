@@ -1,0 +1,42 @@
+---
+title: Travelin
+description: An end-to-end web platform for trip planning, community itinerary sharing, and destination recommendations.
+publishedAt: '2026-09-28'
+---
+
+## Overview & Background
+
+Travelers often struggle with fragmented information, inefficient route planning, and manual itinerary creation.
+
+Our team engineered **Travelin**, an end-to-end web platform designed to streamline trip planning, enable community itinerary sharing, and deliver real-time destination recommendations for travelers across Indonesia.
+
+---
+
+## What We Did
+
+- **Context-aware recommendation engine** delivering destination suggestions based on spatial proximity, user activity preferences, Google Places API data (backed by an offline fallback strategy), and crowd-sourced ratings.
+- **Content sharing and discovery** enabling users to publish, explore, like, and duplicate itineraries as baseline templates.
+- **Collaborative trip planning and budgeting** enabling users to plan multi-day itineraries with time-validated schedules, real-time activity cost tracking against trip budgets, and role-aware sharing permissions across public, private, and link-based access states.
+- **Production-Grade backend architecture** Built on top of UUID primary keys, relational Eloquent models, soft and cascading deletes, multi-record database transactions, strict validation, and middleware security.
+
+---
+
+## Challenges & Key Accomplishments
+
+### Spatial Proximity Optimization in Recommendations
+
+- **Challenge:** Recommending travel spots solely on ratings often led to geographically impractical suggestions scattered across distant regions.
+
+- **Solution:** Integrated spatial coordinate mapping via the Google Places API alongside the Haversine formula to calculate spatial proximity using latitude and longitude coordinates relative to the user's latest scheduled daily activity.
+
+### Multi-Tenant Collaboration & Security Matrix
+
+- **Challenge:** Decoupling public itinerary visibility from private collaborative editing privileges without introducing security vulnerabilities or permission leaks.
+
+- **Solution:** Designed a relational permission schema separating global access types from specific user collaboration roles. This allowed owners to maintain public/private visibility states while delegating selective `read` or `write` access to individual collaborators.
+
+### Transactional Integrity & API Fault Tolerance
+
+- **Challenge**: Preventing partial data corruption during multi-record operations like itinerary cloning, while maintaining recommendation availability during third-party API downtime.
+
+- **Solution**: Wrapped multi-record database operations in explicit MySQL database transactions to ensure strict atomicity, while implementing an offline local fallback strategy when Google Places API calls fail or hit rate limits.

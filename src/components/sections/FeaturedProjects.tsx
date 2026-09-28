@@ -30,12 +30,12 @@ export default function FeaturedProjects({
         <SectionHeading id='featured-projects-heading' className='pb-0'>
           Featured projects
         </SectionHeading>
-        <p className='text-pretty max-w-2xl pb-0 text-muted'>
+        <p className='text-muted max-w-2xl pb-0 text-pretty'>
           Selected works that showcase my full-stack engineering expertise.
         </p>
       </div>
       <div
-        className='animate-fade-in mt-10 divide-y divide-line border-y border-line delay-300!'
+        className='animate-fade-in divide-line border-line mt-10 divide-y border-y delay-300!'
         aria-labelledby='featured-projects-heading'
       >
         {featuredProjects.map((project, index) => (
@@ -47,7 +47,7 @@ export default function FeaturedProjects({
             <div className={clsx('min-w-0', index % 2 === 1 && 'lg:order-2')}>
               <Eyebrow className='pb-3'>{project.category}</Eyebrow>
               <Heading3 id={`${project.slug}-title`}>{project.title}</Heading3>
-              <div className='text-pretty max-w-[70ch] leading-7 text-muted'>
+              <div className='text-muted max-w-[70ch] leading-7 text-pretty'>
                 <ProjectDescription description={project.description} />
               </div>
               <ul className='mt-5 flex flex-wrap gap-2'>
@@ -57,16 +57,27 @@ export default function FeaturedProjects({
                   </li>
                 ))}
               </ul>
-              {!!project.links.length && (
+              {(project.caseStudy || project.links.length > 0) && (
                 <div className='mt-6 flex flex-wrap gap-4'>
+                  {project.caseStudy && (
+                    <Button
+                      href={`/projects/${project.slug}`}
+                      className='text-sm'
+                      variant='filled'
+                      icon={<RiArrowRightLine size={16} />}
+                      iconPosition='right'
+                    >
+                      Case study
+                    </Button>
+                  )}
                   {project.links.map(link => (
                     <Button
                       key={link.url}
                       href={link.url}
                       target='_blank'
                       rel='noreferrer'
-                      className='text-sm'
-                      icon={<ProjectLinkIcon icon={link.icon} size={22} />}
+                      className='text-xs'
+                      icon={<ProjectLinkIcon icon={link.icon} size={20} />}
                     >
                       {link.label}
                     </Button>
@@ -77,7 +88,7 @@ export default function FeaturedProjects({
             {project.illustrations && (
               <div
                 className={clsx(
-                  'grid w-full overflow-hidden rounded-xl border border-line bg-elevated/70 xs:grid-cols-2',
+                  'border-line bg-elevated/70 xs:grid-cols-2 grid w-full overflow-hidden rounded-xl border',
                   project.illustrations.length === 1 && 'max-w-sm',
                   index % 2 === 0 ? 'lg:order-2 lg:ml-auto' : 'lg:order-1 lg:mr-auto'
                 )}
@@ -87,8 +98,8 @@ export default function FeaturedProjects({
                     key={illustration.src}
                     className={
                       project.illustrations?.length === 1
-                        ? 'relative aspect-[16/10] min-w-0 xs:col-span-2'
-                        : 'relative aspect-[4/3] min-w-0 border-line even:border-t xs:even:border-l xs:even:border-t-0'
+                        ? 'xs:col-span-2 relative aspect-[16/10] min-w-0'
+                        : 'border-line xs:even:border-l xs:even:border-t-0 relative aspect-[4/3] min-w-0 even:border-t'
                     }
                   >
                     <Image

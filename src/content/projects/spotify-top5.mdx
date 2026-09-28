@@ -1,0 +1,24 @@
+---
+title: Spotify Top 5
+description: A full-stack Spotify personalization app for exploring top artists and tracks across multiple listening periods.
+publishedAt: '2026-09-28'
+---
+
+## Overview
+
+Spotify Top 5 is a full-stack Spotify personalization app that lets users authenticate with Spotify and explore their top artists and tracks across multiple listening periods.
+
+## Background
+
+I built this in December 2024 to get a complete picture of my most-played songs throughout 2024.
+
+Spotify Wrapped had its cutoff date sometime in November. This was also my first time experimenting with the Spotify API.
+
+## Key Features
+
+- **Spotify OAuth integration** for securely authenticating users and accessing their listening data
+- **Personalized Top 5 rankings** for artists and tracks across three listening periods: last 4 weeks, last 6 months, and last year
+- **Server-side API routes** that keep Spotify API requests and authentication tokens off the client
+- **Responsive Next.js + TypeScript interface** built with Tailwind CSS and accessible Headless UI components
+- **Concurrent data loading** with smooth loading states and skeleton UI while profile and music data are fetched
+- **Clean state management** using React Context and `useReducer`
